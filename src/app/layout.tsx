@@ -6,7 +6,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { GoFundMeBanner } from "@/components/gofundme-banner";
 import { SafetyToast } from "@/components/safety-toast";
 import { CommandPaletteProvider } from "@/components/command-palette";
 import { RegionContextProvider } from "@/components/region-context";
@@ -100,7 +99,6 @@ export default async function RootLayout({
         <ThemeProvider>
           <RegionContextProvider regions={regions} current={DEFAULT_REGION_CODE}>
             <CommandPaletteProvider initialIndex={searchIndex} regions={regions}>
-              <GoFundMeBanner />
               <Navbar />
               <div className="relative z-10">{children}</div>
               <Footer />
@@ -108,10 +106,6 @@ export default async function RootLayout({
             </CommandPaletteProvider>
           </RegionContextProvider>
         </ThemeProvider>
-
-        <Script id="llvpn-ads" strategy="afterInteractive">
-          {`(function(s){s.dataset.zone='10657401',s.src='https://llvpn.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
-        </Script>
 
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-TD8F20DS4V" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
