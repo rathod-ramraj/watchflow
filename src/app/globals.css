@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* ============ THEMES ============ */
+/* Default: purple-dark (current WatchFlow look) */
+:root,
+[data-theme="purple-dark"] {
+  --bg: #07070a;
+  --bg-elev: #0f0f15;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(139, 92, 246, 0.04);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(139, 92, 246, 0.3);
+  --fg: #f5f5f7;
+  --fg-muted: #8e8e93;
+  --accent: #8b5cf6;
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --accent-fg: #ffffff;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warn: #f59e0b;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="midnight"] {
+  --bg: #03060d;
+  --bg-elev: #090f1a;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(56, 189, 248, 0.05);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(56, 189, 248, 0.3);
+  --fg: #e2e8f0;
+  --fg-muted: #708090;
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --accent-fg: #03060d;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warn: #f59e0b;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(0, 8, 24, 0.7);
+}
+
+[data-theme="synthwave"] {
+  --bg: #110517;
+  --bg-elev: #1a0824;
+  --bg-card: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 56, 184, 0.07);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 56, 184, 0.4);
+  --fg: #ffe9fb;
+  --fg-muted: #a684b5;
+  --accent: #ff38b8;
+  --accent-glow: rgba(255, 56, 184, 0.3);
+  --accent-fg: #110517;
+  --danger: #ff5470;
+  --success: #00f0a8;
+  --warn: #ffce5e;
+  --radius: 18px;
+  --shadow: 0 12px 40px rgba(255, 56, 184, 0.12);
+}
+
+[data-theme="paper"] {
+  --bg: #f5f4f0;
+  --bg-elev: #ffffff;
+  --bg-card: rgba(0, 0, 0, 0.02);
+  --bg-card-hover: rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(124, 58, 237, 0.4);
+  --fg: #1a1a1a;
+  --fg-muted: #7a7a7a;
+  --accent: #7c3aed;
+  --accent-glow: rgba(124, 58, 237, 0.15);
+  --accent-fg: #ffffff;
+  --danger: #dc2626;
+  --success: #059669;
+  --warn: #d97706;
+  --radius: 14px;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="terminal"] {
+  --bg: #000000;
+  --bg-elev: #050a05;
+  --bg-card: rgba(0, 255, 102, 0.02);
+  --bg-card-hover: rgba(0, 255, 102, 0.06);
+  --border: rgba(0, 255, 102, 0.2);
+  --border-strong: rgba(0, 255, 102, 0.5);
+  --fg: #00ff66;
+  --fg-muted: #3d8f52;
+  --accent: #00ff66;
+  --accent-glow: rgba(0, 255, 102, 0.3);
+  --accent-fg: #000000;
+  --danger: #ff3838;
+  --success: #00ff66;
+  --warn: #ffd000;
+  --radius: 4px;
+  --shadow: 0 0 20px rgba(0, 255, 102, 0.1);
+}
+
+@theme inline {
+  --breakpoint-xs: 30rem; /* 480px */
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-card: var(--bg-card);
+  --color-card-hover: var(--bg-card-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-warn: var(--warn);
+  --radius-card: var(--radius);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="terminal"] body {
+  font-family: var(--font-mono);
+}
+
+/* Subtle radial accent backdrop, hidden in paper */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1000px 600px at 15% -10%, var(--accent-glow), transparent 65%),
+    radial-gradient(900px 600px at 90% 0%, var(--accent-glow), transparent 70%);
+  opacity: 0.28;
+  z-index: 0;
+}
+[data-theme="paper"] body::before {
+  opacity: 0;
+}
+[data-theme="terminal"] body::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 102, 0.03) 0px,
+    rgba(0, 255, 102, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 1;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* Utility classes */
+.watchflow-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1);
+}
+.watchflow-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4), 0 0 24px -6px var(--accent-glow);
+}
+.watchflow-pill {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg-muted);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.watchflow-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--fg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2);
+}
+.watchflow-pill[data-active="true"] {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px -3px var(--accent-glow);
+}
+.watchflow-glow {
+  box-shadow: 0 0 0 1px var(--border-strong), 0 0 28px var(--accent-glow);
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.pulse-dot {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Hide scrollbars on horizontal scrollers (mobile filter row) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* iOS safe-area aware bottom padding (for mobile bottom-sheet) */
+.pb-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+/* Larger tap targets on touch devices */
+@media (hover: none) {
+  .watchflow-pill { min-height: 36px; }
+}
+
+/* Smooth scroll on hash jumps */
+html { scroll-behavior: smooth; }
