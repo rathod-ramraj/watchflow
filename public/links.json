@@ -154,7 +154,7 @@
         },
         {
           "name": "Overlook",
-          "url": "https://overlook.to/",
+          "url": "https://overlook.cx/",
           "logo": "./logo/movies_shows/overlook.png",
           "enabled": true
         }
@@ -457,7 +457,7 @@
       "sites": [
         {
           "name": "DaddyLive",
-          "url": "https://dlhd.pk/",
+          "url": "https://dlhd.st/",
           "logo": "./logo/livetv/daddylive.png",
           "enabled": true,
           "status": "trusted"
