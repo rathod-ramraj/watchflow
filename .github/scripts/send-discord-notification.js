@@ -1,4 +1,28 @@
 const fs = require('fs');
+const path = require('path');
+
+function loadEnv() {
+  const envPath = path.join(__dirname, '../../.env');
+  if (fs.existsSync(envPath)) {
+    const content = fs.readFileSync(envPath, 'utf8');
+    for (const line of content.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const index = trimmed.indexOf('=');
+      if (index === -1) continue;
+      const key = trimmed.substring(0, index).trim();
+      let val = trimmed.substring(index + 1).trim();
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.substring(1, val.length - 1);
+      }
+      if (!process.env[key]) {
+        process.env[key] = val;
+      }
+    }
+  }
+}
+loadEnv();
+
 const https = require('https');
 
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK;
@@ -150,12 +174,16 @@ async function main() {
   }
 
   const mentions = '<@1343627759997554708>';
+  let commitLine = '';
+  if (process.env.COMMIT_SHA && process.env.GITHUB_REPOSITORY) {
+    commitLine = `\n📝 **Commit:** https://github.com/${process.env.GITHUB_REPOSITORY}/commit/${process.env.COMMIT_SHA}`;
+  }
   const summary = [
     `Found **${originalBroken.length}** broken link(s).`,
     fixed.length > 0 ? `Auto-fixed **${fixed.length}** ✅` : null,
     unresolved.length > 0 ? `**${unresolved.length}** still need attention ⚠️` : 'All resolved 🎉',
   ].filter(Boolean).join(' · ');
-  const content = `${mentions}\n⚠️ **Link Checker Alert**\n${summary}`;
+  const content = `${mentions}\n⚠️ **Link Checker Alert**\n${summary}${commitLine}`;
 
   function embedSize(e) {
     let s = (e.title || '').length + (e.description || '').length;
