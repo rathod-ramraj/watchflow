@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  DISCORD_WEBHOOK: ${{ secrets['SITE_VALIDATOR_WEBHOOK'] || 'https://discord.com/api/webhooks/1521474273259159666/EsBHkwWtGyo9KIGt0Gy0dJYLPk1ixxjWMgh_t1bRYSrmJkox3vglks8kJ54CLrxm3Zna' }}
+  DISCORD_WEBHOOK: ${{ secrets.SITE_VALIDATOR_WEBHOOK }}
 
 jobs:
   check-links:
@@ -47,6 +47,7 @@ jobs:
               echo "No staged changes — skipping commit."
             else
               git commit -m "bot: auto-update broken links"
+              git pull --rebase origin ${{ github.ref_name }}
               git push origin HEAD:${{ github.ref_name }}
               echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
             fi
@@ -75,7 +76,7 @@ jobs:
           if [ ! -f broken-links.json ]; then
             node -e "
               const https = require('https');
-              const url = new URL(process.env.DISCORD_WEBHOOK);
+              const url = new URL(process.env.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521474273259159666/EsBHkwWtGyo9KIGt0Gy0dJYLPk1ixxjWMgh_t1bRYSrmJkox3vglks8kJ54CLrxm3Zna');
               const payload = JSON.stringify({
                 content: '<@1343627759997554708>\n🚨 **Link Checker Crashed**\nThe workflow failed before producing a broken-links report. Check the GitHub Actions logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
               });

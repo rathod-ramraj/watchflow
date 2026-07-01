@@ -25,7 +25,7 @@ loadEnv();
 
 const https = require('https');
 
-const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK;
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK || 'https://discord.com/api/webhooks/1521474273259159666/EsBHkwWtGyo9KIGt0Gy0dJYLPk1ixxjWMgh_t1bRYSrmJkox3vglks8kJ54CLrxm3Zna';
 
 function sendDiscordMessage(payload, _unused) {
   return new Promise((resolve, reject) => {
