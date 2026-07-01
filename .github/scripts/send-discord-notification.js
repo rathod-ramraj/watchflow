@@ -90,15 +90,15 @@ async function main() {
   const MAX_EMBED_CHARS = 5500;
 
   function linkToField(link) {
-    const name = link.name.length > 256 ? link.name.substring(0, 253) + '...' : link.name;
-    let value = `**URL:** ${link.url}\n**Category:** ${link.category}\n**Status:** ${link.status}`;
+    const title = link.url.length > 256 ? link.url.substring(0, 253) + '...' : link.url;
+    let value = `**Name:** ${link.name}\n**Category:** ${link.category}\n**Status:** ${link.status}`;
     if (link.error) {
       value += `\n**Error:** ${link.error.substring(0, 100)}`;
     }
     if (value.length > 1024) {
       value = value.substring(0, 1021) + '...';
     }
-    return { name, value, inline: false };
+    return { name: title, value, inline: false };
   }
 
   function buildLinkEmbeds(links, titlePrefix, color) {

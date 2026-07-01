@@ -15,7 +15,7 @@ const geistSans = Inter({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = JetBrains_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://watchflow.vercel.app"),
+  metadataBase: new URL("https://watchfloww.vercel.app"),
   title: {
     default: "WatchFlow",
     template: "%s · WatchFlow",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "best streaming list",
     "watchflow",
   ],
-  authors: [{ name: "WatchFlow Team", url: "https://watchflow.vercel.app" }],
+  authors: [{ name: "WatchFlow Team", url: "https://watchfloww.vercel.app" }],
   creator: "WatchFlow Team",
   publisher: "WatchFlow",
   manifest: "/manifest.json",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "WatchFlow",
     description:
       "A curated, regional list of free streaming sites — movies, anime, manga, live TV and more.",
-    url: "https://watchflow.vercel.app",
+    url: "https://watchfloww.vercel.app",
     locale: "en_US",
     images: [
       {
