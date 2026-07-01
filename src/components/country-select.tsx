@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { useRegions } from "./region-context";
 import { DEFAULT_REGION_CLIENT } from "@/lib/constants";
 
@@ -9,6 +9,14 @@ export function CountrySelect() {
   const router = useRouter();
   const pathname = usePathname();
   const { regions } = useRegions();
+
+  // Prefetch all region pages to make region-switching instant
+  useEffect(() => {
+    for (const r of regions) {
+      const path = r.code === DEFAULT_REGION_CLIENT ? "/" : `/${r.code.toLowerCase()}`;
+      router.prefetch(path);
+    }
+  }, [regions, router]);
 
   const current = useMemo(() => {
     const seg = (pathname ?? "/").split("/").filter(Boolean)[0]?.toUpperCase();
