@@ -14,7 +14,7 @@ interface CommitResponse {
   date: string;
 }
 
-const TTL_SECONDS = 2 * 60 * 60; // 2 hours
+const TTL_SECONDS = 30; // 30 seconds
 const TTL_MS = TTL_SECONDS * 1000;
 
 // In-process hot cache — avoids hitting GitHub on every request within the same instance.

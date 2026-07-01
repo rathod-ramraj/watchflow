@@ -12,7 +12,7 @@ interface LatestCommit {
 }
 
 const STORAGE_KEY = "watchflow-latest-commit-v1";
-const TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
+const TTL_MS = 1 * 60 * 1000; // 1 minute
 
 interface CachedEntry {
   at: number;

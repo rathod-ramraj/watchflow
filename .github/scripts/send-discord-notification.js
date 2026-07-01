@@ -86,22 +86,8 @@ async function main() {
     l => !fixedKeySet.has(`${l.file}|${l.url}`)
   );
 
-  const groupedByFile = unresolved.reduce((acc, link) => {
-    const key = `${link.region}|${link.file}`;
-    if (!acc[key]) {
-      acc[key] = {
-        region: link.region,
-        file: link.file,
-        links: []
-      };
-    }
-    acc[key].links.push(link);
-    return acc;
-  }, {});
-
   const MAX_FIELDS = 25;
   const MAX_EMBED_CHARS = 5500;
-  const COLOR = 15158332;
 
   function linkToField(link) {
     const name = link.name.length > 256 ? link.name.substring(0, 253) + '...' : link.name;
@@ -115,8 +101,60 @@ async function main() {
     return { name, value, inline: false };
   }
 
+  function buildLinkEmbeds(links, titlePrefix, color) {
+    const grouped = links.reduce((acc, link) => {
+      const key = `${link.region}|${link.file}`;
+      if (!acc[key]) {
+        acc[key] = {
+          region: link.region,
+          file: link.file,
+          links: []
+        };
+      }
+      acc[key].links.push(link);
+      return acc;
+    }, {});
+
+    const resultEmbeds = [];
+    for (const group of Object.values(grouped)) {
+      const fields = group.links.map(linkToField);
+      const title = `${titlePrefix} in ${group.region}`.substring(0, 256);
+      const baseDescription = `**File:** \`${group.file}\`\n**Count:** ${group.links.length}`;
+
+      const chunks = [];
+      let current = [];
+      let currentChars = title.length + baseDescription.length + 40;
+
+      for (const field of fields) {
+        const fieldChars = field.name.length + field.value.length;
+        if (current.length >= MAX_FIELDS || currentChars + fieldChars > MAX_EMBED_CHARS) {
+          chunks.push(current);
+          current = [];
+          currentChars = title.length + baseDescription.length + 40;
+        }
+        current.push(field);
+        currentChars += fieldChars;
+      }
+      if (current.length > 0) chunks.push(current);
+
+      chunks.forEach((chunkFields, idx) => {
+        const partLabel = chunks.length > 1 ? ` (part ${idx + 1}/${chunks.length})` : '';
+        const description = baseDescription + partLabel;
+        resultEmbeds.push({
+          title: (title + partLabel).substring(0, 256),
+          description: description.length > 4096 ? description.substring(0, 4093) + '...' : description,
+          color: color,
+          fields: chunkFields,
+          timestamp: new Date().toISOString()
+        });
+      });
+    }
+    return resultEmbeds;
+  }
+
   const embeds = [];
 
+  // 1. Add new updated (auto-fixed) links
   if (fixed.length > 0) {
     const bySource = fixed.reduce((acc, u) => {
       (acc[u.source] = acc[u.source] || []).push(u);
@@ -139,39 +177,13 @@ async function main() {
     });
   }
 
-  for (const group of Object.values(groupedByFile)) {
-    const fields = group.links.map(linkToField);
-    const title = `🔴 Broken Links in ${group.region}`.substring(0, 256);
-    const baseDescription = `**File:** \`${group.file}\`\n**Total broken:** ${group.links.length}`;
+  // 2. Add original broken links
+  const originalBrokenEmbeds = buildLinkEmbeds(originalBroken, '🚨 Original Broken Links', 15158332);
+  embeds.push(...originalBrokenEmbeds);
 
-    const chunks = [];
-    let current = [];
-    let currentChars = title.length + baseDescription.length + 40;
-
-    for (const field of fields) {
-      const fieldChars = field.name.length + field.value.length;
-      if (current.length >= MAX_FIELDS || currentChars + fieldChars > MAX_EMBED_CHARS) {
-        chunks.push(current);
-        current = [];
-        currentChars = title.length + baseDescription.length + 40;
-      }
-      current.push(field);
-      currentChars += fieldChars;
-    }
-    if (current.length > 0) chunks.push(current);
-
-    chunks.forEach((chunkFields, idx) => {
-      const partLabel = chunks.length > 1 ? ` (part ${idx + 1}/${chunks.length})` : '';
-      const description = baseDescription + partLabel;
-      embeds.push({
-        title: (title + partLabel).substring(0, 256),
-        description: description.length > 4096 ? description.substring(0, 4093) + '...' : description,
-        color: COLOR,
-        fields: chunkFields,
-        timestamp: new Date().toISOString()
-      });
-    });
-  }
+  // 3. Add unresolved (not fixed yet) links
+  const unresolvedEmbeds = buildLinkEmbeds(unresolved, '⚠️ Not Fixed Yet (Unresolved)', 15105570);
+  embeds.push(...unresolvedEmbeds);
 
   const mentions = '<@1343627759997554708>';
   let commitLine = '';
