@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -47,8 +46,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-4 py-3 sm:gap-3 md:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 font-bold transition-transform active:scale-95">
-          <Image src="/favicon.png" alt="WatchFlow" width={28} height={28} className="h-7 w-7 rounded-lg shadow-md" />
-          <span className="hidden text-base font-extrabold tracking-tight sm:inline bg-gradient-to-r from-[var(--fg)] to-[var(--fg-muted)] bg-clip-text text-transparent">WatchFlow</span>
+          <span className="text-xl font-black tracking-tight bg-gradient-to-r from-[var(--fg)] to-[var(--fg-muted)] bg-clip-text text-transparent" style={{ fontFamily: "var(--font-logo)" }}>WatchFlow</span>
         </Link>
 
         <ul className="ml-4 hidden items-center gap-1.5 md:flex">

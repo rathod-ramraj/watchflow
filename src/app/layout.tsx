@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Unbounded } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -13,6 +13,7 @@ import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
 
 const geistSans = Inter({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = JetBrains_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const logoFont = Unbounded({ variable: "--font-logo", subsets: ["latin"], weight: ["800", "900"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://watchfloww.vercel.app"),
@@ -41,10 +42,10 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png" },
+      { url: "/favicon-new.png", type: "image/png" },
     ],
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    shortcut: "/favicon-new.png",
+    apple: "/favicon-new.png",
   },
   alternates: {
     canonical: "/",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/favicon.png",
+        url: "/favicon-new.png",
         width: 512,
         height: 512,
         alt: "WatchFlow",
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     title: "WatchFlow",
     description:
       "Curated streaming sites for movies, anime, manga, live TV and more — fast fuzzy search, multi-region.",
-    images: ["/favicon.png"],
+    images: ["/favicon-new.png"],
   },
   robots: {
     index: true,
@@ -94,7 +95,7 @@ export default async function RootLayout({
   const searchIndex = await buildSearchIndex(DEFAULT_REGION_CODE);
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${logoFont.variable}`}>
       <body className="min-h-screen antialiased">
         <ThemeProvider>
           <RegionContextProvider regions={regions} current={DEFAULT_REGION_CODE}>

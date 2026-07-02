@@ -34,8 +34,8 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
         {/* LEFT: title + tagline */}
         <div className="min-w-0">
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--bg-elev)] border border-[var(--border)] shadow-md transition-transform hover:rotate-6">
-              <Image src="/favicon.png" alt="WatchFlow" width={32} height={32} className="h-8 w-8 rounded-lg" />
+            <div className="flex h-20 w-20 items-center justify-center transition-transform hover:rotate-6">
+              <Image src="/favicon-new.png" alt="WatchFlow" width={80} height={80} className="h-20 w-20 object-contain" />
             </div>
             <div>
               <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl text-white">
