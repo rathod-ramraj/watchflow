@@ -33,12 +33,12 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
       <div className="relative grid items-center gap-8 px-6 py-10 md:px-12 md:py-14 lg:grid-cols-[1.3fr_1fr]">
         {/* LEFT: title + tagline */}
         <div className="min-w-0">
-          <div className="flex items-center gap-4">
-            <div className="flex h-20 w-20 items-center justify-center transition-transform hover:rotate-6">
-              <Image src="/favicon-new.png" alt="WatchFlow" width={80} height={80} className="h-20 w-20 object-contain" />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="flex h-12 w-12 sm:h-20 sm:w-20 shrink-0 items-center justify-center transition-transform hover:rotate-6">
+              <Image src="/favicon-new.png" alt="WatchFlow" width={80} height={80} className="h-12 w-12 sm:h-20 sm:w-20 object-contain" />
             </div>
             <div>
-              <h1 className="text-3xl font-extrabold leading-tight tracking-tight md:text-5xl text-white whitespace-nowrap">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white whitespace-nowrap">
                 Your streaming{" "}
                 <span className="bg-gradient-to-r from-[var(--accent)] via-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent">
                   everything
