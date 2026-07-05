@@ -74,7 +74,7 @@ export function LiveUsers() {
         />
       </span>
       <span className="tabular-nums font-extrabold text-[var(--fg)]">{count.toLocaleString()}</span>
-      <span>Users in Real-Time using WatchFlow</span>
+      <span>Users in Real-Time using WatchFlow ;)</span>
     </div>
   );
 }
