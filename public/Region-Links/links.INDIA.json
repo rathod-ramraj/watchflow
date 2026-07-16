@@ -24,18 +24,6 @@
           "enabled": true
         },
         {
-          "name": "Zee5",
-          "url": "https://www.zee5.com/global",
-          "logo": "./logo/movies_shows/zee5.png",
-          "enabled": true
-        },
-        {
-          "name": "Sony Liv",
-          "url": "https://www.sonyliv.com/",
-          "logo": "./logo/movies_shows/sonyliv.png",
-          "enabled": true
-        },
-        {
           "name": "Bollyflix",
           "url": "https://bollyflix.at/",
           "logo": "./logo/movies_shows/Bollyflix-movies.png",
@@ -66,12 +54,6 @@
           "enabled": true
         },
         {
-          "name": "Velora",
-          "url": "https://www.veloratv.in/",
-          "logo": "./logo/movies_shows/velora.png",
-          "enabled": true
-        },
-        {
           "name": "Multi movies",
           "url": "https://multimovies.wtf/",
           "logo": "./logo/movies_shows/multi-movies.jpg",
@@ -90,6 +72,18 @@
           "enabled": true
         },
         {
+          "name": "movies4u",
+          "url": "https://new1.movies4u.clinic/",
+          "logo": "./logo/movies_shows/movies4u.png",
+          "enabled": true
+        },
+        {
+          "name": "moviesmod",
+          "url": "https://moviesmod.at/",
+          "logo": "./logo/movies_shows/moviesmod.png",
+          "enabled": true
+        },
+        {
           "name": "world4u",
           "url": "https://world4ufree.im/",
           "logo": "./logo/movies_shows/world4u.png",
@@ -97,7 +91,7 @@
         },
         {
           "name": "netmirror",
-          "url": "https://net11.cc/home",
+          "url": "https://net77.cc/home",
           "logo": "./logo/movies_shows/netmirror.png",
           "enabled": true
         },
@@ -127,7 +121,7 @@
         },
         {
           "name": "1tamilblasters",
-          "url": "https://www.1tamilblasters.republican/",
+          "url": "https://www.1tamilblasters.pro/",
           "logo": "./logo/movies_shows/1tamilblasters.png",
           "status": "new",
           "enabled": true
@@ -136,13 +130,6 @@
           "name": "cinephile",
           "url": "https://cinephile.live/",
           "logo": "./logo/movies_shows/cinephile.png",
-          "status": "new",
-          "enabled": true
-        },
-        {
-          "name": "Nxsha",
-          "url": "https://nxsha.space/",
-          "logo": "./logo/movies_shows/nxsha.png",
           "status": "new",
           "enabled": true
         }
@@ -156,18 +143,45 @@
           "name": "AG48 ANIME",
           "url": "https://www.ag48anime.site/",
           "logo": "./logo/anime/ag48anime.png",
+          "status": "trusted",
           "enabled": true
         },
         {
           "name": "WatchAnimeWorld",
           "url": "https://watchanimeworld.net/",
           "logo": "./logo/anime/watchanimeworld.png",
+          "status": "trusted",
           "enabled": true
         },
         {
           "name": "AnimeJoker",
           "url": "https://animejoker.com/",
           "logo": "./logo/anime/animejoker.png",
+          "enabled": true
+        },
+        {
+          "name": "blakiteanime",
+          "url": "https://www.subdubanime.site/",
+          "logo": "./logo/anime/blakiteanime.png",
+          "enabled": true
+        },
+        {
+          "name": "Anime4u",
+          "url": "https://anime4u.site/",
+          "logo": "./logo/anime/anime4u.png",
+          "enabled": true
+        },
+        {
+          "name": "AnimeDrive",
+          "url": "https://animedrive.in/",
+          "logo": "./logo/anime/animedrive.png",
+          "enabled": true
+        },
+        {
+          "name": "DesiDubAnime",
+          "url": "https://www.desidubanime.me/",
+          "logo": "./logo/anime/desidubanime.png",
+          "status": "new",
           "enabled": true
         },
         {
@@ -201,22 +215,9 @@
           "enabled": true
         },
         {
-          "name": "AnimeSuge",
-          "url": "https://animesuge.cz/",
-          "logo": "./logo/anime/animesuge.png",
-          "enabled": true
-        },
-        {
-          "name": "Anime Sogo",
+          "name": "AnimeSogo",
           "url": "https://animesogo.to/home",
           "logo": "./logo/anime/anime-sogo.png",
-          "enabled": true
-        },
-        {
-          "name": "AniWaves",
-          "url": "https://aniwaves.ru",
-          "logo": "./logo/anime/aniwave.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -329,6 +330,12 @@
           "enabled": true
         },
         {
+          "name": "Peacock",
+          "url": "https://www.peacocktv.com/start",
+          "logo": "./logo/paid_apps/Peacock.png",
+          "enabled": true
+        },
+        {
           "name": "AMC+",
           "url": "https://www.amcplus.com/login",
           "logo": "./logo/paid_apps/amc+.png",
@@ -407,6 +414,12 @@
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
           "status": "new",
+          "enabled": true
+        },
+        {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]
