@@ -43,7 +43,7 @@
         },
         {
           "name": "Vegamovies",
-          "url": "https://vegamovie.su/",
+          "url": "https://vegamovie.si/",
           "logo": "./logo/movies_shows/vegamovies.png",
           "enabled": true
         },
@@ -167,7 +167,7 @@
         },
         {
           "name": "Anime4u",
-          "url": "https://www.anime4u.org/",
+          "url": "https://anime4u.site/",
           "logo": "./logo/anime/anime4u.png",
           "enabled": true
         },
