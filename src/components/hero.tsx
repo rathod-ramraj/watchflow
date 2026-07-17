@@ -38,7 +38,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
               <Image src="/favicon-new.png" alt="WatchFlow" width={80} height={80} className="h-12 w-12 sm:h-20 sm:w-20 object-contain" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white whitespace-nowrap">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white">
                 Your streaming{" "}
                 <span className="bg-gradient-to-r from-[var(--accent)] via-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent">
                   everything
