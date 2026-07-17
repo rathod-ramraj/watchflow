@@ -26,6 +26,12 @@
           "status": "trusted"
         },
         {
+          "name": "Nxsha",
+          "url": "https://nxsha.space/",
+          "logo": "./logo/movies_shows/nxsha.png",
+          "enabled": true
+        },
+        {
           "name": "shuttletv",
           "url": "https://shuttletv.su/",
           "logo": "./logo/movies_shows/shuttletv.webp",

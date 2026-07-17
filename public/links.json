@@ -26,6 +26,12 @@
           "status": "trusted"
         },
         {
+          "name": "OneFlix",
+          "url": "https://oneflixx.vercel.app/",
+          "logo": "./logo/movies_shows/OneFlix.png",
+          "enabled": true
+        },
+        {
           "name": "shuttletv",
           "url": "https://shuttletv.su/",
           "logo": "./logo/movies_shows/shuttletv.webp",
