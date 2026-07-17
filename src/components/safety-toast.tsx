@@ -48,12 +48,12 @@ export function SafetyToast() {
           <div className="font-semibold">Before clicking any link</div>
           <p className="mt-1 text-[var(--fg-muted)]">
             Use{" "}
-            <a className="inline-flex items-center gap-1 text-[var(--fg)] underline" href="https://brave.com/" target="_blank" rel="noreferrer">
-              <Image src="/assets/brave.png" alt="" width={14} height={14} /> Brave
+            <a className="inline-flex items-center gap-1.5 text-[var(--fg)] underline" href="https://brave.com/" target="_blank" rel="noreferrer">
+              <Image src="/assets/brave.png" alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain" unoptimized /> Brave
             </a>{" "}
             or{" "}
-            <a className="inline-flex items-center gap-1 text-[var(--fg)] underline" href="https://ublockorigin.com/" target="_blank" rel="noreferrer">
-              <Image src="/assets/ublock.png" alt="" width={14} height={14} /> uBlock Origin
+            <a className="inline-flex items-center gap-1.5 text-[var(--fg)] underline" href="https://ublockorigin.com/" target="_blank" rel="noreferrer">
+              <Image src="/assets/ublock.png" alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain" unoptimized /> uBlock Origin
             </a>{" "}
             to stop unwanted popups and ads.
           </p>
