@@ -73,7 +73,7 @@
         },
         {
           "name": "movies4u",
-          "url": "https://new1.movies4u.clinic/",
+          "url": "https://new3.movies4u.finance/",
           "logo": "./logo/movies_shows/movies4u.png",
           "enabled": true
         },
@@ -91,7 +91,7 @@
         },
         {
           "name": "netmirror",
-          "url": "https://net77.cc/home",
+          "url": "https://net11.cc/home",
           "logo": "./logo/movies_shows/netmirror.png",
           "enabled": true
         },
@@ -167,7 +167,7 @@
         },
         {
           "name": "Anime4u",
-          "url": "https://anime4u.site/",
+          "url": "https://www.anime4u.org/",
           "logo": "./logo/anime/anime4u.png",
           "enabled": true
         },
