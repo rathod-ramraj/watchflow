@@ -5,6 +5,13 @@
       "name": "Movies & Shows",
       "sites": [
         {
+          "name": "YorWatch",
+          "url": "https://yorwatchh.vercel.app/",
+          "logo": "./logo/movies_shows/yorwatch.png",
+          "enabled": true,
+          "status": "trusted"
+        },
+        {
           "name": "1Shows",
           "url": "https://www.1shows.org/",
           "logo": "./logo/movies_shows/1shows.png",
