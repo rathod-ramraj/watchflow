@@ -236,5 +236,14 @@ body::before {
   .watchflow-pill { min-height: 36px; }
 }
 
+/* Smooth continuous rotation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
 /* Smooth scroll on hash jumps */
 html { scroll-behavior: smooth; }
