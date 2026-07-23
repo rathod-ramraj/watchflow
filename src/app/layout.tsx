@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Unbounded } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -10,10 +9,6 @@ import { SafetyToast } from "@/components/safety-toast";
 import { CommandPaletteProvider } from "@/components/command-palette";
 import { RegionContextProvider } from "@/components/region-context";
 import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
-
-const geistSans = Inter({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = JetBrains_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const logoFont = Unbounded({ variable: "--font-logo", subsets: ["latin"], weight: ["800", "900"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://watchfloww.vercel.app"),
@@ -95,7 +90,15 @@ export default async function RootLayout({
   const searchIndex = await buildSearchIndex(DEFAULT_REGION_CODE);
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${logoFont.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen antialiased">
         <ThemeProvider>
           <RegionContextProvider regions={regions} current={DEFAULT_REGION_CODE}>
