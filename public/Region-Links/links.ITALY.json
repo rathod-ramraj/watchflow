@@ -6,7 +6,7 @@
       "sites": [
         {
           "name": "Cineblog01",
-          "url": "https://cineblog001.reisen/",
+          "url": "https://cineblog001.xyz/",
           "logo": "./logo/movies_shows/cineblog01.png",
           "enabled": true
         },
@@ -17,14 +17,14 @@
           "enabled": true
         },
         {
-          "name": "Prossimamente \u2014 aggiungi un suggerimento!",
+          "name": "Prossimamente — aggiungi un suggerimento!",
           "url": "https://watchfloww.vercel.app/site-request.html",
           "enabled": true,
           "logo": ""
         },
         {
           "name": "streamingcommunityz",
-          "url": "https://streamingcommunityz.run/",
+          "url": "https://streamingcommunityz.sale/",
           "logo": "./logo/movies_shows/streamingcommunityz.png",
           "status": "new",
           "enabled": true
@@ -49,13 +49,13 @@
       "name": "Manga",
       "sites": [
         {
-          "name": "Prossimamente \u2014 aggiungi un suggerimento!",
+          "name": "Prossimamente — aggiungi un suggerimento!",
           "url": "https://watchfloww.vercel.app/site-request.html",
           "enabled": true,
           "logo": ""
         },
         {
-          "name": "Prossimamente \u2014 aggiungi un suggerimento!",
+          "name": "Prossimamente — aggiungi un suggerimento!",
           "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
