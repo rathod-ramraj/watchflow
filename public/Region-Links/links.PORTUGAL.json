@@ -17,8 +17,14 @@
       "name": "Anime",
       "sites": [
         {
-          "name": "Em breve mais — adicione uma sugestão!",
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -29,8 +35,14 @@
       "name": "Manga",
       "sites": [
         {
-          "name": "Em breve mais — adicione uma sugestão!",
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -41,8 +53,14 @@
       "name": "Live TV & Sports",
       "sites": [
         {
-          "name": "Em breve mais — adicione uma sugestão!",
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "Em breve mais \u2014 adicione uma sugest\u00e3o!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -176,6 +194,12 @@
           "name": "PikaShow",
           "url": "https://pikashowtv.in/",
           "logo": "./logo/apps/pikashow.png",
+          "enabled": true
+        },
+        {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]

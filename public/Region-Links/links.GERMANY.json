@@ -59,6 +59,19 @@
           "logo": "./logo/movies_shows/burningseries.png",
           "status": "new",
           "enabled": true
+        },
+        {
+          "name": "S.to",
+          "url": "https://SerienStream.to",
+          "logo": "./logo/movies_shows/sto.png",
+          "enabled": true
+        },
+        {
+          "name": "BurningSeries",
+          "url": "https://burning-series.io/",
+          "logo": "./logo/movies_shows/burningseries.png",
+          "status": "new",
+          "enabled": true
         }
       ]
     },
@@ -79,8 +92,14 @@
       "name": "Manga",
       "sites": [
         {
-          "name": "Bald mehr — füge einen Vorschlag hinzu!",
+          "name": "Bald mehr \u2014 f\u00fcge einen Vorschlag hinzu!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "Bald mehr \u2014 f\u00fcge einen Vorschlag hinzu!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -244,6 +263,12 @@
           "name": "PikaShow",
           "url": "https://pikashowtv.in/",
           "logo": "./logo/apps/pikashow.png",
+          "enabled": true
+        },
+        {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]

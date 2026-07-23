@@ -25,8 +25,14 @@
       "name": "Anime",
       "sites": [
         {
-          "name": "Скоро больше — добавьте предложение!",
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -37,8 +43,14 @@
       "name": "Manga",
       "sites": [
         {
-          "name": "Скоро больше — добавьте предложение!",
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -49,8 +61,14 @@
       "name": "Live TV & Sports",
       "sites": [
         {
-          "name": "Скоро больше — добавьте предложение!",
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
           "url": "https://watchfloww.vercel.app/site-request.html",
+          "enabled": true,
+          "logo": ""
+        },
+        {
+          "name": "\u0421\u043a\u043e\u0440\u043e \u0431\u043e\u043b\u044c\u0448\u0435 \u2014 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0435!",
+          "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
         }
@@ -184,6 +202,12 @@
           "name": "PikaShow",
           "url": "https://pikashowtv.in/",
           "logo": "./logo/apps/pikashow.png",
+          "enabled": true
+        },
+        {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]
