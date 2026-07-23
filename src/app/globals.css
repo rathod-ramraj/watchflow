@@ -115,8 +115,8 @@
   --color-success: var(--success);
   --color-warn: var(--warn);
   --radius-card: var(--radius);
-  --font-sans: var(--font-geist-sans), Inter, __Inter_f367f3, __Inter_Fallback_f367f3, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-logo: var(--font-geist-sans), Inter, __Inter_f367f3, __Inter_Fallback_f367f3, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: __Inter_f367f3, __Inter_Fallback_f367f3, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-logo: __Inter_f367f3, __Inter_Fallback_f367f3, Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
@@ -125,7 +125,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: 800;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
