@@ -149,7 +149,7 @@
         },
         {
           "name": "WatchOTT",
-          "url": "https://watchott.ru",
+          "url": "https://watchott.org/",
           "logo": "./logo/movies_shows/watchott.png",
           "enabled": true
         },
