@@ -104,7 +104,7 @@ export function LatestCommitPill() {
       href={commit.url}
       target="_blank"
       rel="noreferrer noopener"
-      className="group inline-flex max-w-full items-center gap-2.5 rounded-full border px-3.5 py-2 text-xs font-semibold transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:border-[var(--border-strong)]"
+      className="group inline-flex max-w-full items-center gap-2 rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:border-[var(--border-strong)]"
       style={{ borderColor: "var(--border)", background: "var(--bg-elev)" }}
       title={commit.message}
     >
