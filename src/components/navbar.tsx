@@ -47,7 +47,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-4 py-3 sm:gap-3 md:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 font-bold transition-transform active:scale-95">
-          <span className="text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent" style={{ fontFamily: "var(--font-logo)", fontWeight: 700, fontStyle: "normal" }}>WatchFlow</span>
+          <span className="text-3xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>WatchFlow</span>
         </Link>
 
         <ul className="ml-4 hidden items-center gap-1.5 md:flex">

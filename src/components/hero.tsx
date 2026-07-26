@@ -38,7 +38,10 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
               <Image src="/favicon-new.png" alt="WatchFlow" width={80} height={80} className="h-12 w-12 sm:h-20 sm:w-20 object-contain animate-spin-slow" />
             </div>
             <div>
-              <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white">
+              <div className="text-[13px] sm:text-[14px] leading-[18px] font-[600] text-[rgb(139,92,246)] uppercase tracking-[0.25em] mb-1.5" style={{ fontFamily: '__Inter_f367f3, __Inter_Fallback_f367f3, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }}>
+                [WATCHFLOW]
+              </div>
+              <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-wide text-white" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>
                 Your streaming{" "}
                 <span className="bg-gradient-to-r from-[var(--accent)] via-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent">
                   everything
