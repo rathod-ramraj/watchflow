@@ -11,13 +11,6 @@
           "enabled": true
         },
         {
-          "name": "Alooytv",
-          "url": "https://fitnur.com/",
-          "logo": "./logo/movies_shows/alooytv.png",
-          "status": "new",
-          "enabled": true
-        },
-        {
           "name": "egydead",
           "url": "https://tv10.egydead.live/",
           "logo": "./logo/movies_shows/egydead.png",
@@ -51,6 +44,13 @@
           "name": "carateen",
           "url": "https://carateen.tv/",
           "logo": "./logo/movies_shows/carateen.png",
+          "enabled": true
+        },
+        {
+          "name": "Alooytv",
+          "url": "https://fitnur.com/",
+          "logo": "./logo/movies_shows/alooytv.png",
+          "status": "new",
           "enabled": true
         },
         {
@@ -276,16 +276,16 @@
           "enabled": true
         },
         {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
+          "enabled": true
+        },
+        {
           "name": "FasselHD",
           "url": "https://fasselhd.com/",
           "logo": "./logo/apps/fasselhd.png",
           "status": "new",
-          "enabled": true
-        },
-        {
-          "name": "PlayFy",
-          "url": "https://playfy.live/",
-          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]

@@ -45,6 +45,24 @@ async function loadLinksFile(regionCode: string): Promise<LinksData> {
   }
 }
 
+function sortSites(sites: Site[]): Site[] {
+  const trusted: Site[] = [];
+  const normal: Site[] = [];
+  const newSites: Site[] = [];
+
+  for (const s of sites) {
+    if (s.status === "trusted") {
+      trusted.push(s);
+    } else if (s.status === "new") {
+      newSites.push(s);
+    } else {
+      normal.push(s);
+    }
+  }
+
+  return [...trusted, ...normal, ...newSites];
+}
+
 export async function getLinksForRegion(
   regionCode: string,
 ): Promise<LinksData> {
@@ -52,7 +70,7 @@ export async function getLinksForRegion(
   return {
     categories: data.categories.map((c) => ({
       ...c,
-      sites: c.sites.filter((s) => s.enabled !== false),
+      sites: sortSites(c.sites.filter((s) => s.enabled !== false)),
     })),
   };
 }

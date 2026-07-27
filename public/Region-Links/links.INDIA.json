@@ -12,13 +12,6 @@
           "status": "trusted"
         },
         {
-          "name": "Nxsha",
-          "url": "https://nxsha.space/",
-          "logo": "./logo/movies_shows/nxsha.png",
-          "enabled": true,
-          "status": "new"
-        },
-        {
           "name": "Desicinemas",
           "url": "https://desicinemas.pk/",
           "logo": "./logo/movies_shows/desicinemas.png",
@@ -127,6 +120,13 @@
           "enabled": true
         },
         {
+          "name": "Nxsha",
+          "url": "https://nxsha.space/",
+          "logo": "./logo/movies_shows/nxsha.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
           "name": "1tamilblasters",
           "url": "https://www.1tamilblasters.pro/",
           "logo": "./logo/movies_shows/1tamilblasters.png",
@@ -185,13 +185,6 @@
           "enabled": true
         },
         {
-          "name": "DesiDubAnime",
-          "url": "https://www.desidubanime.me/",
-          "logo": "./logo/anime/desidubanime.png",
-          "status": "new",
-          "enabled": true
-        },
-        {
           "name": "animedekho",
           "url": "https://animedekho.app/",
           "logo": "./logo/anime/animedekho.png",
@@ -225,6 +218,13 @@
           "name": "AnimeSogo",
           "url": "https://animesogo.to/home",
           "logo": "./logo/anime/anime-sogo.png",
+          "enabled": true
+        },
+        {
+          "name": "DesiDubAnime",
+          "url": "https://www.desidubanime.me/",
+          "logo": "./logo/anime/desidubanime.png",
+          "status": "new",
           "enabled": true
         }
       ]
@@ -308,7 +308,7 @@
         },
         {
           "name": "Amazon Prime",
-          "url": "https://www.amazon.com/gp/video/collection/IncludedwithPrime",
+          "url": "https://www.primevideo.com/",
           "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg",
           "enabled": true
         },
@@ -411,16 +411,16 @@
           "enabled": true
         },
         {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
+          "enabled": true
+        },
+        {
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
           "status": "new",
-          "enabled": true
-        },
-        {
-          "name": "PlayFy",
-          "url": "https://playfy.live/",
-          "logo": "./logo/apps/playfy.png",
           "enabled": true
         }
       ]

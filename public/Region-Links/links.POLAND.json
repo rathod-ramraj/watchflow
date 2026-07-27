@@ -15,6 +15,30 @@
           "url": "https://cda-hd.cc",
           "logo": "./logo/movies_shows/cda-hd.png",
           "enabled": true
+        },
+        {
+          "name": "Ekino",
+          "url": "https://ekino.ws/",
+          "logo": "./logo/movies_shows/ekinotv.png",
+          "enabled": true
+        },
+        {
+          "name": "Obejrzyj",
+          "url": "https://obejrzyj.to/",
+          "logo": "./logo/movies_shows/obejrzyj.png",
+          "enabled": true
+        },
+        {
+          "name": "zaluknij",
+          "url": "https://zaluknij.cc/",
+          "logo": "./logo/movies_shows/zaluknij.png",
+          "enabled": true
+        },
+        {
+          "name": "bajeczki24",
+          "url": "https://bajeczki24.pl/",
+          "logo": "./logo/movies_shows/bajeczki24.png",
+          "enabled": true
         }
       ]
     },
@@ -23,7 +47,7 @@
       "name": "Anime",
       "sites": [
         {
-          "name": "Ogl\u0105daj Anime",
+          "name": "Oglądaj Anime",
           "url": "https://ogladajanime.pl",
           "logo": "./logo/anime/ogladajanime.png",
           "enabled": true
@@ -158,20 +182,6 @@
       "name": "Apps",
       "sites": [
         {
-          "name": "FlowFlix",
-          "url": "https://flowflix.vercel.app/",
-          "logo": "./logo/apps/flowflix.png",
-          "status": "new",
-          "enabled": true
-        },
-        {
-          "name": "PureVideo",
-          "url": "https://majusss.github.io/",
-          "logo": "./logo/apps/purevideo.png",
-          "status": "new",
-          "enabled": true
-        },
-        {
           "name": "Playtorrio",
           "url": "https://playtorrio.pages.dev/",
           "logo": "./logo/apps/playtorrio.png",
@@ -217,6 +227,20 @@
           "name": "PlayFy",
           "url": "https://playfy.live/",
           "logo": "./logo/apps/playfy.png",
+          "enabled": true
+        },
+        {
+          "name": "FlowFlix",
+          "url": "https://flowflix.vercel.app/",
+          "logo": "./logo/apps/flowflix.png",
+          "status": "new",
+          "enabled": true
+        },
+        {
+          "name": "PureVideo",
+          "url": "https://majusss.github.io/",
+          "logo": "./logo/apps/purevideo.png",
+          "status": "new",
           "enabled": true
         }
       ]

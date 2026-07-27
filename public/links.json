@@ -124,6 +124,12 @@
           "enabled": true
         },
         {
+          "name": "onlyflix",
+          "url": "https://onlyflix.to/",
+          "logo": "./logo/movies_shows/onlyflix.png",
+          "enabled": true
+        },
+        {
           "name": "HdTodayz",
           "url": "https://hdtodayz.net/",
           "logo": "./logo/movies_shows/hdtodayz.png",
@@ -133,12 +139,6 @@
           "name": "Willow",
           "url": "https://willow.arlen.icu/",
           "logo": "./logo/movies_shows/willow.png",
-          "enabled": true
-        },
-        {
-          "name": "345movie",
-          "url": "https://345movie.nl/",
-          "logo": "./logo/movies_shows/345movie.png",
           "enabled": true
         },
         {
@@ -314,17 +314,17 @@
           "enabled": true
         },
         {
+          "name": "Senshi",
+          "url": "https://senshi.live/",
+          "logo": "./logo/anime/senshi.png",
+          "enabled": true
+        },
+        {
           "name": "AllManga",
           "url": "https://allmanga.to/",
           "logo": "./logo/anime/allmanga.png",
           "enabled": true,
           "status": "new"
-        },
-        {
-          "name": "Senshi",
-          "url": "https://senshi.live/",
-          "logo": "./logo/anime/senshi.png",
-          "enabled": true
         }
       ]
     },
@@ -462,13 +462,6 @@
           "enabled": true
         },
         {
-          "name": "King of Shojo",
-          "url": "https://kingofshojo.com",
-          "logo": "./logo/manga/kingofshojo.png",
-          "enabled": true,
-          "status": "new"
-        },
-        {
           "name": "AquaManga",
           "url": "https://aquareader.org/",
           "logo": "./logo/manga/aquamanga.png",
@@ -479,6 +472,13 @@
           "url": "https://mangabuddy1.co.uk/",
           "logo": "./logo/manga/mangabuddy.png",
           "enabled": true
+        },
+        {
+          "name": "King of Shojo",
+          "url": "https://kingofshojo.com",
+          "logo": "./logo/manga/kingofshojo.png",
+          "enabled": true,
+          "status": "new"
         }
       ]
     },
@@ -504,6 +504,13 @@
           "name": "Streamed.PK",
           "url": "https://streamed.pk/",
           "logo": "./logo/livetv/streamed.png",
+          "enabled": true,
+          "status": "trusted"
+        },
+        {
+          "name": "DAMITV",
+          "url": "https://ondemand.st/",
+          "logo": "./logo/livetv/damitv.png",
           "enabled": true,
           "status": "trusted"
         },
@@ -580,24 +587,17 @@
           "enabled": true
         },
         {
+          "name": "VenueVault",
+          "url": "https://venuevault.live/",
+          "logo": "./logo/livetv/venuevault.png",
+          "enabled": true
+        },
+        {
           "name": "fifstream1",
           "url": "https://fifstream1.gt.tc/",
           "logo": "./logo/livetv/fifstream1.png",
           "enabled": true,
           "status": "new"
-        },
-        {
-          "name": "DAMITV",
-          "url": "https://ondemand.st/",
-          "logo": "./logo/livetv/damitv.png",
-          "enabled": true,
-          "status": "trusted"
-        },
-        {
-          "name": "VenueVault",
-          "url": "https://venuevault.live/",
-          "logo": "./logo/livetv/venuevault.png",
-          "enabled": true
         }
       ]
     },
@@ -738,17 +738,17 @@
           "enabled": true
         },
         {
+          "name": "PlayFy",
+          "url": "https://playfy.live/",
+          "logo": "./logo/apps/playfy.png",
+          "enabled": true
+        },
+        {
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
           "enabled": true,
           "status": "new"
-        },
-        {
-          "name": "PlayFy",
-          "url": "https://playfy.live/",
-          "logo": "./logo/apps/playfy.png",
-          "enabled": true
         }
       ]
     }

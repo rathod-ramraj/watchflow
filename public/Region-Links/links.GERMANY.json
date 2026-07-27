@@ -47,6 +47,12 @@
           "enabled": true
         },
         {
+          "name": "S.to",
+          "url": "https://SerienStream.to",
+          "logo": "./logo/movies_shows/sto.png",
+          "enabled": true
+        },
+        {
           "name": "Kinox/Kinoz",
           "url": "https://kinoz.to",
           "logo": "./logo/movies_shows/kinox.png",
@@ -58,12 +64,6 @@
           "url": "https://burningseries.ac/",
           "logo": "./logo/movies_shows/burningseries.png",
           "status": "new",
-          "enabled": true
-        },
-        {
-          "name": "S.to",
-          "url": "https://SerienStream.to",
-          "logo": "./logo/movies_shows/sto.png",
           "enabled": true
         },
         {
@@ -92,13 +92,13 @@
       "name": "Manga",
       "sites": [
         {
-          "name": "Bald mehr \u2014 f\u00fcge einen Vorschlag hinzu!",
+          "name": "Bald mehr — füge einen Vorschlag hinzu!",
           "url": "https://watchfloww.vercel.app/site-request.html",
           "enabled": true,
           "logo": ""
         },
         {
-          "name": "Bald mehr \u2014 f\u00fcge einen Vorschlag hinzu!",
+          "name": "Bald mehr — füge einen Vorschlag hinzu!",
           "url": "https://tbcpl.lol/site-request.html",
           "enabled": true,
           "logo": ""
