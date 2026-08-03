@@ -40,7 +40,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
         style={{ background: "var(--accent)" }}
       />
 
-      <div className="relative grid items-center gap-6 px-5 py-6 md:px-8 md:py-8 lg:grid-cols-[1.3fr_1fr]">
+      <div className="relative grid items-center gap-6 px-5 py-6 md:px-8 md:py-8 lg:grid-cols-[1fr_480px]">
         {/* LEFT: title + tagline */}
         <div className="min-w-0">
           <div className="flex items-center gap-3 sm:gap-4">
@@ -75,20 +75,20 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
           {/* Mobile-only stats and indicators */}
           <div className="lg:hidden">
             {stats && stats.length > 0 && (
-              <div className="mt-4 grid grid-cols-3 gap-2">
+              <div className="mt-4 grid grid-cols-3 gap-2 w-full max-w-[480px]">
                 {stats.map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-xl border px-2 py-2 text-center transition-all duration-200"
+                    className="rounded-xl border px-3.5 py-2.5 text-center transition-all duration-200"
                     style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
                   >
-                    <div className="text-base font-extrabold text-white">{s.value}</div>
-                    <div className="text-[8px] font-bold uppercase tracking-wider text-[var(--fg-muted)]">{s.label}</div>
+                    <div className="text-xl font-extrabold text-white">{s.value}</div>
+                    <div className="text-[9px] font-bold uppercase tracking-wider text-[var(--fg-muted)]">{s.label}</div>
                   </div>
                 ))}
               </div>
             )}
-            <div className="mt-3.5 flex flex-wrap items-center gap-2">
+            <div className="mt-3 flex flex-col gap-2 w-full max-w-[480px]">
               <LatestCommitPill />
               <LiveUsers />
             </div>
@@ -96,17 +96,17 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
         </div>
 
         {/* RIGHT: stats + live data */}
-        <aside className="hidden flex-col gap-3 lg:flex">
+        <aside className="hidden flex-col gap-2.5 lg:flex w-full max-w-[480px] ml-auto">
           {stats && stats.length > 0 && (
-            <div className="grid grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-3 gap-3">
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-xl border px-2.5 py-2.5 text-center transition-all duration-300 hover:scale-105 hover:border-[var(--border-strong)] hover:shadow-lg"
+                  className="rounded-xl border px-3.5 py-3 text-center transition-all duration-300 hover:scale-105 hover:border-[var(--border-strong)] hover:shadow-lg"
                   style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
                 >
-                  <div className="text-xl font-extrabold tracking-tight tabular-nums text-white">{s.value}</div>
-                  <div className="mt-0.5 text-[8px] font-bold uppercase tracking-wider text-[var(--fg-muted)]">{s.label}</div>
+                  <div className="text-2xl font-extrabold tracking-tight tabular-nums text-white">{s.value}</div>
+                  <div className="mt-0.5 text-[9.5px] font-bold uppercase tracking-[0.15em] text-[var(--fg-muted)]">{s.label}</div>
                 </div>
               ))}
             </div>

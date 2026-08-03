@@ -55,7 +55,7 @@ export function LiveUsers() {
 
   return (
     <div
-      className="inline-flex items-center gap-2 rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:border-[var(--border-strong)]"
+      className="flex w-full items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-[1.01] hover:border-[var(--border-strong)]"
       style={{
         background: "var(--bg-elev)",
         borderColor: "var(--border)",
@@ -63,9 +63,9 @@ export function LiveUsers() {
       }}
       title={`${count} ${count === 1 ? "person is" : "people are"} online right now`}
     >
-      <span className="relative grid h-2.5 w-2.5 place-items-center">
+      <span className="relative grid h-2 w-2 shrink-0 place-items-center">
         <span
-          className="absolute inline-block h-2.5 w-2.5 animate-ping rounded-full"
+          className="absolute inline-block h-2 w-2 animate-ping rounded-full"
           style={{ background: "var(--success)", opacity: 0.5 }}
         />
         <span
@@ -74,7 +74,7 @@ export function LiveUsers() {
         />
       </span>
       <span className="tabular-nums font-extrabold text-[var(--fg)]">{count.toLocaleString()}</span>
-      <span>Users in Real-Time using WatchFlow ;)</span>
+      <span className="truncate">Users in Real-Time using WatchFlow ;)</span>
     </div>
   );
 }

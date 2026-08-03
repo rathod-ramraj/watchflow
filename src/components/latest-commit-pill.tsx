@@ -104,22 +104,26 @@ export function LatestCommitPill() {
       href={commit.url}
       target="_blank"
       rel="noreferrer noopener"
-      className="group inline-flex max-w-full items-center gap-2 rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:border-[var(--border-strong)]"
+      className="group flex w-full items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:scale-[1.01] hover:border-[var(--border-strong)]"
       style={{ borderColor: "var(--border)", background: "var(--bg-elev)" }}
       title={commit.message}
     >
-      <span className="relative flex h-2 w-2 shrink-0">
-        <span
-          className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-50"
-          style={{ background: "var(--accent)" }}
-        />
-        <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: "var(--accent)" }} />
-      </span>
-      <GitCommit size={13} className="shrink-0 text-[var(--accent)] transition-transform group-hover:rotate-12" />
-      <span className="font-mono text-[var(--accent)]">{commit.shortSha}</span>
-      <span className="hidden truncate text-[var(--fg-muted)] group-hover:text-[var(--fg)] sm:inline transition-colors duration-200">{commit.message}</span>
-      <span className="shrink-0 text-[var(--fg-muted)]">· {ago}</span>
-      <ExternalLink size={11} className="shrink-0 opacity-50 transition-opacity duration-200 group-hover:opacity-100" />
+      <div className="flex min-w-0 items-center gap-2 overflow-hidden">
+        <span className="relative flex h-2 w-2 shrink-0">
+          <span
+            className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-50"
+            style={{ background: "var(--accent)" }}
+          />
+          <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: "var(--accent)" }} />
+        </span>
+        <GitCommit size={13} className="shrink-0 text-[var(--accent)] transition-transform group-hover:rotate-12" />
+        <span className="font-mono font-semibold text-[var(--accent)] shrink-0">{commit.shortSha}</span>
+        <span className="truncate text-[var(--fg-muted)] group-hover:text-[var(--fg)] transition-colors duration-200">{commit.message}</span>
+      </div>
+      <div className="flex shrink-0 items-center gap-1 text-[var(--fg-muted)]">
+        <span>· {ago}</span>
+        <ExternalLink size={11} className="opacity-50 transition-opacity duration-200 group-hover:opacity-100" />
+      </div>
     </a>
   );
 }
