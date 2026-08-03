@@ -121,7 +121,7 @@ export function Sidebar({ categories }: Props) {
         </div>
         <div className="px-1">
           <a
-            href="https://discord.gg/5YuWjScVT"
+            href="https://discord.gg/btsQafsQ4"
             target="_blank"
             rel="noreferrer noopener"
             className="group relative block overflow-hidden rounded-2xl border p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(88,101,242,0.15)]"

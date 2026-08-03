@@ -13,8 +13,13 @@ const nextConfig = {
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/about.html", destination: "/about", permanent: true },
       { source: "/dmca.html", destination: "/dmca", permanent: true },
-      { source: "/site-request.html", destination: "/request", permanent: true },
     ];
+  },
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
   },
 };
 
