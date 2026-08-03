@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LatestCommitPill } from "./latest-commit-pill";
 import { LiveUsers } from "./live-users";
+import { WavyBackground } from "./wavy-background";
 
 interface Stat {
   label: string;
@@ -19,10 +20,19 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
       className="relative mb-8 overflow-hidden rounded-[24px] border shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4)]"
       style={{
         background:
-          "linear-gradient(135deg, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%), var(--bg-card)",
+          "linear-gradient(135deg, color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%), linear-gradient(var(--bg-card), var(--bg-card)), var(--bg)",
         borderColor: "var(--border)",
       }}
     >
+      {/* wavy animated backdrop */}
+      <WavyBackground
+        containerClassName="absolute inset-0"
+        waveOpacity={0.35}
+        blur={12}
+        speed="slow"
+        waveWidth={40}
+      />
+
       {/* Glow dot */}
       <div
         aria-hidden

@@ -192,7 +192,9 @@ body::before {
 
 /* Utility classes */
 .watchflow-card {
-  background: var(--bg-card);
+  background:
+    linear-gradient(var(--bg-card), var(--bg-card)),
+    var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -203,7 +205,9 @@ body::before {
   -webkit-backface-visibility: hidden;
 }
 .watchflow-card:hover {
-  background: var(--bg-card-hover);
+  background:
+    linear-gradient(var(--bg-card-hover), var(--bg-card-hover)),
+    var(--bg);
   border-color: var(--border-strong);
   transform: translate3d(0, -2px, 0) scale(1.02);
   box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4), 0 0 24px -6px var(--accent-glow);

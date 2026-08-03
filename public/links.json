@@ -406,6 +406,12 @@
           "enabled": true
         },
         {
+          "name": "SpecterScans",
+          "url": "https://specterscans.com/",
+          "logo": "./logo/manga/specterscans.png",
+          "enabled": true
+        },
+        {
           "name": "Qtoon",
           "url": "https://qtoon.org/",
           "logo": "./logo/manga/qtoon.png",

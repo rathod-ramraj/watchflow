@@ -15,12 +15,6 @@ const nextConfig = {
       { source: "/dmca.html", destination: "/dmca", permanent: true },
     ];
   },
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.cache = false;
-    }
-    return config;
-  },
 };
 
 export default nextConfig;
