@@ -37,7 +37,7 @@ Fork the repository, make your additions in `public/Region-Links/`, and submit a
 ## Socials
 
 Join our community on [Discord](https://discord.gg/btsQafsQ4).
-Visit for more updates and Thank you.
+Visit for more updates and Thank you....
 
 ## License
 
