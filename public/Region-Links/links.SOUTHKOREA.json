@@ -72,20 +72,7 @@
     {
       "id": "livetv",
       "name": "Live TV & Sports",
-      "sites": [
-        {
-          "name": "곧 더 추가됩니다 — 제안을 추가해 주세요!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "곧 더 추가됩니다 — 제안을 추가해 주세요!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "paid",

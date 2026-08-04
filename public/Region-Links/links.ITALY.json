@@ -17,12 +17,6 @@
           "enabled": true
         },
         {
-          "name": "Prossimamente — aggiungi un suggerimento!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
           "name": "streamingcommunityz",
           "url": "https://streamingcommunityz.recipes/",
           "logo": "./logo/movies_shows/streamingcommunityz.png",
@@ -47,20 +41,7 @@
     {
       "id": "manga",
       "name": "Manga",
-      "sites": [
-        {
-          "name": "Prossimamente — aggiungi un suggerimento!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "Prossimamente — aggiungi un suggerimento!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "livetv",

@@ -90,20 +90,7 @@
     {
       "id": "manga",
       "name": "Manga",
-      "sites": [
-        {
-          "name": "Bald mehr — füge einen Vorschlag hinzu!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "Bald mehr — füge einen Vorschlag hinzu!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "livetv",

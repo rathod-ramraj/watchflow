@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { WaveShaderBg } from "@/components/wave-shader-bg";
+import { SiteShaderBackground } from "@/components/shader-background";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { SafetyToast } from "@/components/safety-toast";
@@ -102,7 +102,7 @@ export default async function RootLayout({
       </head>
       <body className="min-h-screen antialiased">
         <ThemeProvider>
-          <WaveShaderBg />
+          <SiteShaderBackground />
           <RegionContextProvider regions={regions} current={DEFAULT_REGION_CODE}>
             <CommandPaletteProvider initialIndex={searchIndex} regions={regions}>
               <Navbar />

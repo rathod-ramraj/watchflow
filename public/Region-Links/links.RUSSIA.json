@@ -23,56 +23,17 @@
     {
       "id": "anime",
       "name": "Anime",
-      "sites": [
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "manga",
       "name": "Manga",
-      "sites": [
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "livetv",
       "name": "Live TV & Sports",
-      "sites": [
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://watchfloww.vercel.app/site-request.html",
-          "enabled": true,
-          "logo": ""
-        },
-        {
-          "name": "Скоро больше — добавьте предложение!",
-          "url": "https://tbcpl.lol/site-request.html",
-          "enabled": true,
-          "logo": ""
-        }
-      ]
+      "sites": []
     },
     {
       "id": "paid",
