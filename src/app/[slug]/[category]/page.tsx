@@ -25,7 +25,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${meta.label} in ${r.name} | Cinex`,
       description: meta.blurb,
-      url: `https://cinexw.vercel.app/${slug}/${category}`,
+      url: `https://cinexx.vercel.app/${slug}/${category}`,
     }
   };
 }

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       openGraph: {
         title: `${m.label} — USA | Cinex`,
         description: m.blurb,
-        url: `https://cinexw.vercel.app/${slug}`,
+        url: `https://cinexx.vercel.app/${slug}`,
       }
     };
   }
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       openGraph: {
         title: `${r.flag} ${r.name} Streaming Sites | Cinex`,
         description: `Watch free movies, anime, and live TV streams curated for ${r.name}.`,
-        url: `https://cinexw.vercel.app/${slug}`,
+        url: `https://cinexx.vercel.app/${slug}`,
       }
     };
   }

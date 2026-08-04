@@ -12,7 +12,7 @@ import { RegionContextProvider } from "@/components/region-context";
 import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cinexw.vercel.app"),
+  metadataBase: new URL("https://cinexx.vercel.app"),
   title: {
     default: "Cinex – Watch Movies, TV Shows, Anime & Live Entertainment",
     template: "%s | Cinex",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "best streaming list",
     "cinex",
   ],
-  authors: [{ name: "Cinex Team", url: "https://cinexw.vercel.app" }],
+  authors: [{ name: "Cinex Team", url: "https://cinexx.vercel.app" }],
   creator: "Cinex Team",
   publisher: "Cinex",
   manifest: "/manifest.json",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Cinex",
     description:
       "A curated, regional list of free streaming sites — movies, anime, manga, live TV and more.",
-    url: "https://cinexw.vercel.app",
+    url: "https://cinexx.vercel.app",
     locale: "en_US",
     images: [
       {
@@ -109,8 +109,8 @@ export default async function RootLayout({
               "@graph": [
                 {
                   "@type": "WebSite",
-                  "@id": "https://cinexw.vercel.app/#website",
-                  "url": "https://cinexw.vercel.app/",
+                  "@id": "https://cinexx.vercel.app/#website",
+                  "url": "https://cinexx.vercel.app/",
                   "name": "Cinex",
                   "description": "Watch Movies, TV Shows, Anime & Live Entertainment",
                   "potentialAction": [
@@ -118,7 +118,7 @@ export default async function RootLayout({
                       "@type": "SearchAction",
                       "target": {
                         "@type": "EntryPoint",
-                        "urlTemplate": "https://cinexw.vercel.app/?q={search_term_string}"
+                        "urlTemplate": "https://cinexx.vercel.app/?q={search_term_string}"
                       },
                       "query-input": "required name=search_term_string"
                     }
@@ -126,12 +126,12 @@ export default async function RootLayout({
                 },
                 {
                   "@type": "Organization",
-                  "@id": "https://cinexw.vercel.app/#organization",
+                  "@id": "https://cinexx.vercel.app/#organization",
                   "name": "Cinex",
-                  "url": "https://cinexw.vercel.app/",
+                  "url": "https://cinexx.vercel.app/",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://cinexw.vercel.app/favicon-new.png"
+                    "url": "https://cinexx.vercel.app/favicon-new.png"
                   },
                   "sameAs": ["https://github.com/rathod-ramraj/watchflow"]
                 }

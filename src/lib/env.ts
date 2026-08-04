@@ -12,6 +12,6 @@ export const env = {
   REPO_OWNER: () => opt("GITHUB_REPO_OWNER", "N3rdmade"),
   REPO_NAME: () => opt("GITHUB_REPO_NAME", "Cinex"),
   REPO_BRANCH: () => opt("GITHUB_REPO_BRANCH", "main"),
-  SITE_URL: () => opt("SITE_URL", "https://cinexw.vercel.app"),
+  SITE_URL: () => opt("SITE_URL", "https://cinexx.vercel.app"),
   DISCORD_WEBHOOK: () => opt("DISCORD_WEBHOOK", ""),
 };
