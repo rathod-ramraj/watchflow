@@ -4,7 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Outfit } from "next/font/google";
 import { Menu, X, Search, Film, Tv, Radio, Trophy, BookOpen, Smartphone, FileText, Shield, Info } from "lucide-react";
+
+const outfit = Outfit({ subsets: ["latin"], weight: ["800", "900"] });
 import { ThemeSwitcher } from "./theme-switcher";
 import { CountrySelect } from "./country-select";
 import { cn } from "@/lib/utils";
@@ -117,7 +120,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-4 py-3 sm:gap-3 md:px-6">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 font-bold transition-transform active:scale-95">
           <Image src="/favicon-new.png" alt="Cinex Logo" width={40} height={40} className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
-          <span className="text-3xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>Cinex</span>
+          <span className={cn("text-2xl sm:text-3xl font-black tracking-tight bg-gradient-to-r from-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent", outfit.className)}>CINEX</span>
         </Link>
 
         {/* Dropdown Navigation for Desktop */}
