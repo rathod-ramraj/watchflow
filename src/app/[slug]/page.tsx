@@ -11,12 +11,39 @@ const RESERVED = new Set(["about", "dmca", "request"]);
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;
+  
   if (CATEGORY_META[slug]) {
     const m = CATEGORY_META[slug];
-    return { title: `${m.label} — USA`, description: m.blurb };
+    return {
+      title: `${m.label} — USA`,
+      description: m.blurb,
+      alternates: {
+        canonical: `/${slug}`,
+      },
+      openGraph: {
+        title: `${m.label} — USA | Cinex`,
+        description: m.blurb,
+        url: `https://cinexw.vercel.app/${slug}`,
+      }
+    };
   }
+
   const r = await getRegionByCode(slug);
-  if (r) return { title: `${r.flag} ${r.name}`, description: `Streaming sites curated for ${r.name}.` };
+  if (r) {
+    return {
+      title: `${r.flag} ${r.name}`,
+      description: `Watch free movies, anime, and live TV streams curated for ${r.name}.`,
+      alternates: {
+        canonical: `/${slug}`,
+      },
+      openGraph: {
+        title: `${r.flag} ${r.name} Streaming Sites | Cinex`,
+        description: `Watch free movies, anime, and live TV streams curated for ${r.name}.`,
+        url: `https://cinexw.vercel.app/${slug}`,
+      }
+    };
+  }
+  
   return {};
 }
 

@@ -29,8 +29,37 @@ export async function RegionPage({ region, onlyCategoryId }: Props) {
     { label: "Regions", value: allRegions.length },
   ];
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cinexw.vercel.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": region.name,
+        "item": `https://cinexw.vercel.app/${region.code.toLowerCase()}`
+      },
+      ...(onlyCategoryId ? [{
+        "@type": "ListItem",
+        "position": 3,
+        "name": data.categories.find(c => c.id === onlyCategoryId)?.name || onlyCategoryId,
+        "item": `https://cinexw.vercel.app/${region.code.toLowerCase()}/${onlyCategoryId}`
+      }] : [])
+    ]
+  };
+
   return (
     <main className="mx-auto max-w-[1600px] px-3 pb-16 pt-4 sm:px-4 md:px-6 md:pt-6 2xl:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Hero regionFlag={region.flag} regionName={region.name} stats={stats} />
       <div className="mb-4 flex justify-center md:hidden">
         <CountrySelect />

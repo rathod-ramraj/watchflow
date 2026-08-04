@@ -16,7 +16,18 @@ export async function generateMetadata({
   const r = await getRegionByCode(slug);
   const meta = CATEGORY_META[category];
   if (!r || !meta) return {};
-  return { title: `${meta.label} — ${r.flag} ${r.name}`, description: meta.blurb };
+  return { 
+    title: `${meta.label} — ${r.flag} ${r.name}`, 
+    description: meta.blurb,
+    alternates: {
+      canonical: `/${slug}/${category}`,
+    },
+    openGraph: {
+      title: `${meta.label} in ${r.name} | Cinex`,
+      description: meta.blurb,
+      url: `https://cinexw.vercel.app/${slug}/${category}`,
+    }
+  };
 }
 
 export default async function RegionCategoryRoute({

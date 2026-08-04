@@ -45,7 +45,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
         <div className="min-w-0">
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="flex h-14 w-14 sm:h-20 sm:w-20 shrink-0 items-center justify-center">
-              <Image src="/favicon-new.png" alt="Cinex" width={80} height={80} className="h-14 w-14 sm:h-20 sm:w-20 object-contain" />
+              <Image priority src="/favicon-new.png" alt="Cinex Logo - Free Streaming Directory" width={80} height={80} className="h-14 w-14 sm:h-20 sm:w-20 object-contain" />
             </div>
             <div>
               <div className="text-[11px] sm:text-[12px] leading-[14px] font-[600] text-[rgb(139,92,246)] uppercase tracking-[0.2em] mb-1" style={{ fontFamily: '__Inter_f367f3, __Inter_Fallback_f367f3, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }}>

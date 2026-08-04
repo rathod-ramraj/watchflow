@@ -1,11 +1,11 @@
 {
     "name": "Cinex",
     "short_name": "Cinex",
-    "description": "Free Media for all!",
+    "description": "Watch Movies, TV Shows, Anime & Live Entertainment",
     "start_url": "./",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#000000",
+    "background_color": "#09090B",
+    "theme_color": "#09090B",
     "icons": [
       {
         "src": "./favicon-new.png",

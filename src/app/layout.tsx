@@ -14,8 +14,8 @@ import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
 export const metadata: Metadata = {
   metadataBase: new URL("https://cinexw.vercel.app"),
   title: {
-    default: "Cinex",
-    template: "%s · Cinex",
+    default: "Cinex – Watch Movies, TV Shows, Anime & Live Entertainment",
+    template: "%s | Cinex",
   },
   description:
     "A curated, regional list of free streaming sites — movies, TV shows, anime, manga, live TV, sports and more. Fast fuzzy search, multi-region, no ads on us.",
@@ -98,6 +98,46 @@ export default async function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@800;900&display=swap"
           rel="stylesheet"
+        />
+        <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE" />
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://cinexw.vercel.app/#website",
+                  "url": "https://cinexw.vercel.app/",
+                  "name": "Cinex",
+                  "description": "Watch Movies, TV Shows, Anime & Live Entertainment",
+                  "potentialAction": [
+                    {
+                      "@type": "SearchAction",
+                      "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://cinexw.vercel.app/?q={search_term_string}"
+                      },
+                      "query-input": "required name=search_term_string"
+                    }
+                  ]
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://cinexw.vercel.app/#organization",
+                  "name": "Cinex",
+                  "url": "https://cinexw.vercel.app/",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://cinexw.vercel.app/favicon-new.png"
+                  },
+                  "sameAs": ["https://github.com/rathod-ramraj/watchflow"]
+                }
+              ]
+            }),
+          }}
         />
       </head>
       <body className="min-h-screen antialiased">
