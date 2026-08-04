@@ -99,7 +99,7 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@800;900&display=swap"
           rel="stylesheet"
         />
-        <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE" />
+        <meta name="google-site-verification" content="qoel5C0iBe6WiY8ejJqpsAl9dpmHaXQ1mwKN0QKwsEI" />
         <Script
           id="schema-org"
           type="application/ld+json"
