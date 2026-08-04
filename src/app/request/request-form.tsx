@@ -68,7 +68,7 @@ export function RequestForm() {
 
   if (success) {
     return (
-      <div className="watchflow-card p-8 text-center">
+      <div className="cinex-card p-8 text-center">
         <div className="mb-3 text-4xl">✅</div>
         <h3 className="text-lg font-bold">Request sent successfully!</h3>
         <p className="mt-2 text-[var(--fg-muted)]">Thanks for your submission. We&apos;ll review it and add quality sites to the list.</p>
@@ -136,7 +136,7 @@ export function RequestForm() {
                   aria-label="Remove"
                   disabled={targets.length <= 1}
                   onClick={() => removeTarget(row.id)}
-                  className="watchflow-pill inline-flex items-center justify-center h-12 w-12 rounded-2xl border border-[var(--border)] shrink-0 disabled:opacity-30 cursor-pointer hover:border-[var(--danger)] hover:text-[var(--danger)]"
+                  className="cinex-pill inline-flex items-center justify-center h-12 w-12 rounded-2xl border border-[var(--border)] shrink-0 disabled:opacity-30 cursor-pointer hover:border-[var(--danger)] hover:text-[var(--danger)]"
                 >
                   <X size={15} />
                 </button>
@@ -147,7 +147,7 @@ export function RequestForm() {
         <button
           type="button"
           onClick={addTarget}
-          className="watchflow-pill mt-4 inline-flex items-center gap-2 px-4.5 py-2.5 text-xs font-bold shadow-md cursor-pointer active:scale-95"
+          className="cinex-pill mt-4 inline-flex items-center gap-2 px-4.5 py-2.5 text-xs font-bold shadow-md cursor-pointer active:scale-95"
         >
           <Plus size={14} className="text-[var(--accent)]" /> Add another region/section
         </button>

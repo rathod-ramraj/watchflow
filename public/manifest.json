@@ -1,6 +1,6 @@
 {
-    "name": "WatchFlow",
-    "short_name": "WatchFlow",
+    "name": "Cinex",
+    "short_name": "Cinex",
     "description": "Free Media for all!",
     "start_url": "./",
     "display": "standalone",

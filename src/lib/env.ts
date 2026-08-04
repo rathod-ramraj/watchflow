@@ -10,8 +10,8 @@ function opt(name: string, fallback = ""): string {
 
 export const env = {
   REPO_OWNER: () => opt("GITHUB_REPO_OWNER", "N3rdmade"),
-  REPO_NAME: () => opt("GITHUB_REPO_NAME", "WatchFlow"),
+  REPO_NAME: () => opt("GITHUB_REPO_NAME", "Cinex"),
   REPO_BRANCH: () => opt("GITHUB_REPO_BRANCH", "main"),
-  SITE_URL: () => opt("SITE_URL", "https://watchfloww.vercel.app"),
+  SITE_URL: () => opt("SITE_URL", "https://cinexw.vercel.app"),
   DISCORD_WEBHOOK: () => opt("DISCORD_WEBHOOK", ""),
 };

@@ -30,7 +30,7 @@ export function ThemeSwitcher() {
         type="button"
         aria-label="Switch theme"
         onClick={() => setOpen((o) => !o)}
-        className="watchflow-pill inline-flex h-9 items-center gap-2 px-3.5 text-sm font-semibold transition-all hover:scale-105 active:scale-95"
+        className="cinex-pill inline-flex h-9 items-center gap-2 px-3.5 text-sm font-semibold transition-all hover:scale-105 active:scale-95"
       >
         <Palette size={15} className="text-[var(--accent)]" />
         <span className="hidden sm:inline">Theme</span>

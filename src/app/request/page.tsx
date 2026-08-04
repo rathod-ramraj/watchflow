@@ -28,14 +28,14 @@ export default function RequestPage() {
       </header>
 
       <div className="grid gap-5 sm:gap-8 lg:grid-cols-[1.4fr_1fr]">
-        <section className="watchflow-card p-4 sm:p-6 md:p-8">
+        <section className="cinex-card p-4 sm:p-6 md:p-8">
           <h2 className="mb-4 text-base font-bold sm:text-lg">Submit your request</h2>
           <RequestForm />
         </section>
 
         <section className="space-y-4">
           <h2 className="text-base font-bold sm:text-lg">Submission guidelines</h2>
-          <div className="watchflow-card p-4 sm:p-5">
+          <div className="cinex-card p-4 sm:p-5">
             <h3 className="mb-3 flex items-center gap-2 font-semibold" style={{ color: "var(--success)" }}>
               <CheckCircle2 size={16} /> We look for
             </h3>
@@ -48,7 +48,7 @@ export default function RequestPage() {
               ))}
             </ul>
           </div>
-          <div className="watchflow-card p-4 sm:p-5">
+          <div className="cinex-card p-4 sm:p-5">
             <h3 className="mb-3 flex items-center gap-2 font-semibold" style={{ color: "var(--danger)" }}>
               <XCircle size={16} /> We avoid
             </h3>

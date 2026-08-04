@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-const KEY = "watchflow-favorites-v1";
-const EVT = "watchflow-favorites-changed";
+const KEY = "cinex-favorites-v1";
+const EVT = "cinex-favorites-changed";
 
 export interface FavoriteItem {
   name: string;

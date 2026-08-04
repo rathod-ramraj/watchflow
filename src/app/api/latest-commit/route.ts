@@ -29,7 +29,7 @@ async function fetchFromGithub(): Promise<CommitResponse> {
   const r = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/commits/${branch}`,
     {
-      headers: { Accept: "application/vnd.github+json", "User-Agent": "watchflow-site" },
+      headers: { Accept: "application/vnd.github+json", "User-Agent": "cinex-site" },
       cache: "no-store",
     },
   );

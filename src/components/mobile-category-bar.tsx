@@ -93,7 +93,7 @@ export function MobileCategoryBar({ categories }: Props) {
                       key={c.id}
                       href={`#cat-${c.id}`}
                       onClick={() => setOpen(false)}
-                      className="watchflow-card flex items-center justify-between gap-2.5 px-3.5 py-3 text-sm font-semibold hover:border-[var(--accent)]"
+                      className="cinex-card flex items-center justify-between gap-2.5 px-3.5 py-3 text-sm font-semibold hover:border-[var(--accent)]"
                     >
                       <span className="flex items-center gap-2">
                         <CategoryIcon id={c.id} size={15} />

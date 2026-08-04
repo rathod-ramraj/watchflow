@@ -7,8 +7,8 @@ x-logging: &default-logging
 services:
   web:
     build: .
-    image: watchflow:latest
-    container_name: watchflow-web
+    image: cinex:latest
+    container_name: cinex-web
     restart: unless-stopped
     ports:
       - "80:80"
@@ -30,7 +30,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: watchflow-redis
+    container_name: cinex-redis
     restart: unless-stopped
     command: ["redis-server", "--save", "60", "1", "--appendonly", "yes"]
     volumes:

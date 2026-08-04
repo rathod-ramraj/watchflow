@@ -50,7 +50,7 @@ export function FavoritesSection() {
             rel="noreferrer noopener"
             data-name={fav.name.toLowerCase()}
             data-category="favorites"
-            className="watchflow-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1 p-2.5 hover:watchflow-glow"
+            className="cinex-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1 p-2.5 hover:cinex-glow"
             title={fav.name}
           >
             <button

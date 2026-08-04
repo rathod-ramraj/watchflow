@@ -11,11 +11,11 @@ export function Footer() {
           <Link href="/about" className="transition-colors duration-200 hover:text-[var(--fg)]">About</Link>
           <Link href="/request" className="transition-colors duration-200 hover:text-[var(--fg)]">Request</Link>
           <Link href="/dmca" className="transition-colors duration-200 hover:text-[var(--fg)]">DMCA</Link>
-          <a href="https://github.com/N3rdmade/WatchFlow/" target="_blank" rel="noreferrer" className="transition-colors duration-200 hover:text-[var(--fg)]">GitHub</a>
+          <a href="https://github.com/N3rdmade/Cinex/" target="_blank" rel="noreferrer" className="transition-colors duration-200 hover:text-[var(--fg)]">GitHub</a>
         </div>
         <div className="flex flex-col items-center gap-1.5 text-center md:items-end md:text-right">
-          <div className="font-medium text-[var(--fg)]">Curated with <span className="text-[var(--accent)] animate-pulse inline-block">💜</span> by the WatchFlow Team</div>
-          <div className="text-xs text-[var(--fg-muted)] opacity-80">© {new Date().getFullYear()} WatchFlow. All rights reserved.</div>
+          <div className="font-medium text-[var(--fg)]">Curated with <span className="text-[var(--accent)] animate-pulse inline-block">💜</span> by the Cinex Team</div>
+          <div className="text-xs text-[var(--fg-muted)] opacity-80">© {new Date().getFullYear()} Cinex. All rights reserved.</div>
         </div>
       </div>
     </footer>

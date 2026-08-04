@@ -12,14 +12,14 @@ import { RegionContextProvider } from "@/components/region-context";
 import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://watchfloww.vercel.app"),
+  metadataBase: new URL("https://cinexw.vercel.app"),
   title: {
-    default: "WatchFlow",
-    template: "%s · WatchFlow",
+    default: "Cinex",
+    template: "%s · Cinex",
   },
   description:
     "A curated, regional list of free streaming sites — movies, TV shows, anime, manga, live TV, sports and more. Fast fuzzy search, multi-region, no ads on us.",
-  applicationName: "WatchFlow",
+  applicationName: "Cinex",
   keywords: [
     "streaming sites",
     "free movies",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     "sports streams",
     "fmhy alternative",
     "best streaming list",
-    "watchflow",
+    "cinex",
   ],
-  authors: [{ name: "WatchFlow Team", url: "https://watchfloww.vercel.app" }],
-  creator: "WatchFlow Team",
-  publisher: "WatchFlow",
+  authors: [{ name: "Cinex Team", url: "https://cinexw.vercel.app" }],
+  creator: "Cinex Team",
+  publisher: "Cinex",
   manifest: "/manifest.json",
   icons: {
     icon: [
@@ -48,24 +48,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "WatchFlow",
-    title: "WatchFlow",
+    siteName: "Cinex",
+    title: "Cinex",
     description:
       "A curated, regional list of free streaming sites — movies, anime, manga, live TV and more.",
-    url: "https://watchfloww.vercel.app",
+    url: "https://cinexw.vercel.app",
     locale: "en_US",
     images: [
       {
         url: "/favicon-new.png",
         width: 512,
         height: 512,
-        alt: "WatchFlow",
+        alt: "Cinex",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "WatchFlow",
+    title: "Cinex",
     description:
       "Curated streaming sites for movies, anime, manga, live TV and more — fast fuzzy search, multi-region.",
     images: ["/favicon-new.png"],

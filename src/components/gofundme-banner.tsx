@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-const KEY = "watchflow-gfm-dismissed-v1";
+const KEY = "cinex-gfm-dismissed-v1";
 
 export function GoFundMeBanner() {
   const [show, setShow] = useState(false);

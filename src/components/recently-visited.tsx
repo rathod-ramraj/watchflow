@@ -13,7 +13,7 @@ interface Recent {
   visitedAt: number;
 }
 
-const KEY = "watchflow-recents-v1";
+const KEY = "cinex-recents-v1";
 const MAX = 8;
 
 export function addRecent(item: Omit<Recent, "visitedAt">) {
@@ -26,7 +26,7 @@ export function addRecent(item: Omit<Recent, "visitedAt">) {
       ...arr.filter((r) => r.url !== item.url),
     ].slice(0, MAX);
     localStorage.setItem(KEY, JSON.stringify(next));
-    window.dispatchEvent(new CustomEvent("watchflow-recents-changed"));
+    window.dispatchEvent(new CustomEvent("cinex-recents-changed"));
   } catch {}
 }
 
@@ -89,10 +89,10 @@ export function RecentlyVisited() {
         setItems(kept);
       })
       .catch(() => {});
-    window.addEventListener("watchflow-recents-changed", load);
+    window.addEventListener("cinex-recents-changed", load);
     return () => {
       cancelled = true;
-      window.removeEventListener("watchflow-recents-changed", load);
+      window.removeEventListener("cinex-recents-changed", load);
     };
   }, []);
 
@@ -124,7 +124,7 @@ export function RecentlyVisited() {
             href={r.url}
             target="_blank"
             rel="noreferrer noopener"
-            className="watchflow-card flex shrink-0 items-center gap-2 px-3 py-2 text-sm"
+            className="cinex-card flex shrink-0 items-center gap-2 px-3 py-2 text-sm"
           >
             <Image
               src={normalizeAsset(r.logo)}

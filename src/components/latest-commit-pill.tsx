@@ -11,7 +11,7 @@ interface LatestCommit {
   date: string;
 }
 
-const STORAGE_KEY = "watchflow-latest-commit-v1";
+const STORAGE_KEY = "cinex-latest-commit-v1";
 const TTL_MS = 1 * 60 * 1000; // 1 minute
 
 interface CachedEntry {

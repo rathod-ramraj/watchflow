@@ -69,8 +69,8 @@ export function SiteCard({ site, categoryId }: Props) {
       data-category={categoryId}
       data-tags={(site.tags ?? []).join(",").toLowerCase()}
       className={cn(
-        "watchflow-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1.5 overflow-hidden p-3.5",
-        "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-1 hover:scale-[1.03] hover:watchflow-glow",
+        "cinex-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1.5 overflow-hidden p-3.5",
+        "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-1 hover:scale-[1.03] hover:cinex-glow",
         starred && "ring-1 ring-[var(--accent)]/30",
       )}
       title={site.name}

@@ -3,11 +3,11 @@
     src="./public/favicon.png"
     width="120"
     height="120"
-    alt="WatchFlow logo"
+    alt="Cinex logo"
   />
 </p>
 
-# <p align="center">WatchFlow</p>
+# <p align="center">Cinex</p>
 
 <p align="center">
   A curated, regional index of free streaming sites.
@@ -16,7 +16,7 @@
 <p align="center">
   <img
     src="./public/preview.png"
-    alt="WatchFlow Preview"
+    alt="Cinex Preview"
     width="100%"
     style="border-radius: 12px; border: 1px solid #222;"
   />

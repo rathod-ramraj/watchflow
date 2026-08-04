@@ -14,9 +14,9 @@ type Store = {
 // Lambda-scoped in-memory store. NOTE: not consistent across Vercel
 // instances/regions or cold starts — fine for a "vibes" counter.
 // Swap for Upstash Redis (ZADD + ZREMRANGEBYSCORE) later for a real count.
-const g = globalThis as unknown as { __watchflow_ping?: Store };
-const store: Store = g.__watchflow_ping ?? { seen: new Map(), lastSweep: 0 };
-g.__watchflow_ping = store;
+const g = globalThis as unknown as { __cinex_ping?: Store };
+const store: Store = g.__cinex_ping ?? { seen: new Map(), lastSweep: 0 };
+g.__cinex_ping = store;
 
 function sweep(now: number) {
   if (now - store.lastSweep < 5_000) return;

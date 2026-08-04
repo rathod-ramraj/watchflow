@@ -1,9 +1,9 @@
 import "server-only";
 import { Octokit } from "@octokit/rest";
 
-const g = globalThis as unknown as { __watchflow_octo?: Map<string, Octokit> };
-const cache: Map<string, Octokit> = g.__watchflow_octo ?? new Map();
-g.__watchflow_octo = cache;
+const g = globalThis as unknown as { __cinex_octo?: Map<string, Octokit> };
+const cache: Map<string, Octokit> = g.__cinex_octo ?? new Map();
+g.__cinex_octo = cache;
 
 export function getOctokit(token: string): Octokit {
   const hit = cache.get(token);
