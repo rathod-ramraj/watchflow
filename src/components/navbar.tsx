@@ -1,21 +1,89 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, Film, Tv, Radio, Trophy, BookOpen, Smartphone, FileText, Shield, Info } from "lucide-react";
 import { ThemeSwitcher } from "./theme-switcher";
 import { CountrySelect } from "./country-select";
 import { cn } from "@/lib/utils";
 import { useCommandPalette } from "./command-palette";
 import { motion, AnimatePresence } from "framer-motion";
+import { DropdownNavigation, NavItem } from "@/components/ui/dorpdown-navigation";
 
-const NAV = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/request", label: "Request" },
-  { href: "/dmca", label: "DMCA" },
+const WATCHFLOW_NAV: NavItem[] = [
+  {
+    id: 1,
+    label: "Home",
+    link: "/",
+  },
+  {
+    id: 2,
+    label: "About",
+    link: "/about",
+  },
+  {
+    id: 3,
+    label: "Explore",
+    subMenus: [
+      {
+        title: "Media Categories",
+        items: [
+          {
+            label: "Movies & Shows",
+            description: "Stream top movies and series",
+            icon: Film,
+            href: "/#cat-movies",
+          },
+          {
+            label: "Anime & Cartoons",
+            description: "High quality subbed & dubbed anime",
+            icon: Tv,
+            href: "/#cat-anime",
+          },
+          {
+            label: "Live TV Channels",
+            description: "Real-time global television networks",
+            icon: Radio,
+            href: "/#cat-livetv",
+          },
+        ],
+      },
+      {
+        title: "More Content",
+        items: [
+          {
+            label: "Sports Live",
+            description: "Football, basketball, combat & racing",
+            icon: Trophy,
+            href: "/#cat-sports",
+          },
+          {
+            label: "Manga & Comics",
+            description: "Read manga, manhwa & webtoons",
+            icon: BookOpen,
+            href: "/#cat-manga",
+          },
+          {
+            label: "Apps & Extensions",
+            description: "Adblockers, players & streaming tools",
+            icon: Smartphone,
+            href: "/#cat-apps",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    label: "Request Site",
+    link: "/request",
+  },
+  {
+    id: 5,
+    label: "DMCA",
+    link: "/dmca",
+  },
 ];
 
 export function Navbar() {
@@ -50,33 +118,10 @@ export function Navbar() {
           <span className="text-3xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>WatchFlow</span>
         </Link>
 
-        <ul className="ml-4 hidden items-center gap-1.5 md:flex">
-          {NAV.map((n) => {
-            const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
-            return (
-              <li key={n.href} className="relative">
-                <Link
-                  href={n.href}
-                  className={cn(
-                    "relative z-10 block rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-250",
-                    active
-                      ? "text-[var(--fg)]"
-                      : "text-[var(--fg-muted)] hover:text-[var(--fg)]",
-                  )}
-                >
-                  {n.label}
-                </Link>
-                {active && (
-                  <motion.div
-                    layoutId="active-nav"
-                    className="absolute inset-0 rounded-full bg-[var(--bg-card-hover)] border border-[var(--border-strong)]/20"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        {/* Dropdown Navigation for Desktop */}
+        <div className="ml-4 hidden md:block">
+          <DropdownNavigation navItems={WATCHFLOW_NAV} />
+        </div>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           {/* Desktop pill search */}
@@ -151,24 +196,31 @@ export function Navbar() {
           >
             <div className="mx-auto flex max-w-[1600px] flex-col gap-3 px-4 py-3">
               <ul className="flex flex-col gap-1">
-                {NAV.map((n) => {
-                  const active = n.href === "/" ? pathname === "/" : pathname.startsWith(n.href);
-                  return (
-                    <li key={n.href}>
-                      <Link
-                        href={n.href}
-                        className={cn(
-                          "block rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all",
-                          active
-                            ? "bg-[var(--bg-card-hover)] text-[var(--fg)] border-l-2 border-[var(--accent)] pl-4"
-                            : "text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]",
-                        )}
-                      >
-                        {n.label}
-                      </Link>
-                    </li>
-                  );
-                })}
+                <li>
+                  <Link href="/" className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#cat-movies" className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]">
+                    Explore Categories
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/request" className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]">
+                    Request Site
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/dmca" className="block rounded-xl px-3.5 py-2.5 text-sm font-semibold text-[var(--fg-muted)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--fg)]">
+                    DMCA
+                  </Link>
+                </li>
               </ul>
             </div>
           </motion.div>
@@ -177,4 +229,3 @@ export function Navbar() {
     </nav>
   );
 }
-
