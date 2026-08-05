@@ -88,8 +88,10 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
     return regions.filter((r) => r.code.toLowerCase().includes(lc) || r.name.toLowerCase().includes(lc));
   }, [q, regions]);
 
+  const contextValue = useMemo(() => ({ open, close }), [open, close]);
+
   return (
-    <PaletteCtx.Provider value={{ open, close }}>
+    <PaletteCtx.Provider value={contextValue}>
       {children}
       <AnimatePresence>
         {isOpen && (

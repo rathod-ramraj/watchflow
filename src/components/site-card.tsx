@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import { Copy, ExternalLink, Flag, Check, Star } from "lucide-react";
 import type { Site } from "@/lib/types";
 import { normalizeAsset, cn } from "@/lib/utils";
@@ -22,20 +22,28 @@ function statusColor(status?: Site["status"]) {
   }
 }
 
-export function SiteCard({ site, categoryId }: Props) {
+export const SiteCard = memo(function SiteCard({ site, categoryId }: Props) {
   const [copied, setCopied] = useState(false);
   const [imgError, setImgError] = useState(false);
   const { has, toggle, mounted } = useFavorites();
   const starred = mounted && has(site.url);
   const color = statusColor(site.status);
   const cardRef = useRef<HTMLAnchorElement>(null);
+  const rafRef = useRef<number>(0);
 
   function onPointerMove(e: React.PointerEvent<HTMLAnchorElement>) {
     const el = cardRef.current;
     if (!el) return;
-    const rect = el.getBoundingClientRect();
-    el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-    el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    if (rafRef.current) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = 0;
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      cardRef.current.style.setProperty("--mx", `${clientX - rect.left}px`);
+      cardRef.current.style.setProperty("--my", `${clientY - rect.top}px`);
+    });
   }
 
   async function copyUrl(e: React.MouseEvent | React.KeyboardEvent) {
@@ -166,4 +174,4 @@ export function SiteCard({ site, categoryId }: Props) {
       </div>
     </a>
   );
-}
+});

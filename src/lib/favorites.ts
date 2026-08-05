@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 
 const KEY = "cinex-favorites-v1";
 const EVT = "cinex-favorites-changed";
@@ -13,23 +13,48 @@ export interface FavoriteItem {
   starredAt: number;
 }
 
-function read(): FavoriteItem[] {
-  if (typeof window === "undefined") return [];
+let cachedItems: FavoriteItem[] = [];
+let cachedStarredSet = new Set<string>();
+let isInitialized = false;
+
+const listeners = new Set<() => void>();
+
+function initCache() {
+  if (isInitialized || typeof window === "undefined") return;
+  isInitialized = true;
   try {
     const raw = localStorage.getItem(KEY);
-    return raw ? (JSON.parse(raw) as FavoriteItem[]) : [];
+    cachedItems = raw ? (JSON.parse(raw) as FavoriteItem[]) : [];
   } catch {
-    return [];
+    cachedItems = [];
   }
+  cachedStarredSet = new Set(cachedItems.map((f) => f.url));
+}
+
+function notify() {
+  listeners.forEach((cb) => cb());
+}
+
+function read(): FavoriteItem[] {
+  if (typeof window === "undefined") return [];
+  initCache();
+  return cachedItems;
 }
 
 function write(items: FavoriteItem[]) {
-  localStorage.setItem(KEY, JSON.stringify(items));
+  cachedItems = items;
+  cachedStarredSet = new Set(items.map((f) => f.url));
+  try {
+    localStorage.setItem(KEY, JSON.stringify(items));
+  } catch {}
+  notify();
   window.dispatchEvent(new CustomEvent(EVT));
 }
 
 export function isStarred(url: string): boolean {
-  return read().some((f) => f.url === url);
+  if (typeof window === "undefined") return false;
+  initCache();
+  return cachedStarredSet.has(url);
 }
 
 export function toggleStar(item: Omit<FavoriteItem, "starredAt">): boolean {
@@ -47,24 +72,54 @@ export function clearFavorites() {
   write([]);
 }
 
+function subscribe(callback: () => void) {
+  listeners.add(callback);
+  if (typeof window !== "undefined") {
+    const handleSync = () => {
+      try {
+        const raw = localStorage.getItem(KEY);
+        const parsed = raw ? (JSON.parse(raw) as FavoriteItem[]) : [];
+        cachedItems = parsed;
+        cachedStarredSet = new Set(parsed.map((f) => f.url));
+      } catch {
+        cachedItems = [];
+        cachedStarredSet = new Set();
+      }
+      callback();
+    };
+    window.addEventListener(EVT, handleSync);
+    window.addEventListener("storage", handleSync);
+    return () => {
+      listeners.delete(callback);
+      window.removeEventListener(EVT, handleSync);
+      window.removeEventListener("storage", handleSync);
+    };
+  }
+  return () => {
+    listeners.delete(callback);
+  };
+}
+
+function getSnapshot() {
+  initCache();
+  return cachedItems;
+}
+
+const SERVER_SNAPSHOT: FavoriteItem[] = [];
+function getServerSnapshot() {
+  return SERVER_SNAPSHOT;
+}
+
 export function useFavorites() {
-  const [items, setItems] = useState<FavoriteItem[]>([]);
+  const items = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const sync = () => setItems(read());
-    sync();
-    window.addEventListener(EVT, sync);
-    window.addEventListener("storage", sync);
-    return () => {
-      window.removeEventListener(EVT, sync);
-      window.removeEventListener("storage", sync);
-    };
   }, []);
 
   const toggle = useCallback((item: Omit<FavoriteItem, "starredAt">) => toggleStar(item), []);
-  const has = useCallback((url: string) => items.some((f) => f.url === url), [items]);
+  const has = useCallback((url: string) => cachedStarredSet.has(url), [items]);
 
   return { items, has, toggle, mounted };
 }

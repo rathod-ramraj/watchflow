@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useDeferredValue, useEffect, useState } from "react";
 import { Search, X } from "lucide-react";
 import { CATEGORY_META } from "@/lib/constants";
 import { CategoryIcon } from "./category-icon";
@@ -13,40 +13,52 @@ interface Props {
 export function FilterChips({ categories }: Props) {
   const [active, setActive] = useState<Set<string>>(new Set());
   const [q, setQ] = useState("");
+  const deferredQ = useDeferredValue(q);
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
-    const query = q.trim().toLowerCase();
-    const sections = document.querySelectorAll<HTMLElement>("section[data-category]");
-    let totalVisible = 0;
+    let rafId = 0;
+    rafId = requestAnimationFrame(() => {
+      const query = deferredQ.trim().toLowerCase();
+      const sections = document.querySelectorAll<HTMLElement>("section[data-category]");
+      let totalVisible = 0;
 
-    sections.forEach((sec) => {
-      const cat = sec.dataset.category!;
-      const cards = sec.querySelectorAll<HTMLElement>("a[data-name]");
-      let sectionVisibleCount = 0;
-      const catMatch = active.size === 0 || active.has(cat) || cat === "favorites";
+      sections.forEach((sec) => {
+        const cat = sec.dataset.category!;
+        const cards = sec.querySelectorAll<HTMLElement>("a[data-name]");
+        let sectionVisibleCount = 0;
+        const catMatch = active.size === 0 || active.has(cat) || cat === "favorites";
 
-      cards.forEach((card) => {
-        const name = card.dataset.name ?? "";
-        const tags = card.dataset.tags ?? "";
-        const categoryId = card.dataset.category ?? "";
-        const queryMatch =
-          !query ||
-          name.includes(query) ||
-          tags.includes(query) ||
-          categoryId.includes(query);
-        const show = catMatch && queryMatch;
-        card.style.display = show ? "" : "none";
-        if (show) sectionVisibleCount++;
+        cards.forEach((card) => {
+          const name = card.dataset.name ?? "";
+          const tags = card.dataset.tags ?? "";
+          const categoryId = card.dataset.category ?? "";
+          const queryMatch =
+            !query ||
+            name.includes(query) ||
+            tags.includes(query) ||
+            categoryId.includes(query);
+          const show = catMatch && queryMatch;
+          if ((card.style.display === "none") !== !show) {
+            card.style.display = show ? "" : "none";
+          }
+          if (show) sectionVisibleCount++;
+        });
+
+        const showSection = catMatch && sectionVisibleCount > 0;
+        if ((sec.style.display === "none") !== !showSection) {
+          sec.style.display = showSection ? "" : "none";
+        }
+        if (showSection) totalVisible += sectionVisibleCount;
       });
 
-      const showSection = catMatch && sectionVisibleCount > 0;
-      sec.style.display = showSection ? "" : "none";
-      if (showSection) totalVisible += sectionVisibleCount;
+      setNoResults(totalVisible === 0);
     });
 
-    setNoResults(totalVisible === 0);
-  }, [q, active]);
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [deferredQ, active]);
 
   function selectTab(id: string | null) {
     if (!id) {

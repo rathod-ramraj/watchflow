@@ -30,31 +30,41 @@ export function addRecent(item: Omit<Recent, "visitedAt">) {
   } catch {}
 }
 
-async function fetchValidUrlSet(): Promise<Set<string>> {
-  const regionsRes = await fetch("/regions.json", { cache: "no-store" });
-  const regionsData = await regionsRes.json();
-  const codes: string[] = (regionsData.regions || [])
-    .filter((r: { enabled?: boolean }) => r.enabled !== false)
-    .map((r: { code: string }) => r.code);
-  const files = [
-    "/links.json",
-    ...codes
-      .filter((c) => c !== "USA")
-      .map((c) => `/Region-Links/links.${c}.json`),
-  ];
-  const valid = new Set<string>();
-  const results = await Promise.all(
-    files.map((f) => fetch(f, { cache: "no-store" }).then((r) => r.json()).catch(() => null))
-  );
-  for (const data of results) {
-    if (!data?.categories) continue;
-    for (const cat of data.categories) {
-      for (const site of cat.sites || []) {
-        if (site.enabled !== false && site.url) valid.add(site.url);
+let cachedValidUrlSetPromise: Promise<Set<string>> | null = null;
+
+function fetchValidUrlSet(): Promise<Set<string>> {
+  if (cachedValidUrlSetPromise) return cachedValidUrlSetPromise;
+  cachedValidUrlSetPromise = (async () => {
+    try {
+      const regionsRes = await fetch("/regions.json");
+      const regionsData = await regionsRes.json();
+      const codes: string[] = (regionsData.regions || [])
+        .filter((r: { enabled?: boolean }) => r.enabled !== false)
+        .map((r: { code: string }) => r.code);
+      const files = [
+        "/links.json",
+        ...codes
+          .filter((c) => c !== "USA")
+          .map((c) => `/Region-Links/links.${c}.json`),
+      ];
+      const valid = new Set<string>();
+      const results = await Promise.all(
+        files.map((f) => fetch(f).then((r) => r.json()).catch(() => null))
+      );
+      for (const data of results) {
+        if (!data?.categories) continue;
+        for (const cat of data.categories) {
+          for (const site of cat.sites || []) {
+            if (site.enabled !== false && site.url) valid.add(site.url);
+          }
+        }
       }
+      return valid;
+    } catch {
+      return new Set<string>();
     }
-  }
-  return valid;
+  })();
+  return cachedValidUrlSetPromise;
 }
 
 export function RecentlyVisited() {

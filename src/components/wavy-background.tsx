@@ -97,7 +97,29 @@ export function WavyBackground({
       }
     };
 
+    let inView = true;
+    let isRendering = false;
+
+    const startLoop = () => {
+      if (!isRendering && inView) {
+        isRendering = true;
+        render();
+      }
+    };
+
+    const stopLoop = () => {
+      isRendering = false;
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+
     const render = () => {
+      if (!inView) {
+        isRendering = false;
+        return;
+      }
       ctx.globalAlpha = 1;
       ctx.fillStyle = backgroundFill ?? "transparent";
       if (backgroundFill) ctx.fillRect(0, 0, w, h);
@@ -108,7 +130,20 @@ export function WavyBackground({
     };
 
     resize();
-    render();
+    startLoop();
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        if (inView) {
+          startLoop();
+        } else {
+          stopLoop();
+        }
+      },
+      { threshold: 0 },
+    );
+    io.observe(wrapper);
 
     const ro = new ResizeObserver(resize);
     ro.observe(wrapper);
@@ -124,7 +159,8 @@ export function WavyBackground({
     });
 
     return () => {
-      cancelAnimationFrame(raf);
+      stopLoop();
+      io.disconnect();
       ro.disconnect();
       mo?.disconnect();
     };
