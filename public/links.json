@@ -784,6 +784,13 @@
           "logo": "./logo/apps/ottadda.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "Cineby",
+          "url": "https://www.cinebyhd.app/",
+          "logo": "./logo/movies_shows/cineby.png",
+          "enabled": true,
+          "status": "new"
         }
       ]
     }
