@@ -141,13 +141,20 @@ async function hit(url, { method = 'HEAD', timeout = REQUEST_TIMEOUT, wantBody =
   }
 }
 
-// Follow redirects manually, capped, with budget.
+// Follow redirects manually, capped, with budget. Falls back to GET on any hop
+// where HEAD errors or returns 4xx — many hosts (Cloudflare, piracy sites)
+// reject HEAD but respond fine to GET.
 async function resolveFinal(url, budget) {
   let current = url;
   let lastStatus = null;
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
     if (budget.expired()) return { ok: false, error: 'budget' };
-    const res = await hit(current, { method: 'HEAD', timeout: Math.min(REQUEST_TIMEOUT, budget.left()) });
+    let res = await hit(current, { method: 'HEAD', timeout: Math.min(REQUEST_TIMEOUT, budget.left()) });
+    if (!res.ok || (res.status >= 400 && res.status < 500)) {
+      if (budget.expired()) return res.ok ? { ok: true, status: res.status, finalUrl: current } : res;
+      const g = await hit(current, { method: 'GET', timeout: Math.min(REQUEST_TIMEOUT, budget.left()) });
+      if (g.ok) res = g;
+    }
     if (!res.ok) return res;
     lastStatus = res.status;
     if (res.status >= 300 && res.status < 400 && res.location) {
@@ -161,10 +168,19 @@ async function resolveFinal(url, budget) {
   return { ok: false, status: lastStatus, error: 'too-many-redirects' };
 }
 
+// A domain is considered "alive" if it responds with any real HTTP status.
+// Cloudflare / bot-shield sites often 403/503/429 GitHub Actions IPs while
+// serving real users fine — treating those as alive avoids rejecting a valid
+// mirror just because the runner IP is on a datacenter blocklist.
+const ALIVE_STATUSES_EVEN_IF_HOSTILE = new Set([403, 405, 406, 429, 451, 503]);
+let lastAliveDetail = '';
 async function isAlive(url, budget) {
   const r = await resolveFinal(url, budget);
-  if (!r.ok) return false;
-  return r.status >= 200 && r.status < 400;
+  if (!r.ok) { lastAliveDetail = r.error || 'unknown-error'; return false; }
+  if (r.status >= 200 && r.status < 400) { lastAliveDetail = String(r.status); return true; }
+  if (ALIVE_STATUSES_EVEN_IF_HOSTILE.has(r.status)) { lastAliveDetail = `${r.status}-hostile-alive`; return true; }
+  lastAliveDetail = String(r.status);
+  return false;
 }
 
 // ─── FMHY index ──────────────────────────────────────────────────────────
@@ -260,7 +276,15 @@ async function processLink(link) {
   // 1. pre-detected redirect from check-links.js
   if (link.redirectTo) {
     const c = siteRoot(link.redirectTo);
-    if (c && !sameHost(c, link.url) && !isBlockedRedirectTarget(c) && await isAlive(c, budget)) {
+    if (!c) {
+      console.log(`${tag} redirect-pre skipped: bad-url ${link.redirectTo}`);
+    } else if (sameHost(c, link.url)) {
+      console.log(`${tag} redirect-pre skipped: same-host ${c}`);
+    } else if (isBlockedRedirectTarget(c)) {
+      console.log(`${tag} redirect-pre skipped: blocked ${c}`);
+    } else if (!(await isAlive(c, budget))) {
+      console.log(`${tag} redirect-pre skipped: not-alive (${lastAliveDetail}) ${c}`);
+    } else {
       return { result: 'fix', source: 'redirect-pre', replacement: c, ms: Date.now() - t0 };
     }
   }
@@ -268,9 +292,19 @@ async function processLink(link) {
   // 2. fresh redirect-follow
   if (!budget.expired()) {
     const r = await resolveFinal(link.url, budget);
-    if (r.ok && r.finalUrl && !sameHost(r.finalUrl, link.url)) {
+    if (!r.ok) {
+      console.log(`${tag} redirect-follow failed: ${r.error || r.status}`);
+    } else if (!r.finalUrl || sameHost(r.finalUrl, link.url)) {
+      console.log(`${tag} redirect-follow no-cross-domain (final=${r.finalUrl})`);
+    } else {
       const root = siteRoot(r.finalUrl);
-      if (root && !isBlockedRedirectTarget(root) && await isAlive(root, budget)) {
+      if (!root) {
+        console.log(`${tag} redirect-follow skipped: bad-final ${r.finalUrl}`);
+      } else if (isBlockedRedirectTarget(root)) {
+        console.log(`${tag} redirect-follow skipped: blocked ${root}`);
+      } else if (!(await isAlive(root, budget))) {
+        console.log(`${tag} redirect-follow skipped: not-alive (${lastAliveDetail}) ${root}`);
+      } else {
         return { result: 'fix', source: 'redirect', replacement: root, ms: Date.now() - t0 };
       }
     }
