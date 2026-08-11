@@ -107,6 +107,33 @@ function collectExistingUrls() {
   return existing;
 }
 
+const JUNK_HOST_SUFFIXES = [
+  'github.com', 'github.io', 'reddit.com', 'wikipedia.org', 'wikidata.org',
+  'discord.gg', 'discord.com', 'discordapp.com', 't.me', 'telegram.me', 'telegram.org',
+  'rentry.co', 'rentry.org', 'pastebin.com', 'hastebin.com', 'ghostbin.com',
+  'twitter.com', 'x.com', 'youtube.com', 'youtu.be', 'vimeo.com', 'dailymotion.com',
+  'patreon.com', 'ko-fi.com', 'buymeacoffee.com', 'subscribestar.com',
+  'archive.org', 'web.archive.org', 'fmhy.net', 'fmhy.pages.dev', 'fmhy.org',
+  'google.com', 'google.co', 'google.org', 'blogspot.com', 'wordpress.com',
+  'medium.com', 'notion.site', 'notion.so', 'gitlab.com', 'codeberg.org',
+  'sourceforge.net', 'docker.com', 'npmjs.com', 'virustotal.com',
+  'greasyfork.org', 'openuserjs.org', 'tampermonkey.net'
+];
+
+function isJunkHost(host) {
+  const h = (host || '').toLowerCase();
+  return JUNK_HOST_SUFFIXES.some(s => h === s || h.endsWith('.' + s));
+}
+
+function isJunkName(name) {
+  const n = (name || '').trim();
+  if (!n || /^\d+$/.test(n) || n.length < 2) return true;
+  if (/^[◄►▲▼◀▶★⭐\s]+/.test(n)) return true;
+  if (/^(mirror|backup|alt|index|wiki|back to|star|fork|edit|discord|grading page|guide|tutorial|faq|rules|readme|changelog)$/i.test(n)) return true;
+  if (/back to/i.test(n) || /wiki index/i.test(n) || /guide/i.test(n) || /setup/i.test(n)) return true;
+  return false;
+}
+
 async function discover() {
   console.log('🔍 Discovering new links for [movies, anime, manga, livetv, paid, apps] from FMHY docs…');
   const existingUrls = collectExistingUrls();
@@ -146,7 +173,11 @@ async function discover() {
               const name = match[1].trim();
               const rawUrl = match[2].trim();
               const root = siteRoot(rawUrl);
-              if (!root || /^\d+$/.test(name) || /^(mirror|backup|alt)$/i.test(name)) continue;
+              if (!root || isJunkName(name)) continue;
+
+              let host = '';
+              try { host = new URL(root).hostname; } catch { continue; }
+              if (isJunkHost(host)) continue;
 
               const norm = normalize(root);
               if (existingUrls.has(norm) || isWhitelisted(root)) continue;
