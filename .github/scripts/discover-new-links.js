@@ -6,15 +6,16 @@ const { isWhitelisted } = require('./skip-list');
 
 const REQUEST_TIMEOUT = 8000;
 const CONCURRENCY = 6;
+const MAX_NEW_LINKS = 15;
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
+const ALLOWED_CATEGORIES = new Set(['movies', 'anime', 'manga', 'livetv', 'paid', 'apps']);
+
 const FMHY_DOCS = [
-  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/video.md', defaultCat: 'movies_shows' },
-  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/downloading.md', defaultCat: 'downloads' },
-  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/torrenting.md', defaultCat: 'torrents' },
+  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/video.md', defaultCat: 'movies' },
   { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/reading.md', defaultCat: 'manga' },
   { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/mobile.md', defaultCat: 'apps' },
-  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/non-english.md', defaultCat: 'movies_shows' }
+  { url: 'https://raw.githubusercontent.com/fmhy/edit/refs/heads/main/docs/non-english.md', defaultCat: 'movies' }
 ];
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36';
@@ -39,6 +40,14 @@ function siteRoot(url) {
 
 function slugify(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function logoDirForCategory(catId) {
+  switch (catId) {
+    case 'movies': return 'movies_shows';
+    case 'paid': return 'paid_apps';
+    default: return catId;
+  }
 }
 
 function hit(url, { method = 'HEAD', timeout = REQUEST_TIMEOUT } = {}) {
@@ -99,7 +108,7 @@ function collectExistingUrls() {
 }
 
 async function discover() {
-  console.log('🔍 Discovering new links from FMHY docs…');
+  console.log('🔍 Discovering new links for [movies, anime, manga, livetv, paid, apps] from FMHY docs…');
   const existingUrls = collectExistingUrls();
   const linkRe = /\[([^\]]{1,120})\]\((https?:\/\/[^)\s]+)\)/g;
   const candidates = [];
@@ -115,22 +124,40 @@ async function discover() {
       lib.get(doc.url, { headers: { 'user-agent': UA } }, (r) => {
         r.on('data', chunk => body += chunk);
         r.on('end', () => {
-          let match;
-          while ((match = linkRe.exec(body)) !== null) {
-            const name = match[1].trim();
-            const rawUrl = match[2].trim();
-            const root = siteRoot(rawUrl);
-            if (!root || /^\d+$/.test(name) || /^(mirror|backup|alt)$/i.test(name)) continue;
+          let currentCat = doc.defaultCat;
 
-            const norm = normalize(root);
-            if (existingUrls.has(norm) || isWhitelisted(root)) continue;
-            existingUrls.add(norm);
+          for (const line of body.split('\n')) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith('#')) {
+              const headerLower = trimmed.toLowerCase();
+              if (headerLower.includes('anime')) currentCat = 'anime';
+              else if (headerLower.includes('manga') || headerLower.includes('comic')) currentCat = 'manga';
+              else if (headerLower.includes('live tv') || headerLower.includes('sport')) currentCat = 'livetv';
+              else if (headerLower.includes('app') || headerLower.includes('android') || headerLower.includes('mobile')) currentCat = 'apps';
+              else if (headerLower.includes('paid') || headerLower.includes('premium')) currentCat = 'paid';
+              else if (headerLower.includes('movie') || headerLower.includes('show') || headerLower.includes('stream')) currentCat = 'movies';
+            }
 
-            candidates.push({
-              name,
-              url: root,
-              category: doc.defaultCat
-            });
+            if (!ALLOWED_CATEGORIES.has(currentCat)) continue;
+
+            const lineRe = new RegExp(linkRe.source, 'g');
+            let match;
+            while ((match = lineRe.exec(line)) !== null) {
+              const name = match[1].trim();
+              const rawUrl = match[2].trim();
+              const root = siteRoot(rawUrl);
+              if (!root || /^\d+$/.test(name) || /^(mirror|backup|alt)$/i.test(name)) continue;
+
+              const norm = normalize(root);
+              if (existingUrls.has(norm) || isWhitelisted(root)) continue;
+              existingUrls.add(norm);
+
+              candidates.push({
+                name,
+                url: root,
+                category: currentCat
+              });
+            }
           }
           resolve();
         });
@@ -142,42 +169,73 @@ async function discover() {
   const added = [];
 
   for (let i = 0; i < candidates.length; i += CONCURRENCY) {
+    if (added.length >= MAX_NEW_LINKS) break;
     const batch = candidates.slice(i, i + CONCURRENCY);
     await Promise.all(batch.map(async (cand) => {
+      if (added.length >= MAX_NEW_LINKS) return;
       if (await isAlive(cand.url)) {
+        if (added.length >= MAX_NEW_LINKS) return;
         const slug = slugify(cand.name);
+        const logoDir = logoDirForCategory(cand.category);
         const newItem = {
           name: cand.name,
           url: cand.url,
-          logo: `./logo/${cand.category}/${slug}.png`,
+          logo: `./logo/${logoDir}/${slug}.png`,
           enabled: true,
           status: 'new'
         };
         added.push({ ...newItem, categoryId: cand.category });
-        console.log(`   ✓ Found new live link: [${cand.name}] (${cand.url})`);
+        console.log(`   ✓ Found new live link (${added.length}/${MAX_NEW_LINKS}): [${cand.name}] (${cand.url}) -> category: ${cand.category}`);
       }
     }));
   }
 
   if (added.length > 0) {
-    const mainLinksPath = path.join(process.cwd(), 'public', 'links.json');
-    const mainLinks = JSON.parse(fs.readFileSync(mainLinksPath, 'utf8'));
+    const publicDir = path.join(process.cwd(), 'public');
+    const regionLinksDir = path.join(publicDir, 'Region-Links');
+    const targetFiles = [
+      path.join(publicDir, 'links.json'),
+      ...(fs.existsSync(regionLinksDir)
+        ? fs.readdirSync(regionLinksDir)
+            .filter(f => f.endsWith('.json'))
+            .map(f => path.join(regionLinksDir, f))
+        : [])
+    ];
 
-    for (const item of added) {
-      let cat = mainLinks.categories.find(c => c.id === item.categoryId);
-      if (!cat) cat = mainLinks.categories[0];
-      cat.sites.push({
-        name: item.name,
-        url: item.url,
-        logo: item.logo,
-        enabled: item.enabled,
-        status: item.status
-      });
+    for (const file of targetFiles) {
+      if (!fs.existsSync(file)) continue;
+      try {
+        const json = JSON.parse(fs.readFileSync(file, 'utf8'));
+        if (!Array.isArray(json.categories)) continue;
+
+        let fileModified = false;
+        for (const item of added) {
+          let cat = json.categories.find(c => c.id === item.categoryId);
+          if (!cat) continue;
+
+          const alreadyInFile = cat.sites.some(s => normalize(s.url) === normalize(item.url));
+          if (!alreadyInFile) {
+            cat.sites.push({
+              name: item.name,
+              url: item.url,
+              logo: item.logo,
+              enabled: item.enabled,
+              status: item.status
+            });
+            fileModified = true;
+          }
+        }
+
+        if (fileModified) {
+          fs.writeFileSync(file, JSON.stringify(json, null, 2) + '\n');
+        }
+      } catch (err) {
+        console.error(`Error updating ${file}:`, err.message);
+      }
     }
 
-    fs.writeFileSync(mainLinksPath, JSON.stringify(mainLinks, null, 2) + '\n');
     fs.writeFileSync('discovered-links.json', JSON.stringify(added, null, 2) + '\n');
-    console.log(`✨ Added ${added.length} new live links to public/links.json!`);
+    console.log(`✨ Added ${added.length} new live links across public/links.json and Region-Links files!`);
   } else {
     console.log('ℹ️ No new live links found.');
   }

@@ -29,7 +29,7 @@ jobs:
           if [ -f discovered-links.json ]; then
             git config user.name "rathod-ramraj"
             git config user.email "diamondstar2200@gmail.com"
-            git add public/links.json discovered-links.json 2>/dev/null || true
+            git add public/links.json public/Region-Links/*.json discovered-links.json 2>/dev/null || true
             if git diff --cached --quiet; then
               echo "No new links discovered."
             else
