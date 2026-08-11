@@ -1,8 +1,6 @@
 name: Discover FMHY Links
 
 on:
-  schedule:
-    - cron: '0 0 * * 0' # Every Sunday at midnight
   workflow_dispatch:
 
 jobs:
