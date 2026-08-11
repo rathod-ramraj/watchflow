@@ -1,0 +1,40 @@
+name: Discover FMHY Links
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Discover new links
+        run: |
+          npm run discover-links
+
+      - name: Commit discovered links
+        run: |
+          if [ -f discovered-links.json ]; then
+            git config user.name "rathod-ramraj"
+            git config user.email "diamondstar2200@gmail.com"
+            git add public/links.json discovered-links.json 2>/dev/null || true
+            if git diff --cached --quiet; then
+              echo "No new links discovered."
+            else
+              git commit -m "bot: auto-discover new FMHY streaming links"
+              git pull --rebase origin ${{ github.ref_name }}
+              git push origin HEAD:${{ github.ref_name }}
+            fi
+          fi

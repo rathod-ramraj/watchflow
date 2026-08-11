@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start --port 80"
+    "start": "next start --port 80",
+    "discover-links": "node .github/scripts/discover-new-links.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
