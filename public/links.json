@@ -264,10 +264,11 @@
           "enabled": true
         },
         {
-          "name": "1Anime",
-          "url": "https://1anime.app/discover",
-          "logo": "./logo/anime/1anime.png",
-          "enabled": true
+          "name": "AnimeTVPlus",
+          "url": "https://animetvplus.xyz/",
+          "logo": "./logo/anime/animetvplus.png",
+          "enabled": true,
+          "status": "new"
         },
         {
           "name": "Anistream",
@@ -624,6 +625,13 @@
           "name": "fifstream1",
           "url": "https://fifstream1.gt.tc/",
           "logo": "./logo/livetv/fifstream1.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "golvar",
+          "url": "https://golvar896.sbs/",
+          "logo": "./logo/livetv/golvar.png",
           "enabled": true,
           "status": "new"
         }
