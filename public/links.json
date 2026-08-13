@@ -186,6 +186,13 @@
           "logo": "./logo/movies_shows/sonixhub.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "PVRPlay",
+          "url": "https://pvrplay.online/",
+          "logo": "./logo/movies_shows/pvrplay.png",
+          "enabled": true,
+          "status": "new"
         }
       ]
     },
