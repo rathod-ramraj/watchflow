@@ -247,6 +247,13 @@
       "name": "Live TV & Sports",
       "sites": [
         {
+          "name": "PlayUP",
+          "url": "https://playup.vercel.app/",
+          "logo": "./logo/livetv/playup.png",
+          "enabled": true,
+          "status": "trusted"
+        },
+        {
           "name": "Taranga Plus",
           "url": "https://tarangplus.in/",
           "logo": "./logo/livetv/taranga-plus.png",

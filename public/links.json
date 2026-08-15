@@ -523,6 +523,13 @@
       "name": "Live TV & Sports",
       "sites": [
         {
+          "name": "PlayUP",
+          "url": "https://playup.vercel.app/",
+          "logo": "./logo/livetv/playup.png",
+          "enabled": true,
+          "status": "trusted"
+        },
+        {
           "name": "DaddyLive",
           "url": "https://dlhd.st/",
           "logo": "./logo/livetv/daddylive.png",

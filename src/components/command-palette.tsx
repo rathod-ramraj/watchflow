@@ -111,7 +111,7 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.97, y: -12 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="relative z-10 w-[min(640px,calc(100vw-2rem))] overflow-hidden rounded-2xl border shadow-2xl"
               style={{ background: "var(--bg-elev)", borderColor: "var(--border)", boxShadow: "var(--shadow)" }}
             >

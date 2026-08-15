@@ -69,7 +69,7 @@ export function MobileCategoryBar({ categories }: Props) {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 220 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
               className="absolute inset-x-0 bottom-0 max-h-[80vh] overflow-y-auto rounded-t-[24px] border-t p-6 pb-safe shadow-2xl"
               style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
             >
