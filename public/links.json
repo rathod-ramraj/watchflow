@@ -523,7 +523,7 @@
       "name": "Live TV & Sports",
       "sites": [
         {
-          "name": "PlayUP",
+          "name": "PlayUp",
           "url": "https://playup.vercel.app/",
           "logo": "./logo/livetv/playup.png",
           "enabled": true,
