@@ -130,15 +130,27 @@
           "name": "1tamilblasters",
           "url": "https://www.1tamilblasters.sale/",
           "logo": "./logo/movies_shows/1tamilblasters.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         },
         {
           "name": "cinephile",
           "url": "https://cinephile.live/",
           "logo": "./logo/movies_shows/cinephile.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "7 Reels",
+          "url": "https://7reels.cc/",
+          "logo": "./logo/movies/7-reels.svg",
+          "status": "new"
+        },
+        {
+          "name": "PantyFlix",
+          "url": "https://pantyflix.com/",
+          "logo": "./logo/movies/pantyflix.png",
+          "status": "new"
         }
       ]
     },
@@ -150,15 +162,15 @@
           "name": "AG48 ANIME",
           "url": "https://www.ag48anime.fun/",
           "logo": "./logo/anime/ag48anime.png",
-          "status": "trusted",
-          "enabled": true
+          "enabled": true,
+          "status": "trusted"
         },
         {
           "name": "WatchAnimeWorld",
           "url": "https://watchanimeworld.net/",
           "logo": "./logo/anime/watchanimeworld.png",
-          "status": "trusted",
-          "enabled": true
+          "enabled": true,
+          "status": "trusted"
         },
         {
           "name": "AnimeJoker",
@@ -224,8 +236,14 @@
           "name": "DesiDubAnime",
           "url": "https://www.desidubanime.me/",
           "logo": "./logo/anime/desidubanime.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "AniStream",
+          "url": "https://anistream.one/home",
+          "logo": "./logo/anime/anistream.svg",
+          "status": "new"
         }
       ]
     },
@@ -237,8 +255,8 @@
           "name": "natomanga",
           "url": "https://www.natomanga.com/",
           "logo": "./logo/manga/natomanga.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         }
       ]
     },
@@ -353,15 +371,15 @@
           "name": "JioHotstar",
           "url": "https://www.hotstar.com/",
           "logo": "./logo/paid_apps/jiohotstar.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         },
         {
           "name": "AhaVideo",
           "url": "https://www.aha.video/",
           "logo": "./logo/paid_apps/ahavideo.png",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         }
       ]
     },
@@ -427,8 +445,8 @@
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
-          "status": "new",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         }
       ]
     }
