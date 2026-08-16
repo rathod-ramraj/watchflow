@@ -112,14 +112,17 @@ export default async function AdminDashboardPage() {
 function StatCard({ label, value, highlight }: { label: string; value: number; highlight?: boolean }) {
   return (
     <div
-      className="rounded-2xl border p-4"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
       style={{
         borderColor: highlight ? "var(--accent)" : "var(--border)",
-        background: "var(--bg-card)",
+        background: highlight
+          ? "color-mix(in oklab, var(--accent) 8%, var(--bg-card))"
+          : "var(--bg-card)",
+        boxShadow: highlight ? "0 0 16px color-mix(in oklab, var(--accent) 12%, transparent)" : undefined,
       }}
     >
-      <div className="text-2xl font-bold tabular-nums">{value}</div>
-      <div className="mt-1 text-xs text-[var(--fg-muted)]">{label}</div>
+      <div className="text-2xl font-extrabold tracking-tight tabular-nums sm:text-3xl">{value}</div>
+      <div className="mt-1 text-xs font-medium text-[var(--fg-muted)]">{label}</div>
     </div>
   );
 }
@@ -140,27 +143,27 @@ function ActionCard({
   return (
     <Link
       href={href}
-      className="group block rounded-2xl border p-4 transition hover:bg-[var(--bg-card-hover)]"
+      className="group relative block rounded-2xl border p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-lg active:scale-[0.99]"
       style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
         <div
-          className="flex h-8 w-8 items-center justify-center rounded-lg"
+          className="flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-200 group-hover:scale-105 group-hover:bg-[var(--accent)] group-hover:text-white"
           style={{ background: "var(--bg-elev)", color: "var(--accent)" }}
         >
           {icon}
         </div>
-        <h3 className="font-semibold">{title}</h3>
+        <h3 className="font-bold text-base tracking-tight transition-colors group-hover:text-[var(--accent)]">{title}</h3>
         {badge && (
           <span
-            className="ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold text-white"
+            className="ml-auto rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-sm"
             style={{ background: "var(--accent)" }}
           >
             {badge}
           </span>
         )}
       </div>
-      <p className="mt-2 text-sm text-[var(--fg-muted)]">{body}</p>
+      <p className="mt-2.5 text-xs font-normal leading-relaxed text-[var(--fg-muted)]">{body}</p>
     </Link>
   );
 }

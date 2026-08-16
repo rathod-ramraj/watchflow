@@ -1025,13 +1025,13 @@ function EditDrawer({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-end bg-black/60 backdrop-blur-sm sm:items-center sm:justify-center"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 p-3 backdrop-blur-sm sm:items-center sm:p-6 sm:pt-20"
       onClick={onClose}
     >
       <div
-        className="relative flex max-h-[92vh] w-full max-w-md flex-col rounded-t-2xl border shadow-2xl sm:rounded-2xl"
+        className="relative flex max-h-[calc(100vh-3rem)] sm:max-h-[calc(100vh-6rem)] w-full max-w-md flex-col rounded-2xl border shadow-2xl"
         style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
         {pickerOpen ? (
           <LogoPicker
@@ -1802,13 +1802,13 @@ function PublishPreviewModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-3 backdrop-blur-sm sm:p-6 sm:pt-20"
       onClick={onCancel}
     >
       <div
-        className="relative flex max-h-[90vh] w-full max-w-2xl flex-col rounded-2xl border shadow-2xl"
+        className="relative flex max-h-[calc(100vh-3rem)] sm:max-h-[calc(100vh-6rem)] w-full max-w-2xl flex-col rounded-2xl border shadow-2xl"
         style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b p-4" style={{ borderColor: "var(--border)" }}>
           <div>

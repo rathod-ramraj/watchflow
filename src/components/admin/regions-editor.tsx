@@ -223,7 +223,7 @@ function RegionRow({
       </span>
       <div className="flex items-center gap-1">
         <span className="grid h-6 w-6 place-items-center">
-          <FlagIcon code={region.flag} size={16} />
+          <FlagIcon code={region.flag || region.code} size={16} />
         </span>
         <input
           value={region.flag}

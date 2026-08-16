@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { env } from "@/lib/env";
+import { getDb } from "@/lib/db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -80,6 +81,25 @@ export async function POST(req: Request) {
     .slice(0, 20);
   if (cleanTargets.length === 0) {
     return NextResponse.json({ error: "no_targets" }, { status: 400 });
+  }
+
+  const now = Date.now();
+  try {
+    const db = getDb();
+    db.prepare(
+      `INSERT INTO site_requests (siteUrl, siteName, siteFeature, targets, status, submittedAt, submitterIp, userAgent)
+       VALUES (?, ?, ?, ?, 'pending', ?, ?, ?)`,
+    ).run(
+      siteUrl,
+      siteName,
+      siteFeature || null,
+      JSON.stringify(cleanTargets),
+      now,
+      ip,
+      h.get("user-agent") ?? "unknown",
+    );
+  } catch (dbErr) {
+    console.error("Failed to save site_request to SQLite db", dbErr);
   }
 
   const webhookUrl = env.DISCORD_WEBHOOK();
