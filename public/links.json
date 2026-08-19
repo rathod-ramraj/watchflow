@@ -193,6 +193,12 @@
           "logo": "./logo/movies_shows/pvrplay.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "Movy",
+          "url": "https://www.movy.bz/",
+          "logo": "./logo/movies/movy.png",
+          "status": "new"
         }
       ]
     },
@@ -347,7 +353,8 @@
           "name": "Senshi",
           "url": "https://senshi.live/",
           "logo": "./logo/anime/senshi.png",
-          "enabled": true
+          "enabled": false,
+          "status": "ok"
         },
         {
           "name": "AllManga",
