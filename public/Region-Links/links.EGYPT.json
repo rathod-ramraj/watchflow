@@ -6,7 +6,7 @@
       "sites": [
         {
           "name": "EgyBest",
-          "url": "https://egybesst.courses/",
+          "url": "https://egybesst.motorcycles/",
           "logo": "./logo/movies_shows/egybest.png",
           "enabled": true
         },
@@ -157,7 +157,7 @@
         },
         {
           "name": "Shudder",
-          "url": "https://www.shudder.com/",
+          "url": "https://watch.shudder.com/",
           "logo": "./logo/paid_apps/shudder.png",
           "enabled": true
         },
