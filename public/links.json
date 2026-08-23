@@ -349,6 +349,7 @@
           "logo": "./logo/anime/lunaranime.png",
           "enabled": true
         },
+        {
           "name": "Senshi",
           "url": "https://senshi.live/",
           "logo": "./logo/anime/senshi.png",
