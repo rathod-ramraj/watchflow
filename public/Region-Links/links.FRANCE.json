@@ -33,6 +33,18 @@
           "url": "https://fawesome.tv/category/82798/french",
           "logo": "./logo/movies_shows/fawesome.webp",
           "enabled": true
+        },
+        {
+          "name": "purstream",
+          "url": "https://purstream.wiki/",
+          "logo": "./logo/movies_shows/purstream.png",
+          "enabled": true
+        },
+        {
+          "name": "flixium",
+          "url": "https://flixium.top/",
+          "logo": "./logo/movies_shows/flixium.png",
+          "enabled": true
         }
       ]
     },

@@ -349,7 +349,6 @@
           "logo": "./logo/anime/lunaranime.png",
           "enabled": true
         },
-        {
           "name": "Senshi",
           "url": "https://senshi.live/",
           "logo": "./logo/anime/senshi.png",
@@ -522,6 +521,12 @@
           "logo": "./logo/manga/kingofshojo.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "batcave",
+          "url": "https://batcave.biz/",
+          "logo": "./logo/manga/batcave.png",
+          "enabled": true
         }
       ]
     },
@@ -655,6 +660,12 @@
           "logo": "./logo/livetv/golvar.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "freetvgarden",
+          "url": "https://freetvgarden.com/",
+          "logo": "./logo/livetv/freetvgarden.png",
+          "enabled": true
         }
       ]
     },
