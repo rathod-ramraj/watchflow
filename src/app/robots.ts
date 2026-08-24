@@ -10,6 +10,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/admin-panel", "/admin-panel/", "/api/", "/api/*"],
       },
+      {
+        userAgent: "Googlebot-Image",
+        allow: ["/", "/*.png", "/*.ico", "/*.svg"],
+      },
     ],
     sitemap: `${base}/sitemap.xml`,
     host: base,
