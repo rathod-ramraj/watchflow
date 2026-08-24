@@ -113,15 +113,17 @@ export async function buildSearchIndex(
 }
 
 export function siteKey(site: Site): string {
+  if (!site || !site.name) return "";
   try {
     const u = new URL(site.url);
     return `${site.name.toLowerCase()}@${u.hostname}`;
   } catch {
-    return `${site.name.toLowerCase()}@${site.url}`;
+    return `${site.name.toLowerCase()}@${site.url || ""}`;
   }
 }
 
-export function createResourceSlug(name: string): string {
+export function createResourceSlug(name?: string): string {
+  if (!name || typeof name !== "string") return "";
   return name
     .toLowerCase()
     .trim()
@@ -141,6 +143,7 @@ export async function getAllResources(regionCode = DEFAULT_REGION_CODE): Promise
   const map = new Map<string, ResourceItem>();
 
   for (const s of index) {
+    if (!s || !s.name) continue;
     const slug = createResourceSlug(s.name);
     if (!slug || map.has(slug)) continue;
     map.set(slug, {
@@ -152,7 +155,8 @@ export async function getAllResources(regionCode = DEFAULT_REGION_CODE): Promise
   return Array.from(map.values());
 }
 
-export async function getResourceBySlug(slug: string, regionCode = DEFAULT_REGION_CODE): Promise<ResourceItem | null> {
+export async function getResourceBySlug(slug?: string, regionCode = DEFAULT_REGION_CODE): Promise<ResourceItem | null> {
+  if (!slug || typeof slug !== "string") return null;
   const resources = await getAllResources(regionCode);
   const target = slug.toLowerCase().trim();
   return resources.find((r) => r.slug === target) ?? null;
