@@ -37,19 +37,19 @@ export async function RegionPage({ region, onlyCategoryId }: Props) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://cinexx.vercel.app"
+        "item": "https://fmwmedia.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": region.name,
-        "item": `https://cinexx.vercel.app/${region.code.toLowerCase()}`
+        "item": `https://fmwmedia.vercel.app/${region.code.toLowerCase()}`
       },
       ...(onlyCategoryId ? [{
         "@type": "ListItem",
         "position": 3,
         "name": data.categories.find(c => c.id === onlyCategoryId)?.name || onlyCategoryId,
-        "item": `https://cinexx.vercel.app/${region.code.toLowerCase()}/${onlyCategoryId}`
+        "item": `https://fmwmedia.vercel.app/${region.code.toLowerCase()}/${onlyCategoryId}`
       }] : [])
     ]
   };

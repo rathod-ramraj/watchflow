@@ -35,7 +35,7 @@ export default function DmcaPage() {
           If you believe content linked from our site infringes your copyright, follow the procedure below.
         </p>
         <p className="text-sm md:text-base leading-relaxed text-[var(--fg-muted)]">
-          <strong className="text-[var(--fg)]">Please Note:</strong> Cinex is a directory service that provides links
+          <strong className="text-[var(--fg)]">Please Note:</strong> Free Media World (FMW) is a directory service that provides links
           to third-party sites. We do not host, store, or control any content.
         </p>
       </section>

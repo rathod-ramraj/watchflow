@@ -8,7 +8,7 @@ import { getDb } from "@/lib/db";
 import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
-  title: "Dashboard · Cinex Admin",
+  title: "Dashboard · FMW Admin",
   robots: { index: false, follow: false },
 };
 

@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
-import { env } from "@/lib/env";
+import { getCanonicalUrl } from "@/lib/seo.config";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = env.SITE_URL();
+  const base = getCanonicalUrl();
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin-panel", "/admin-panel/", "/api/"],
+        disallow: ["/admin-panel", "/admin-panel/", "/api/", "/api/*"],
       },
     ],
     sitemap: `${base}/sitemap.xml`,

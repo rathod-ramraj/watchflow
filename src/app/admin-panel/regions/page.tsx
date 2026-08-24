@@ -5,7 +5,7 @@ import { getAllRegions } from "@/lib/data";
 import { RegionsEditor } from "@/components/admin/regions-editor";
 
 export const metadata: Metadata = {
-  title: "Regions · Cinex Admin",
+  title: "Regions · FMW Admin",
   robots: { index: false, follow: false },
 };
 

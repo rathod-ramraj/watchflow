@@ -121,4 +121,41 @@ export function siteKey(site: Site): string {
   }
 }
 
+export function createResourceSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export interface ResourceItem extends Site {
+  slug: string;
+  categoryId: string;
+  categoryName: string;
+  regionCode: string;
+}
+
+export async function getAllResources(regionCode = DEFAULT_REGION_CODE): Promise<ResourceItem[]> {
+  const index = await buildSearchIndex(regionCode);
+  const map = new Map<string, ResourceItem>();
+
+  for (const s of index) {
+    const slug = createResourceSlug(s.name);
+    if (!slug || map.has(slug)) continue;
+    map.set(slug, {
+      ...s,
+      slug,
+    });
+  }
+
+  return Array.from(map.values());
+}
+
+export async function getResourceBySlug(slug: string, regionCode = DEFAULT_REGION_CODE): Promise<ResourceItem | null> {
+  const resources = await getAllResources(regionCode);
+  const target = slug.toLowerCase().trim();
+  return resources.find((r) => r.slug === target) ?? null;
+}
+
 export const DEFAULT_REGION_CODE = DEFAULT_REGION;

@@ -4,7 +4,7 @@ import { getSessionUser } from "@/lib/auth/session";
 import { RequestsInbox } from "@/components/admin/requests-inbox";
 
 export const metadata: Metadata = {
-  title: "Site requests · Cinex Admin",
+  title: "Site requests · FMW Admin",
   robots: { index: false, follow: false },
 };
 

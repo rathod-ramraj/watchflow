@@ -1,43 +1,43 @@
-<p align="center">
-  <img
-    src="./public/favicon.png"
-    width="120"
-    height="120"
-    alt="Cinex logo"
-  />
-</p>
+# FMW — Free Media World
 
-# <p align="center">Cinex</p>
+A curated, regional discovery directory organizing legal, third-party free media resources for movies, TV series, anime, manga, sports, and media apps.
 
-<p align="center">
-  A curated, regional index of free streaming sites.
-</p>
+## SEO System & Search Console Integration
 
-<p align="center">
-  <img
-    src="./public/preview.png"
-    alt="Cinex Preview"
-    width="100%"
-    style="border-radius: 12px; border: 1px solid #222;"
-  />
-</p>
+FMW includes a centralized, production-ready technical SEO system designed for search engines (Google, Bing, DuckDuckGo).
 
-## Features
+### Environment Configuration
 
-- **Modern SaaS UI**: Overhauled aesthetics inspired by Linear and Apple (dark mode, glassmorphism, responsive animations).
-- **Favorites Bar**: Star your favorite links and save them locally.
-- **Raycast-like Command Search**: Use shortcuts (`Ctrl+K` or `Cmd+K`) to quickly filter and open sites.
-- **Responsive Layout**: Designed for all screen sizes from mobile to desktop.
-- **Discord Request Integrations**: Direct hook submissions for suggestions.
+In your `.env` or deployment environment (Vercel, Railway, etc.), configure the canonical site domain:
 
-## How to add a new site?
+```env
+SITE_URL=https://fmwmedia.vercel.app
+```
 
-Fork the repository, make your additions in `public/Region-Links/`, and submit a pull request!
+> **Note:** If you attach a custom production domain later (e.g. `https://freemediaworld.com`), simply change `SITE_URL` in your environment variables. All canonical tags, sitemaps, Open Graph tags, and JSON-LD schemas will update automatically.
 
-## Socials
+### Search Console Setup Guide
 
-Join our community on [Discord](https://discord.gg/btsQafsQ4).
-Visit for more updates and Thank you....
+1. **Verify Ownership**:
+   - Open [Google Search Console](https://search.google.com/search-console).
+   - Add your property URL matching your configured `SITE_URL`.
+   - Verify via HTML tag (already pre-configured in `src/app/layout.tsx`) or DNS TXT record.
+
+2. **Submit XML Sitemap**:
+   - Navigate to **Sitemaps** in Search Console.
+   - Enter `sitemap.xml` and click **Submit**.
+   - The dynamic sitemap at `/sitemap.xml` includes all canonical category routes, region pages, guide pages, and individual resource detail pages (`/resources/[slug]`).
+
+3. **Verify Indexing & Robots**:
+   - Robots file: `https://fmwmedia.vercel.app/robots.txt`
+   - XML Sitemap: `https://fmwmedia.vercel.app/sitemap.xml`
+
+## Development & Features
+
+- **Centralized SEO Config**: Defined in `src/lib/seo.config.ts`.
+- **Dynamic Resource Detail Pages**: Individual SEO indexable pages located at `/resources/[slug]`.
+- **Informational Guides**: `/about`, `/how-it-works`, `/safety`, `/request`, `/dmca`.
+- **Raycast-style Command Palette**: `Cmd+K` / `Ctrl+K` site-wide fuzzy search.
 
 ## License
 

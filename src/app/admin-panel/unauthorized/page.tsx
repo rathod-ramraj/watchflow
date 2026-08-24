@@ -4,7 +4,7 @@ import { ShieldAlert } from "lucide-react";
 import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
-  title: "Access denied · Cinex Admin",
+  title: "Access denied · FMW Admin",
   robots: { index: false, follow: false },
 };
 

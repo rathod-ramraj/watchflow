@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         canonical: `/${slug}`,
       },
       openGraph: {
-        title: `${m.label} — USA | Cinex`,
+        title: `${m.label} — USA | FMW`,
         description: m.blurb,
-        url: `https://cinexx.vercel.app/${slug}`,
+        url: `https://fmwmedia.vercel.app/${slug}`,
       }
     };
   }
@@ -37,9 +37,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         canonical: `/${slug}`,
       },
       openGraph: {
-        title: `${r.flag} ${r.name} Streaming Sites | Cinex`,
+        title: `${r.flag} ${r.name} Streaming Sites | FMW`,
         description: `Watch free movies, anime, and live TV streams curated for ${r.name}.`,
-        url: `https://cinexx.vercel.app/${slug}`,
+        url: `https://fmwmedia.vercel.app/${slug}`,
       }
     };
   }

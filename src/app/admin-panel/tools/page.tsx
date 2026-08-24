@@ -5,7 +5,7 @@ import { getAllRegions } from "@/lib/data";
 import { ToolsPanel } from "@/components/admin/tools-panel";
 
 export const metadata: Metadata = {
-  title: "Tools · Cinex Admin",
+  title: "Tools · FMW Admin",
   robots: { index: false, follow: false },
 };
 

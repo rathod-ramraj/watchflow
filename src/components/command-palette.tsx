@@ -115,7 +115,7 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
               className="relative z-10 w-[min(640px,calc(100vw-2rem))] overflow-hidden rounded-2xl border shadow-2xl"
               style={{ background: "var(--bg-elev)", borderColor: "var(--border)", boxShadow: "var(--shadow)" }}
             >
-              <Command label="Search Cinex" shouldFilter={false} className="flex flex-col">
+              <Command label="Search FMW" shouldFilter={false} className="flex flex-col">
                 <div className="flex items-center gap-3 border-b px-4.5 py-3.5" style={{ borderColor: "var(--border)" }}>
                   <Search size={15} className="text-[var(--accent)]" />
                   <Command.Input
@@ -221,7 +221,7 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
                 </Command.List>
                 <div className="flex items-center justify-between border-t px-4.5 py-3 text-[10px] font-semibold text-[var(--fg-muted)]" style={{ borderColor: "var(--border)" }}>
                   <span><kbd className="font-mono bg-[var(--bg-elev)] border border-[var(--border)] px-1 rounded">↑↓</kbd> Navigate · <kbd className="font-mono bg-[var(--bg-elev)] border border-[var(--border)] px-1 rounded">↵</kbd> Open</span>
-                  <span className="text-[var(--accent)] font-bold">Cinex</span>
+                  <span className="text-[var(--accent)] font-bold">FMW</span>
                 </div>
               </Command>
             </motion.div>

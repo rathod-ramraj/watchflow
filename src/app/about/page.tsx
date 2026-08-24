@@ -25,14 +25,14 @@ export default function AboutPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-16 md:px-8">
       <header className="mb-14 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-white">About Cinex</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl text-white">About Free Media World (FMW)</h1>
         <p className="mt-3 text-sm font-medium tracking-wide text-[var(--fg-muted)]">The story behind the list <span className="text-[var(--accent)]">💜</span></p>
       </header>
 
       <section className="cinex-card mb-12 p-8 md:p-10 rounded-[24px]">
         <h2 className="mb-4 text-xl font-extrabold text-white tracking-tight">Our Mission</h2>
         <p className="mb-4 text-sm md:text-base leading-relaxed text-[var(--fg-muted)]">
-          Welcome to <strong className="text-[var(--fg)]">Cinex</strong> — your guide to free
+          Welcome to <strong className="text-[var(--fg)]">Free Media World (FMW)</strong> — your guide to free
           streaming entertainment. We curate the most comprehensive collection of streaming sites across movies, TV
           shows, anime, manga, and live TV.
         </p>

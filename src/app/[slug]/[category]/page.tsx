@@ -23,9 +23,9 @@ export async function generateMetadata({
       canonical: `/${slug}/${category}`,
     },
     openGraph: {
-      title: `${meta.label} in ${r.name} | Cinex`,
+      title: `${meta.label} in ${r.name} | FMW`,
       description: meta.blurb,
-      url: `https://cinexx.vercel.app/${slug}/${category}`,
+      url: `https://fmwmedia.vercel.app/${slug}/${category}`,
     }
   };
 }

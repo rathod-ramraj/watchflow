@@ -1,7 +1,7 @@
 {
-    "name": "Cinex",
-    "short_name": "Cinex",
-    "description": "Watch Movies, TV Shows, Anime & Live Entertainment",
+    "name": "Free Media World (FMW)",
+    "short_name": "FMW",
+    "description": "Free Media World - Watch Movies, TV Shows, Anime & Live Entertainment",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#09090B",

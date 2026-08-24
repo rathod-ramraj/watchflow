@@ -3,7 +3,7 @@ import { getSessionUser } from "@/lib/auth/session";
 import { AdminTopbar, AdminNav } from "@/components/admin/topbar";
 
 export const metadata: Metadata = {
-  title: "Admin Panel · Cinex",
+  title: "Admin Panel · FMW",
   robots: { index: false, follow: false },
 };
 

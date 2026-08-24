@@ -19,7 +19,7 @@ export function AdminTopbar({ user }: { user: SessionUser | null }) {
         <Link href="/admin-panel" className="flex items-center gap-2.5 font-bold transition-opacity hover:opacity-90">
           <Image src="/logo.png" alt="" width={24} height={24} className="rounded-lg shadow-sm" />
           <span className="bg-gradient-to-r from-[var(--fg)] to-[var(--fg-muted)] bg-clip-text text-sm font-extrabold tracking-tight">
-            Cinex Admin
+            FMW Admin
           </span>
         </Link>
         <div className="flex items-center gap-3">
