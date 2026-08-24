@@ -78,6 +78,15 @@ export function generatePageMetadata({
     creator: SEO_CONFIG.brandFullName,
     publisher: SEO_CONFIG.brandFullName,
     manifest: "/manifest.json",
+    icons: {
+      icon: [
+        { url: "/favicon-new.png", type: "image/png" },
+        { url: "/favicon.png", type: "image/png" },
+        { url: "/favicon.ico", type: "image/x-icon" },
+      ],
+      shortcut: "/favicon-new.png",
+      apple: "/favicon-new.png",
+    },
     alternates: {
       canonical: canonicalUrl,
     },
