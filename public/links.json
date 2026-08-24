@@ -49,7 +49,8 @@
           "name": "MeowTV",
           "url": "https://meowtv.ru/",
           "logo": "./logo/movies_shows/meowtv.png",
-          "enabled": true
+          "enabled": true,
+          "status": "trusted"
         },
         {
           "name": "RiveStream",
