@@ -5,9 +5,9 @@
       "name": "Movies & Shows",
       "sites": [
         {
-          "name": "YorWatch",
-          "url": "https://yorwatchh.vercel.app/",
-          "logo": "./logo/movies_shows/yorwatch.png",
+          "name": "oneflix",
+          "url": "https://oneflixx.vercel.app/",
+          "logo": "./logo/movies_shows/OneFlix.png",
           "enabled": true,
           "status": "trusted"
         },
