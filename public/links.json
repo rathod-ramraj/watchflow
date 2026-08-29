@@ -833,6 +833,12 @@
           "logo": "./logo/movies_shows/cineby.png",
           "enabled": true,
           "status": "new"
+        },
+        {
+          "name": "Castle",
+          "url": "https://castlleapk.app/",
+          "logo": "./logo/apps/castle.webp",
+          "status": "new"
         }
       ]
     }
