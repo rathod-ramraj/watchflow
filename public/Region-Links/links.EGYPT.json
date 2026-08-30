@@ -50,35 +50,30 @@
           "name": "Alooytv",
           "url": "https://fitnur.com/",
           "logo": "./logo/movies_shows/alooytv.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "carateen",
           "url": "https://web.topcinemaa.live/",
           "logo": "./logo/movies_shows/topcinema.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "WeCima",
           "url": "https://wecima.cx/",
           "logo": "./logo/movies_shows/wecima.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "DramaCafe",
           "url": "https://dramacafe-tv.live/",
           "logo": "./logo/movies_shows/dramacafe.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "movizlands",
           "url": "https://w3.movizlands.com/",
           "logo": "./logo/movies_shows/movizlands.png",
-          "status": "new",
           "enabled": true
         },
         {
@@ -116,21 +111,18 @@
           "name": "cartoony",
           "url": "https://cartoony.net/",
           "logo": "./logo/anime/cartoony.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "carateen",
           "url": "https://carateen.tv/",
           "logo": "./logo/anime/carateen.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "animezid",
           "url": "https://animezid.cam/index.php",
           "logo": "./logo/anime/animezid.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -292,7 +284,6 @@
           "name": "FasselHD",
           "url": "https://fasselhd.com/",
           "logo": "./logo/apps/fasselhd.png",
-          "status": "new",
           "enabled": true
         }
       ]

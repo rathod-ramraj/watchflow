@@ -123,34 +123,29 @@
           "name": "Nxsha",
           "url": "https://nxsha.space/",
           "logo": "./logo/movies_shows/nxsha.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "1tamilblasters",
           "url": "https://www.1tamilblasters.sale/",
           "logo": "./logo/movies_shows/1tamilblasters.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "cinephile",
           "url": "https://cinephile.live/",
           "logo": "./logo/movies_shows/cinephile.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "7 Reels",
           "url": "https://7reels.cc/",
-          "logo": "./logo/movies/7-reels.svg",
-          "status": "new"
+          "logo": "./logo/movies/7-reels.svg"
         },
         {
           "name": "PantyFlix",
           "url": "https://pantyflix.com/",
-          "logo": "./logo/movies/pantyflix.png",
-          "status": "new"
+          "logo": "./logo/movies/pantyflix.png"
         }
       ]
     },
@@ -236,14 +231,12 @@
           "name": "DesiDubAnime",
           "url": "https://www.desidubanime.me/",
           "logo": "./logo/anime/desidubanime.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "AniStream",
           "url": "https://anistream.one/home",
-          "logo": "./logo/anime/anistream.svg",
-          "status": "new"
+          "logo": "./logo/anime/anistream.svg"
         }
       ]
     },
@@ -255,8 +248,7 @@
           "name": "natomanga",
           "url": "https://www.natomanga.com/",
           "logo": "./logo/manga/natomanga.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         }
       ]
     },
@@ -371,15 +363,13 @@
           "name": "JioHotstar",
           "url": "https://www.hotstar.com/",
           "logo": "./logo/paid_apps/jiohotstar.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "AhaVideo",
           "url": "https://www.aha.video/",
           "logo": "./logo/paid_apps/ahavideo.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         }
       ]
     },
@@ -445,8 +435,7 @@
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         }
       ]
     }

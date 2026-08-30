@@ -26,14 +26,12 @@
           "name": "goplay.su",
           "url": "https://goplay.su",
           "logo": "./logo/movies_shows/goplaysu.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "tvwiki",
           "url": "https://cokcok10.com/",
           "logo": "./logo/movies_shows/tvwiki.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -64,7 +62,6 @@
           "name": "King of Shojo",
           "url": "https://kingofshojo.com",
           "logo": "./logo/manga/kingofshojo.png",
-          "status": "new",
           "enabled": true
         }
       ]

@@ -20,7 +20,6 @@
           "name": "streamingcommunityz",
           "url": "https://streamingcommunityz.style/",
           "logo": "./logo/movies_shows/streamingcommunityz.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -33,7 +32,6 @@
           "name": "animeunity",
           "url": "https://www.animeunity.so",
           "logo": "./logo/anime/animeunity.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -51,7 +49,6 @@
           "name": "DAZN",
           "url": "https://www.dazn.com",
           "logo": "./logo/livetv/dazn.png",
-          "status": "new",
           "enabled": true
         }
       ]

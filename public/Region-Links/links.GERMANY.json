@@ -56,21 +56,18 @@
           "name": "Kinox/Kinoz",
           "url": "https://kinoz.to",
           "logo": "./logo/movies_shows/kinox.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "BurningSeries",
           "url": "https://burningseries.ac/",
           "logo": "./logo/movies_shows/burningseries.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "BurningSeries",
           "url": "https://burning-series.io/",
           "logo": "./logo/movies_shows/burningseries.png",
-          "status": "new",
           "enabled": true
         }
       ]

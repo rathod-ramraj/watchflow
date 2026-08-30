@@ -32,14 +32,12 @@
           "name": "NetMirror",
           "url": "https://net77.cc/home",
           "logo": "./logo/movies_shows/netmirror.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "Felixlatam",
           "url": "https://flixlatam.com/",
           "logo": "./logo/movies_shows/flixlatam.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -94,14 +92,12 @@
           "name": "FutbolLibre",
           "url": "https://futbol-libres.su/",
           "logo": "./logo/livetv/futbollibre.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "RojaDirecta",
           "url": "https://rojadirectastream.com/",
           "logo": "./logo/livetv/rojadirecta.png",
-          "status": "new",
           "enabled": true
         }
       ]

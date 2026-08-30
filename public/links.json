@@ -171,35 +171,30 @@
           "name": "StigStream",
           "url": "https://stigstream.ru/",
           "logo": "./logo/movies_shows/stigstream.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "PrimeShows",
           "url": "https://primeshows.org/",
           "logo": "./logo/movies_shows/primeshowsLogo.svg",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "SonixHub",
           "url": "https://sonixhub.net/",
           "logo": "./logo/movies_shows/sonixhub.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "PVRPlay",
           "url": "https://pvrplay.online/",
           "logo": "./logo/movies_shows/pvrplay.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "Movy",
           "url": "https://www.movy.bz/",
-          "logo": "./logo/movies/movy.png",
-          "status": "new"
+          "logo": "./logo/movies/movy.png"
         }
       ]
     },
@@ -281,8 +276,7 @@
           "name": "AnimeTVPlus",
           "url": "https://animetvplus.xyz/",
           "logo": "./logo/anime/animetvplus.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "Anistream",
@@ -361,8 +355,7 @@
           "name": "AllManga",
           "url": "https://allmanga.to/",
           "logo": "./logo/anime/allmanga.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         }
       ]
     },
@@ -521,8 +514,7 @@
           "name": "King of Shojo",
           "url": "https://kingofshojo.com",
           "logo": "./logo/manga/kingofshojo.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "batcave",
@@ -653,15 +645,13 @@
           "name": "fifstream1",
           "url": "https://fifstream1.gt.tc/",
           "logo": "./logo/livetv/fifstream1.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "golvar",
           "url": "https://golvar569.sbs/",
           "logo": "./logo/livetv/golvar.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "freetvgarden",
@@ -817,28 +807,24 @@
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "OTTAdda",
           "url": "https://ottadda.space/",
           "logo": "./logo/apps/ottadda.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "Cineby",
           "url": "https://www.cinebyhd.app/",
           "logo": "./logo/movies_shows/cineby.png",
-          "enabled": true,
-          "status": "new"
+          "enabled": true
         },
         {
           "name": "Castle",
           "url": "https://castlleapk.app/",
-          "logo": "./logo/apps/castle.webp",
-          "status": "new"
+          "logo": "./logo/apps/castle.webp"
         }
       ]
     }

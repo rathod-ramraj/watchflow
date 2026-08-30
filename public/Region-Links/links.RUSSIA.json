@@ -8,14 +8,12 @@
           "name": "REZKA",
           "url": "https://rezka.ag/",
           "logo": "./logo/movies_shows/rezka.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "Kinogo",
           "url": "https://kinogo.ec",
           "logo": "./logo/movies_shows/noavatar.png",
-          "status": "new",
           "enabled": true
         }
       ]

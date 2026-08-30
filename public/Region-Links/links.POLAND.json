@@ -56,14 +56,12 @@
           "name": "docchi",
           "url": "https://docchi.pl/",
           "logo": "./logo/anime/docchi.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "Shinden",
           "url": "https://shinden.pl/",
           "logo": "./logo/anime/shinden.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -76,7 +74,6 @@
           "name": "Shinden",
           "url": "https://shinden.pl/",
           "logo": "./logo/anime/shinden.png",
-          "status": "new",
           "enabled": true
         }
       ]
@@ -233,14 +230,12 @@
           "name": "FlowFlix",
           "url": "https://flowflix.vercel.app/",
           "logo": "./logo/apps/flowflix.png",
-          "status": "new",
           "enabled": true
         },
         {
           "name": "PureVideo",
           "url": "https://majusss.github.io/",
           "logo": "./logo/apps/purevideo.png",
-          "status": "new",
           "enabled": true
         }
       ]
