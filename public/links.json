@@ -139,9 +139,10 @@
         },
         {
           "name": "Willow",
-          "url": "https://willow.arlen.icu/",
+          "url": "https://willowmovies.com/",
           "logo": "./logo/movies_shows/willow.png",
-          "enabled": true
+          "enabled": true,
+          "status": "new"
         },
         {
           "name": "FMovies",
