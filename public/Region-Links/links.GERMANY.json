@@ -69,6 +69,20 @@
           "url": "https://burning-series.io/",
           "logo": "./logo/movies_shows/burningseries.png",
           "enabled": true
+        },
+        {
+          "name": "streamcloud",
+          "url": "https://streamcloud.date/streamcloud/",
+          "logo": "./logo/movies_shows/streamclouddate.png",
+          "status": "new",
+          "enabled": true
+        },
+        {
+          "name": "hdfilme",
+          "url": "https://hdfilme.win/",
+          "logo": "./logo/movies_shows/hdfilmewin.png",
+          "status": "new",
+          "enabled": true
         }
       ]
     },
