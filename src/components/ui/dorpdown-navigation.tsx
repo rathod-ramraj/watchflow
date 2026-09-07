@@ -77,25 +77,14 @@ export function DropdownNavigation({ navItems, className }: Props) {
                   {isItemActive && (
                     <motion.div
                       layoutId="hover-nav-pill"
-                      className="absolute inset-0 size-full rounded-full pointer-events-none z-0 overflow-hidden"
+                      className="absolute inset-0 size-full rounded-full pointer-events-none z-0 border"
                       style={{
-                        background: "linear-gradient(180deg, color-mix(in oklab, var(--accent) 35%, var(--bg-elev)) 0%, color-mix(in oklab, var(--accent) 55%, var(--bg-elev)) 50%, color-mix(in oklab, var(--accent) 75%, black) 100%)",
-                        border: "1.5px solid color-mix(in oklab, var(--accent) 55%, var(--border-strong))",
-                        boxShadow: "inset 0 1.5px 2px rgba(255, 255, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 -4px 10px rgba(0, 0, 0, 0.5), 0 0 12px 1px var(--accent-glow)",
+                        background: "color-mix(in oklab, var(--fg) 10%, var(--bg-elev))",
+                        borderColor: "var(--border-strong)",
+                        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
                       }}
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    >
-                      <div
-                        className="absolute top-[1px] left-[3px] right-[3px] h-[46%] pointer-events-none"
-                        style={{
-                          borderTopLeftRadius: "999px",
-                          borderTopRightRadius: "999px",
-                          borderBottomLeftRadius: "100% 35%",
-                          borderBottomRightRadius: "100% 35%",
-                          background: "linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 80%, rgba(255, 255, 255, 0) 100%)",
-                        }}
-                      />
-                    </motion.div>
+                    />
                   )}
                 </Link>
               ) : (
@@ -116,25 +105,14 @@ export function DropdownNavigation({ navItems, className }: Props) {
                   {isItemActive && (
                     <motion.div
                       layoutId="hover-nav-pill"
-                      className="absolute inset-0 size-full rounded-full pointer-events-none z-0 overflow-hidden"
+                      className="absolute inset-0 size-full rounded-full pointer-events-none z-0 border"
                       style={{
-                        background: "linear-gradient(180deg, color-mix(in oklab, var(--accent) 35%, var(--bg-elev)) 0%, color-mix(in oklab, var(--accent) 55%, var(--bg-elev)) 50%, color-mix(in oklab, var(--accent) 75%, black) 100%)",
-                        border: "1.5px solid color-mix(in oklab, var(--accent) 55%, var(--border-strong))",
-                        boxShadow: "inset 0 1.5px 2px rgba(255, 255, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 -4px 10px rgba(0, 0, 0, 0.5), 0 0 12px 1px var(--accent-glow)",
+                        background: "color-mix(in oklab, var(--fg) 10%, var(--bg-elev))",
+                        borderColor: "var(--border-strong)",
+                        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
                       }}
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    >
-                      <div
-                        className="absolute top-[1px] left-[3px] right-[3px] h-[46%] pointer-events-none"
-                        style={{
-                          borderTopLeftRadius: "999px",
-                          borderTopRightRadius: "999px",
-                          borderBottomLeftRadius: "100% 35%",
-                          borderBottomRightRadius: "100% 35%",
-                          background: "linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.08) 80%, rgba(255, 255, 255, 0) 100%)",
-                        }}
-                      />
-                    </motion.div>
+                    />
                   )}
                 </button>
               )}

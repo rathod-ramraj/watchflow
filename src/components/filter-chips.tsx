@@ -74,7 +74,7 @@ export function FilterChips({ categories }: Props) {
   return (
     <>
       <div
-        className="sticky top-[57px] z-30 mb-5 rounded-2xl border px-3 py-2.5 backdrop-blur-xl sm:px-4 md:top-[64px] md:mb-6 md:px-5 md:py-3 shadow-lg"
+        className="sticky top-[76px] sm:top-[80px] md:top-[84px] z-30 mb-5 rounded-2xl border px-3 py-2.5 backdrop-blur-xl sm:px-4 md:mb-6 md:px-5 md:py-3 shadow-lg"
         style={{
           background: "color-mix(in oklab, var(--bg-elev) 88%, transparent)",
           borderColor: "var(--border-strong)",

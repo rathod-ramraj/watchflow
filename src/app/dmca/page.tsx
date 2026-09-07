@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { CheckCircle2, Mail } from "lucide-react";
+import { generatePageMetadata } from "@/lib/seo.config";
 
-export const metadata: Metadata = { title: "DMCA Policy" };
+export const metadata: Metadata = generatePageMetadata({
+  title: "DMCA Policy | FMW",
+  description:
+    "FMW (Free Media World) DMCA copyright policy, takedown request instructions, and compliance guidelines.",
+  path: "/dmca",
+});
 
 const STEPS = [
   { n: 1, title: "Review", body: "We review all valid DMCA requests submitted via email." },

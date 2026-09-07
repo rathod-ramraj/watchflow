@@ -2,6 +2,19 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  // 1. Permanently redirect uppercase URLs to lowercase (excluding static files & API routes)
+  if (
+    !pathname.startsWith("/_next") &&
+    !pathname.startsWith("/api") &&
+    !pathname.includes(".") &&
+    /[A-Z]/.test(pathname)
+  ) {
+    const url = req.nextUrl.clone();
+    url.pathname = pathname.toLowerCase();
+    return NextResponse.redirect(url, 301);
+  }
+
   const res = NextResponse.next();
 
   if (pathname.startsWith("/api/admin")) {
@@ -21,5 +34,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/api/admin/:path*", "/sitemap.xml", "/robots.txt"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };

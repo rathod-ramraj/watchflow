@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { CheckCircle2, XCircle } from "lucide-react";
 import { RequestForm } from "./request-form";
+import { generatePageMetadata } from "@/lib/seo.config";
 
-export const metadata: Metadata = { title: "Request a Site" };
+export const metadata: Metadata = generatePageMetadata({
+  title: "Request a Site | FMW",
+  description:
+    "Submit a new media resource or streaming site to be reviewed and indexed on Free Media World (FMW).",
+  path: "/request",
+});
 
 const LOOK_FOR = [
   "Working, active sites",

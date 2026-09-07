@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo.config";
 
 function GithubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -9,7 +10,12 @@ function GithubIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = generatePageMetadata({
+  title: "About Free Media World (FMW)",
+  description:
+    "Learn about Free Media World (FMW), our mission to make media discovery accessible, our community-curated directory, and team.",
+  path: "/about",
+});
 
 const TEAM = [
   {

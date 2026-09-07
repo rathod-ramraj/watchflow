@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { LatestCommitPill } from "./latest-commit-pill";
 import { LiveUsers } from "./live-users";
 import { WavyBackground } from "./wavy-background";
@@ -42,22 +41,17 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
 
       <div className="relative grid items-center gap-6 px-5 py-6 md:px-8 md:py-8 lg:grid-cols-[1fr_480px]">
         {/* LEFT: title + tagline */}
-        <div className="min-w-0">
-          <div className="flex items-center gap-3 sm:gap-4">
-            <div className="flex h-14 w-14 sm:h-20 sm:w-20 shrink-0 items-center justify-center">
-              <Image priority src="/favicon-new.png" alt="FMW Logo - Free Media World Directory" width={80} height={80} className="h-14 w-14 sm:h-20 sm:w-20 object-contain" />
+        <div className="min-w-0 pl-1 sm:pl-2">
+          <div>
+            <div className="text-xs sm:text-sm font-bold text-[var(--accent)] uppercase tracking-[0.2em] mb-1.5">
+              [ Free Media World ]
             </div>
-            <div>
-              <div className="text-[11px] sm:text-[12px] leading-[14px] font-[600] text-[rgb(139,92,246)] uppercase tracking-[0.2em] mb-1" style={{ fontFamily: '__Inter_f367f3, __Inter_Fallback_f367f3, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }}>
-                [FMW]
-              </div>
-              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide text-white whitespace-nowrap" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>
-                Your streaming{" "}
-                <span className="bg-gradient-to-r from-[var(--accent)] via-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent">
-                  everything
-                </span>
-              </h1>
-            </div>
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide text-[var(--fg)] whitespace-nowrap" style={{ fontFamily: '"Bebas Neue", "Bebas Neue Fallback", sans-serif' }}>
+              Your streaming{" "}
+              <span className="bg-gradient-to-r from-[var(--accent)] via-[var(--fg)] to-[var(--accent)] bg-clip-text text-transparent">
+                everything
+              </span>
+            </h1>
           </div>
           <p className="mt-3 max-w-xl text-xs sm:text-sm font-medium leading-relaxed text-[var(--fg-muted)]">
             Curated streaming sites, instant fuzzy search, multi-region support.
@@ -72,6 +66,25 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
             )}
           </p>
 
+          {/* Quick category shortcut pills */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            <a href="#cat-movies" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+              <span>🎬</span> Movies
+            </a>
+            <a href="#cat-anime" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+              <span>🍿</span> Anime
+            </a>
+            <a href="#cat-livetv" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+              <span>📺</span> Live TV
+            </a>
+            <a href="#cat-sports" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+              <span>⚽</span> Sports
+            </a>
+            <a href="#cat-manga" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+              <span>📖</span> Manga
+            </a>
+          </div>
+
           {/* Mobile-only stats and indicators */}
           <div className="lg:hidden">
             {stats && stats.length > 0 && (
@@ -82,7 +95,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
                     className="rounded-xl border px-3.5 py-2.5 text-center transition-all duration-200"
                     style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
                   >
-                    <div className="text-xl font-extrabold text-white">{s.value}</div>
+                    <div className="text-xl font-extrabold text-[var(--fg)]">{s.value}</div>
                     <div className="text-[9px] font-bold uppercase tracking-wider text-[var(--fg-muted)]">{s.label}</div>
                   </div>
                 ))}
@@ -102,10 +115,10 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="rounded-xl border px-3.5 py-3 text-center transition-all duration-300 hover:scale-105 hover:border-[var(--border-strong)] hover:shadow-lg"
+                  className="rounded-xl border px-3.5 py-3 text-center transition-all duration-300 hover:border-[var(--accent)] hover:shadow-md"
                   style={{ background: "var(--bg-elev)", borderColor: "var(--border)" }}
                 >
-                  <div className="text-2xl font-extrabold tracking-tight tabular-nums text-white">{s.value}</div>
+                  <div className="text-2xl font-extrabold tracking-tight tabular-nums text-[var(--fg)]">{s.value}</div>
                   <div className="mt-0.5 text-[9.5px] font-bold uppercase tracking-[0.15em] text-[var(--fg-muted)]">{s.label}</div>
                 </div>
               ))}
