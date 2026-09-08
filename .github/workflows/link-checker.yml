@@ -5,14 +5,13 @@ on:
     - cron: '23 */12 * * *'
   workflow_dispatch:
 
-env:
-  DISCORD_WEBHOOK: ${{ secrets.SITE_VALIDATOR_WEBHOOK || secrets.DISCORD_WEBHOOK }}
-
 jobs:
   check-links:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      DISCORD_WEBHOOK: ${{ secrets['DISCORD_WEBHOOK'] }}
 
     steps:
       - name: Checkout repository
