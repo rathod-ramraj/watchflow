@@ -28,6 +28,10 @@ const https = require('https');
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK;
 
 function sendDiscordMessage(payload, _unused) {
+  if (!DISCORD_WEBHOOK) {
+    console.warn("DISCORD_WEBHOOK environment variable is not set. Skipping Discord notification.");
+    return Promise.resolve();
+  }
   return new Promise((resolve, reject) => {
     const webhookUrl = new URL(DISCORD_WEBHOOK);
 

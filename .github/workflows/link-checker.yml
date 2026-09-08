@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  DISCORD_WEBHOOK: ${{ secrets.SITE_VALIDATOR_WEBHOOK }}
+  DISCORD_WEBHOOK: ${{ secrets.SITE_VALIDATOR_WEBHOOK || secrets.DISCORD_WEBHOOK }}
 
 jobs:
   check-links:
