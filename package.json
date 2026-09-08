@@ -8,6 +8,9 @@
     "start": "next start --port 80",
     "discover-links": "node .github/scripts/discover-new-links.js"
   },
+  "allowScripts": {
+    "better-sqlite3": true
+  },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",

@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write
     env:
-      DISCORD_WEBHOOK: ${{ secrets['DISCORD_WEBHOOK'] }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
 
     steps:
       - name: Checkout repository

@@ -65,8 +65,8 @@ function sendDiscordMessage(payload, _unused) {
 
 async function main() {
   if (!DISCORD_WEBHOOK) {
-    console.error('DISCORD_WEBHOOK environment variable is not set');
-    process.exit(1);
+    console.warn("DISCORD_WEBHOOK environment variable is not set. Skipping Discord notification.");
+    process.exit(0);
   }
 
   if (!fs.existsSync('broken-links.json')) {
