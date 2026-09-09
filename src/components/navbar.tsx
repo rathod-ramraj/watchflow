@@ -162,7 +162,7 @@ export function Navbar() {
 
           {/* Discord */}
           <a
-            href="https://discord.gg/btsQafsQ4"
+            href="https://discord.gg/Pd7eEPSf4"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Discord"
