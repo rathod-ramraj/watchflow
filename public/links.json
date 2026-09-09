@@ -7,7 +7,7 @@
         {
           "name": "oneflix",
           "url": "https://oneflixx.vercel.app/",
-          "logo": "./logo/movies_shows/OneFlix.png",
+          "logo": "./logo/movies_shows/oneflixLogo.png",
           "enabled": true,
           "status": "trusted"
         },
