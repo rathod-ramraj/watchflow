@@ -640,7 +640,7 @@
           "name": "VenueVault",
           "url": "https://venuevault.live/",
           "logo": "./logo/livetv/venuevault.png",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "fifstream1",
