@@ -154,6 +154,13 @@
       "name": "Anime",
       "sites": [
         {
+          "name": "Kartoonsme",
+          "url": "https://kartoons.me/home",
+          "logo": "./logo/anime/kartoons.png",
+          "status": "trusted",
+          "enabled": true
+        },
+        {
           "name": "AG48 ANIME",
           "url": "https://www.ag48anime.fun/",
           "logo": "./logo/anime/ag48anime.png",
@@ -225,6 +232,12 @@
           "name": "AnimeSogo",
           "url": "https://animesogo.to/home",
           "logo": "./logo/anime/anime-sogo.png",
+          "enabled": true
+        },
+        {
+          "name": "ToonWorld4All",
+          "url": "https://toonworld4all.me/",
+          "logo": "./logo/anime/toonworld4all.png",
           "enabled": true
         },
         {

@@ -101,7 +101,14 @@
     {
       "id": "manga",
       "name": "Manga",
-      "sites": []
+      "sites": [
+        {
+          "name": "Toomics",
+          "url": "https://toomics.com/de",
+          "enabled": true,
+          "logo": "./logo/manga/toomics.png"
+        }
+      ]
     },
     {
       "id": "livetv",
