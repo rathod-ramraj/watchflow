@@ -40,7 +40,7 @@
         },
         {
           "name": "FlickyStream",
-          "url": "https://flickystream.mov/",
+          "url": "https://meowtv.ru/",
           "logo": "./logo/movies_shows/flickystream.png",
           "enabled": true,
           "status": "trusted"
@@ -103,7 +103,7 @@
         },
         {
           "name": "Cineby",
-          "url": "https://www.cineby.at/",
+          "url": "https://cineby.gdn/",
           "logo": "./logo/movies_shows/cineby.png",
           "enabled": true
         },
@@ -596,7 +596,7 @@
         },
         {
           "name": "iStreamEast",
-          "url": "https://streameast.cool/",
+          "url": "https://thestreameast.top/",
           "logo": "./logo/livetv/istreameast.png",
           "enabled": true
         },
