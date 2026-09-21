@@ -60,7 +60,7 @@ export async function RegionPage({ region, onlyCategoryId }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <Hero regionFlag={region.flag} regionName={region.name} stats={stats} />
+      <Hero regionCode={region.code} regionFlag={region.flag} regionName={region.name} stats={stats} />
       <div className="mb-4 flex justify-center md:hidden">
         <CountrySelect />
       </div>

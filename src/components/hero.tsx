@@ -8,12 +8,13 @@ interface Stat {
 }
 
 interface Props {
+  regionCode?: string;
   regionFlag?: string;
   regionName?: string;
   stats?: Stat[];
 }
 
-export function Hero({ regionFlag, regionName, stats }: Props) {
+export function Hero({ regionCode, regionFlag, regionName, stats }: Props) {
   return (
     <section
       className="relative mb-8 overflow-hidden rounded-[24px] border shadow-[0_8px_32px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_12px_48px_rgba(0,0,0,0.4)]"
@@ -103,7 +104,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
             )}
             <div className="mt-3 flex flex-col gap-2 w-full max-w-[480px]">
               <LatestCommitPill />
-              <LiveUsers />
+              <LiveUsers region={regionCode} shortLabel={regionFlag} />
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
 
           <div className="flex flex-col gap-2">
             <LatestCommitPill />
-            <LiveUsers />
+            <LiveUsers region={regionCode} />
           </div>
         </aside>
       </div>

@@ -3,7 +3,14 @@
     {
       "id": "movies",
       "name": "Movies & Shows",
-      "sites": []
+      "sites": [
+        {
+          "name": "deepcine",
+          "url": "https://deepcine.tv/",
+          "enabled": true,
+          "logo": "./logo/movies_shows/deepcine.png"
+        }
+      ]
     },
     {
       "id": "anime",
