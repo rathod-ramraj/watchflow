@@ -188,7 +188,7 @@
         },
         {
           "name": "PVRPlay",
-          "url": "https://pvrplay.online/",
+          "url": "https://pvrplay.site/",
           "logo": "./logo/movies_shows/pvrplay.png",
           "enabled": true
         },
@@ -758,7 +758,7 @@
         },
         {
           "name": "OnStream APKs",
-          "url": "https://onstreamapks.app/",
+          "url": "https://onstreamapks.net/",
           "logo": "./logo/apps/onstream.png",
           "enabled": true
         },
