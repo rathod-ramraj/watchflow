@@ -271,7 +271,7 @@
       "sites": [
         {
           "name": "PlayUP",
-          "url": "https://playup.vercel.app/",
+          "url": "https://playupp.pages.dev/",
           "logo": "./logo/livetv/playup.png",
           "enabled": true,
           "status": "trusted"

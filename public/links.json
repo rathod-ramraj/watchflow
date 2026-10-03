@@ -6,7 +6,7 @@
       "sites": [
         {
           "name": "oneflix",
-          "url": "https://oneflixx.vercel.app/",
+          "url": "https://oneflixx.pages.dev/",
           "logo": "./logo/movies_shows/oneflixLogo.png",
           "enabled": true,
           "status": "trusted"
@@ -301,7 +301,7 @@
           "name": "FAnime",
           "url": "https://fanime.tv/",
           "logo": "./logo/anime/fanime.png",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Justanime",
@@ -531,7 +531,7 @@
       "sites": [
         {
           "name": "PlayUp",
-          "url": "https://playup.vercel.app/",
+          "url": "https://playupp.pages.dev/",
           "logo": "./logo/livetv/playup.png",
           "enabled": true,
           "status": "trusted"
@@ -794,7 +794,7 @@
         },
         {
           "name": "MobiFlix",
-          "url": "https://mobiflix.tv/",
+          "url": "https://mobiflixapp.com/",
           "logo": "./logo/apps/mobiflix.png",
           "enabled": true
         },
