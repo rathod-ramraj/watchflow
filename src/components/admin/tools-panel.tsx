@@ -159,7 +159,7 @@ function PurgeCacheTool() {
             value={urlsText}
             onChange={(e) => setUrlsText(e.target.value)}
             rows={4}
-            placeholder={"https://FMW.lol/\nhttps://FMW.lol/links/USA.json\nhttps://FMW.lol/logo/movies/foo.png"}
+            placeholder={"https://fmwsite.pages.dev/\nhttps://fmwsite.pages.dev/links/USA.json\nhttps://fmwsite.pages.dev/logo/movies/foo.png"}
             className="w-full resize-y rounded-lg border bg-transparent px-3 py-2 font-mono text-xs"
             style={{ borderColor: "var(--border)" }}
           />
