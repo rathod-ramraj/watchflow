@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* ============ THEMES ============ */
-/* Default: purple-dark (current Cinex look) */
+/* Default: purple-dark (current FMW look) */
 :root,
 [data-theme="purple-dark"] {
   --bg: #07070a;
@@ -191,7 +191,7 @@ body::before {
 }
 
 /* Utility classes */
-.cinex-card {
+.FMW-card {
   background:
     linear-gradient(var(--bg-card), var(--bg-card)),
     var(--bg);
@@ -204,7 +204,7 @@ body::before {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-.cinex-card:hover {
+.FMW-card:hover {
   background:
     linear-gradient(var(--bg-card-hover), var(--bg-card-hover)),
     var(--bg);
@@ -212,26 +212,26 @@ body::before {
   transform: translate3d(0, -2px, 0) scale(1.02);
   box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.4), 0 0 24px -6px var(--accent-glow);
 }
-.cinex-pill {
+.FMW-pill {
   background: color-mix(in oklab, var(--fg) 6%, var(--bg-elev));
   border: 1px solid var(--border-strong);
   border-radius: 999px;
   color: var(--fg-muted);
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
-.cinex-pill:hover {
+.FMW-pill:hover {
   border-color: var(--border-strong);
   color: var(--fg);
   background: color-mix(in oklab, var(--fg) 14%, var(--bg-elev));
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-.cinex-pill[data-active="true"] {
+.FMW-pill[data-active="true"] {
   background: var(--accent);
   color: var(--accent-fg);
   border-color: var(--accent);
   box-shadow: 0 2px 8px var(--accent-glow);
 }
-.cinex-glow {
+.FMW-glow {
   box-shadow: 0 0 0 1px var(--border-strong), 0 0 28px var(--accent-glow);
 }
 
@@ -255,7 +255,7 @@ body::before {
 
 /* Larger tap targets on touch devices */
 @media (hover: none) {
-  .cinex-pill { min-height: 36px; }
+  .FMW-pill { min-height: 36px; }
 }
 
 /* Smooth continuous rotation */

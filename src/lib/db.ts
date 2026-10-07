@@ -5,11 +5,11 @@ import fs from "node:fs";
 
 declare global {
   // eslint-disable-next-line no-var
-  var __Cinex_sqlite: Database.Database | undefined;
+  var __FMW_sqlite: Database.Database | undefined;
 }
 
 const g = globalThis as typeof globalThis & {
-  __Cinex_sqlite?: Database.Database;
+  __FMW_sqlite?: Database.Database;
 };
 
 const SCHEMA = `
@@ -36,7 +36,7 @@ CREATE INDEX IF NOT EXISTS idx_site_requests_status_submitted ON site_requests(s
 function openDb(): Database.Database {
   const dataDir = path.join(process.cwd(), "data");
   fs.mkdirSync(dataDir, { recursive: true });
-  const dbPath = path.join(dataDir, "Cinex.db");
+  const dbPath = path.join(dataDir, "FMW.db");
   const db = new Database(dbPath);
   db.pragma("journal_mode = WAL");
   db.exec(SCHEMA);
@@ -44,8 +44,8 @@ function openDb(): Database.Database {
 }
 
 export function getDb(): Database.Database {
-  if (!g.__Cinex_sqlite) {
-    g.__Cinex_sqlite = openDb();
+  if (!g.__FMW_sqlite) {
+    g.__FMW_sqlite = openDb();
   }
-  return g.__Cinex_sqlite;
+  return g.__FMW_sqlite;
 }

@@ -69,19 +69,19 @@ export function Hero({ regionCode, regionFlag, regionName, stats }: Props) {
 
           {/* Quick category shortcut pills */}
           <div className="mt-4 flex flex-wrap gap-2">
-            <a href="#cat-movies" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+            <a href="#cat-movies" className="FMW-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
               <span>🎬</span> Movies
             </a>
-            <a href="#cat-anime" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+            <a href="#cat-anime" className="FMW-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
               <span>🍿</span> Anime
             </a>
-            <a href="#cat-livetv" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+            <a href="#cat-livetv" className="FMW-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
               <span>📺</span> Live TV
             </a>
-            <a href="#cat-sports" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+            <a href="#cat-sports" className="FMW-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
               <span>⚽</span> Sports
             </a>
-            <a href="#cat-manga" className="cinex-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
+            <a href="#cat-manga" className="FMW-pill inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold transition-all">
               <span>📖</span> Manga
             </a>
           </div>

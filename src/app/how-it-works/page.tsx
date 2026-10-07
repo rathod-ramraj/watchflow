@@ -40,7 +40,7 @@ export default function HowItWorksPage() {
         </header>
 
         {/* Step 1 */}
-        <section className="cinex-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
+        <section className="FMW-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
           <div className="flex items-start gap-4">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)]">
               <Search size={24} />
@@ -55,7 +55,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Step 2 */}
-        <section className="cinex-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
+        <section className="FMW-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
           <div className="flex items-start gap-4">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)]">
               <Compass size={24} />
@@ -70,7 +70,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Step 3 */}
-        <section className="cinex-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
+        <section className="FMW-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
           <div className="flex items-start gap-4">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[var(--accent)]/15 text-[var(--accent)]">
               <ShieldCheck size={24} />

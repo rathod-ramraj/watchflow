@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 
-const KEY = "cinex-favorites-v1";
-const EVT = "cinex-favorites-changed";
+const KEY = "FMW-favorites-v1";
+const EVT = "FMW-favorites-changed";
 
 export interface FavoriteItem {
   name: string;
@@ -46,7 +46,7 @@ function write(items: FavoriteItem[]) {
   cachedStarredSet = new Set(items.map((f) => f.url));
   try {
     localStorage.setItem(KEY, JSON.stringify(items));
-  } catch {}
+  } catch { }
   notify();
   window.dispatchEvent(new CustomEvent(EVT));
 }

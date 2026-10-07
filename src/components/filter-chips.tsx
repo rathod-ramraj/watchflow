@@ -107,7 +107,7 @@ export function FilterChips({ categories }: Props) {
               type="button"
               data-active={active.size === 0}
               onClick={() => selectTab(null)}
-              className={cn("cinex-pill h-8 shrink-0 px-3.5 text-xs font-semibold rounded-xl cursor-pointer")}
+              className={cn("FMW-pill h-8 shrink-0 px-3.5 text-xs font-semibold rounded-xl cursor-pointer")}
             >
               All
             </button>
@@ -120,7 +120,7 @@ export function FilterChips({ categories }: Props) {
                   type="button"
                   data-active={isActive}
                   onClick={() => selectTab(c.id)}
-                  className={cn("cinex-pill inline-flex h-8 shrink-0 items-center gap-1.5 px-3.5 text-xs font-semibold rounded-xl cursor-pointer")}
+                  className={cn("FMW-pill inline-flex h-8 shrink-0 items-center gap-1.5 px-3.5 text-xs font-semibold rounded-xl cursor-pointer")}
                 >
                   <CategoryIcon id={c.id} size={14} />
                   {meta?.label ?? c.name}

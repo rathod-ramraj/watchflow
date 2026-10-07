@@ -35,7 +35,7 @@ export default function AboutPage() {
         <p className="mt-3 text-sm font-medium tracking-wide text-[var(--fg-muted)]">The story behind the list <span className="text-[var(--accent)]">💜</span></p>
       </header>
 
-      <section className="cinex-card mb-12 p-8 md:p-10 rounded-[24px]">
+      <section className="FMW-card mb-12 p-8 md:p-10 rounded-[24px]">
         <h2 className="mb-4 text-xl font-extrabold text-white tracking-tight">Our Mission</h2>
         <p className="mb-4 text-sm md:text-base leading-relaxed text-[var(--fg-muted)]">
           Welcome to <strong className="text-[var(--fg)]">Free Media World (FMW)</strong> — your guide to free
@@ -52,7 +52,7 @@ export default function AboutPage() {
         <h2 className="mb-6 text-center text-xl font-extrabold text-white tracking-tight">The Team</h2>
         <div className="flex justify-center">
           {TEAM.map((m) => (
-            <div key={m.name} className="cinex-card flex max-w-md flex-col items-center p-10 text-center rounded-[24px] shadow-lg shadow-black/30 hover:-translate-y-1 hover:scale-[1.02] hover:cinex-glow duration-300">
+            <div key={m.name} className="FMW-card flex max-w-md flex-col items-center p-10 text-center rounded-[24px] shadow-lg shadow-black/30 hover:-translate-y-1 hover:scale-[1.02] hover:FMW-glow duration-300">
               <div className="relative mb-6">
                 <Image
                   src={m.avatar}

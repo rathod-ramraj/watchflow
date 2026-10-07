@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const PLACEHOLDER_NAME = "Coming soon — request a site";
-const PLACEHOLDER_URL = "https://Cinex.lol/request";
+const PLACEHOLDER_URL = "https://FMW.lol/request";
 
 export async function POST(req: Request) {
   const auth = await requireAdmin();

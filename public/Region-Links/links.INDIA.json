@@ -85,7 +85,7 @@
         },
         {
           "name": "world4u",
-          "url": "https://world4ufree.beer/",
+          "url": "https://worldfree4u.blog/",
           "logo": "./logo/movies_shows/world4u.png",
           "enabled": true
         },
@@ -448,6 +448,12 @@
           "name": "YouCine",
           "url": "https://youcineapkpro.com/",
           "logo": "./logo/livetv/youcine.webp",
+          "enabled": true
+        },
+        {
+          "name": "anivortex",
+          "url": "https://anivortex.in/",
+          "logo": "./logo/apps/anivortex.png",
           "enabled": true
         }
       ]

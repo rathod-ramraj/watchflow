@@ -123,7 +123,7 @@ export default async function ResourceDetailPage({
         </Link>
 
         {/* Hero Card Header */}
-        <article className="cinex-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
+        <article className="FMW-card rounded-3xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[var(--bg-elev)] border border-[var(--border)] p-2 shadow-inner">
@@ -207,7 +207,7 @@ export default async function ResourceDetailPage({
                 <Link
                   key={r.slug}
                   href={`/resources/${r.slug}`}
-                  className="group cinex-card flex flex-col items-center justify-center p-4 text-center rounded-2xl border border-[var(--border)] transition-all hover:-translate-y-1 hover:border-[var(--accent)]"
+                  className="group FMW-card flex flex-col items-center justify-center p-4 text-center rounded-2xl border border-[var(--border)] transition-all hover:-translate-y-1 hover:border-[var(--accent)]"
                 >
                   <Image
                     src={normalizeAsset(r.logo)}

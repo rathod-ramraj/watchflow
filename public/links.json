@@ -141,8 +141,7 @@
           "name": "Willow",
           "url": "https://willowmovies.com/",
           "logo": "./logo/movies_shows/willow.png",
-          "enabled": true,
-          "status": "down"
+          "enabled": true
         },
         {
           "name": "FMovies",

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-const KEY = "cinex-gfm-dismissed-v1";
+const KEY = "FMW-gfm-dismissed-v1";
 
 export function GoFundMeBanner() {
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ export function GoFundMeBanner() {
   }, []);
 
   if (!show) return null;
-  return (  
+  return (
     <div
       className="relative flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-10 py-2 text-center text-xs font-medium text-white sm:text-sm"
       style={{ background: "linear-gradient(135deg, #ff6b6b, #ee5a24)" }}

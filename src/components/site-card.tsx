@@ -53,7 +53,7 @@ export const SiteCard = memo(function SiteCard({ site, categoryId }: Props) {
       await navigator.clipboard.writeText(site.url);
       setCopied(true);
       setTimeout(() => setCopied(false), 1200);
-    } catch {}
+    } catch { }
   }
 
   function star(e: React.MouseEvent) {
@@ -63,7 +63,7 @@ export const SiteCard = memo(function SiteCard({ site, categoryId }: Props) {
   }
 
   let host = "";
-  try { host = new URL(site.url).hostname.replace(/^www\./, ""); } catch {}
+  try { host = new URL(site.url).hostname.replace(/^www\./, ""); } catch { }
 
   return (
     <a
@@ -77,8 +77,8 @@ export const SiteCard = memo(function SiteCard({ site, categoryId }: Props) {
       data-category={categoryId}
       data-tags={(site.tags ?? []).join(",").toLowerCase()}
       className={cn(
-        "cinex-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1.5 overflow-hidden p-3.5",
-        "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-1 hover:scale-[1.03] hover:cinex-glow",
+        "FMW-card group relative flex aspect-[5/3] flex-col items-center justify-center gap-1.5 overflow-hidden p-3.5",
+        "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform hover:-translate-y-1 hover:scale-[1.03] hover:FMW-glow",
         starred && "ring-1 ring-[var(--accent)]/30",
       )}
       title={site.name}

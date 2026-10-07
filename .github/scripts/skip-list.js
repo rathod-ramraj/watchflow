@@ -11,7 +11,7 @@ const SKIP_URLS = new Set([
   'https://goplay.su',
   'https://inkapelis.cyou',
   'https://www.anivault.co',
-  'https://cinexx.vercel.app/site-request.html',
+  'https://FMWx.vercel.app/site-request.html',
   'https://tv.eddit.me/',
   'https://cokcok10.com/',
   'https://stmify.com/'

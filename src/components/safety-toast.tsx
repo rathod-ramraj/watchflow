@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-const KEY = "cinex-safety-dismissed-v1";
+const KEY = "FMW-safety-dismissed-v1";
 
 export function SafetyToast() {
   const [show, setShow] = useState(false);

@@ -43,7 +43,7 @@ export default function SafetyPage() {
         </header>
 
         <section className="space-y-6">
-          <div className="cinex-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
+          <div className="FMW-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
             <h2 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <Lock size={18} className="text-[var(--accent)]" /> Use Modern Ad-Blockers & DNS Protection
             </h2>
@@ -52,7 +52,7 @@ export default function SafetyPage() {
             </p>
           </div>
 
-          <div className="cinex-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
+          <div className="FMW-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
             <h2 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <AlertTriangle size={18} className="text-amber-400" /> Never Download Executable Files (.exe, .dmg, .apk)
             </h2>
@@ -61,7 +61,7 @@ export default function SafetyPage() {
             </p>
           </div>
 
-          <div className="cinex-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
+          <div className="FMW-card rounded-3xl p-6 sm:p-8 border border-[var(--border)]">
             <h2 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <Eye size={18} className="text-[var(--accent)]" /> Support Official & Licensed Platforms
             </h2>

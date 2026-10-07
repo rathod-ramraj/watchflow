@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   let res: Response;
   try {
     res = await fetch(url, {
-      headers: { "User-Agent": "Cinex-Admin/1.0" },
+      headers: { "User-Agent": "FMW-Admin/1.0" },
       redirect: "follow",
       signal: AbortSignal.timeout(10000),
     });

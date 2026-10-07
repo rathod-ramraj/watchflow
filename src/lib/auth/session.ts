@@ -4,7 +4,7 @@ import { SignJWT, jwtVerify } from "jose";
 import { encrypt, decrypt } from "../crypto";
 import { env } from "../env";
 
-const COOKIE = "Cinex_sid";
+const COOKIE = "FMW_sid";
 const TTL_DAYS = 7;
 const TTL_SECONDS = TTL_DAYS * 86_400;
 const ALG = "HS256";
@@ -121,7 +121,7 @@ export async function destroySession() {
   jar.delete(COOKIE);
 }
 
-const STATE_COOKIE = "Cinex_oauth_state";
+const STATE_COOKIE = "FMW_oauth_state";
 
 export async function setOAuthState(state: string) {
   const jar = cookies();

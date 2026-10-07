@@ -34,7 +34,7 @@ export default function DmcaPage() {
         <p className="mt-3 text-sm font-medium tracking-wide text-[var(--fg-muted)]">Copyright Takedown Requests 🛡️</p>
       </header>
 
-      <section className="cinex-card mb-12 p-8 md:p-10 rounded-[24px]">
+      <section className="FMW-card mb-12 p-8 md:p-10 rounded-[24px]">
         <h2 className="mb-4 text-xl font-extrabold text-white tracking-tight">DMCA Overview</h2>
         <p className="mb-4 text-sm md:text-base leading-relaxed text-[var(--fg-muted)]">
           We take intellectual property rights seriously and comply with the Digital Millennium Copyright Act (DMCA).
@@ -50,7 +50,7 @@ export default function DmcaPage() {
         <h2 className="mb-6 text-xl font-extrabold text-white tracking-tight">How We Handle DMCA Requests</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s) => (
-            <div key={s.n} className="cinex-card p-6 text-center rounded-[20px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:cinex-glow">
+            <div key={s.n} className="FMW-card p-6 text-center rounded-[20px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:FMW-glow">
               <div className="mx-auto mb-4 grid h-10 w-10 place-items-center rounded-xl font-extrabold shadow-md"
                 style={{ background: "var(--accent)", color: "var(--accent-fg)", boxShadow: "0 4px 12px var(--accent-glow)" }}>
                 {s.n}
@@ -64,7 +64,7 @@ export default function DmcaPage() {
 
       <section className="mb-12">
         <h2 className="mb-6 text-xl font-extrabold text-white tracking-tight">DMCA Request Requirements</h2>
-        <div className="cinex-card divide-y p-3 rounded-[24px]" style={{ borderColor: "var(--border)" }}>
+        <div className="FMW-card divide-y p-3 rounded-[24px]" style={{ borderColor: "var(--border)" }}>
           {REQUIREMENTS.map((r) => (
             <div key={r.title} className="flex items-start gap-4.5 p-5" style={{ borderColor: "var(--border)" }}>
               <CheckCircle2 className="mt-0.5 shrink-0 text-[var(--accent)]" size={18} />
@@ -77,7 +77,7 @@ export default function DmcaPage() {
         </div>
       </section>
 
-      <section className="cinex-card p-8 md:p-10 text-center rounded-[24px]">
+      <section className="FMW-card p-8 md:p-10 text-center rounded-[24px]">
         <h2 className="mb-2 text-lg font-bold text-white">Submit DMCA Request</h2>
         <p className="mb-6 text-[var(--fg-muted)]">Please send your DMCA takedown notice to:</p>
         <a

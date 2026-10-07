@@ -13,7 +13,7 @@ interface Recent {
   visitedAt: number;
 }
 
-const KEY = "cinex-recents-v1";
+const KEY = "FMW-recents-v1";
 const MAX = 8;
 
 export function addRecent(item: Omit<Recent, "visitedAt">) {
@@ -26,8 +26,8 @@ export function addRecent(item: Omit<Recent, "visitedAt">) {
       ...arr.filter((r) => r.url !== item.url),
     ].slice(0, MAX);
     localStorage.setItem(KEY, JSON.stringify(next));
-    window.dispatchEvent(new CustomEvent("cinex-recents-changed"));
-  } catch {}
+    window.dispatchEvent(new CustomEvent("FMW-recents-changed"));
+  } catch { }
 }
 
 let cachedValidUrlSetPromise: Promise<Set<string>> | null = null;
@@ -94,15 +94,15 @@ export function RecentlyVisited() {
         if (kept.length !== stored.length) {
           try {
             localStorage.setItem(KEY, JSON.stringify(kept));
-          } catch {}
+          } catch { }
         }
         setItems(kept);
       })
-      .catch(() => {});
-    window.addEventListener("cinex-recents-changed", load);
+      .catch(() => { });
+    window.addEventListener("FMW-recents-changed", load);
     return () => {
       cancelled = true;
-      window.removeEventListener("cinex-recents-changed", load);
+      window.removeEventListener("FMW-recents-changed", load);
     };
   }, []);
 
@@ -134,7 +134,7 @@ export function RecentlyVisited() {
             href={r.url}
             target="_blank"
             rel="noreferrer noopener"
-            className="cinex-card flex shrink-0 items-center gap-2 px-3 py-2 text-sm"
+            className="FMW-card flex shrink-0 items-center gap-2 px-3 py-2 text-sm"
           >
             <Image
               src={normalizeAsset(r.logo)}
