@@ -146,6 +146,13 @@
           "name": "PantyFlix",
           "url": "https://pantyflix.com/",
           "logo": "./logo/movies/pantyflix.png"
+        },
+        {
+          "name": "BingR",
+          "url": "https://bingr.one/home/",
+          "logo": "./logo/movies/bingr.png",
+          "enabled": true,
+          "status": "trusted"
         }
       ]
     },
