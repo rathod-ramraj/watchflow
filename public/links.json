@@ -80,7 +80,7 @@
         },
         {
           "name": "primeflix",
-          "url": "https://primeflix.ru/",
+          "url": "https://primeflix.to/",
           "logo": "./logo/movies_shows/primeflix.png",
           "enabled": true
         },
