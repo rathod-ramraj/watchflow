@@ -61,7 +61,7 @@
         },
         {
           "name": "KMMovies",
-          "url": "https://kmmovies.autos/",
+          "url": "https://kmmovies.beer/",
           "logo": "./logo/movies_shows/kmmovies.png",
           "enabled": true
         },
@@ -144,7 +144,7 @@
         },
         {
           "name": "PantyFlix",
-          "url": "https://pantyflix.com/",
+          "url": "https://ghostflix.st/",
           "logo": "./logo/movies/pantyflix.png"
         },
         {
