@@ -140,17 +140,17 @@
         {
           "name": "7 Reels",
           "url": "https://7reels.cc/",
-          "logo": "./logo/movies/7-reels.svg"
+          "logo": "./logo/movies_shows/7-reels.svg"
         },
         {
-          "name": "PantyFlix",
+          "name": "GhostFlix",
           "url": "https://ghostflix.st/",
-          "logo": "./logo/movies/pantyflix.png"
+          "logo": "./logo/movies_shows/ghostflix.png"
         },
         {
           "name": "BingR",
           "url": "https://bingr.one/home/",
-          "logo": "./logo/movies/bingr.png",
+          "logo": "./logo/movies_shows/bingr.png",
           "enabled": true,
           "status": "trusted"
         }
