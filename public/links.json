@@ -217,7 +217,7 @@
       "sites": [
         {
           "name": "ReAnime",
-          "url": "https://reanime.to/home",
+          "url": "https://reanime.cz/",
           "logo": "./logo/anime/reanime.png",
           "enabled": true,
           "status": "trusted"

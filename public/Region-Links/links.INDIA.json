@@ -149,7 +149,7 @@
         },
         {
           "name": "BingR",
-          "url": "https://bingr.one/home/",
+          "url": "https://bingr.st/",
           "logo": "./logo/movies_shows/bingr.png",
           "enabled": true,
           "status": "trusted"
