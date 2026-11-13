@@ -67,7 +67,7 @@
         },
         {
           "name": "CinemaBZ",
-          "url": "https://cinema.com.ph/",
+          "url": "https://pinoycinema.net/",
           "logo": "./logo/movies_shows/cinemabz.png",
           "enabled": true
         },
@@ -251,7 +251,7 @@
         },
         {
           "name": "Anikoto",
-          "url": "https://anikototv.to",
+          "url": "https://anikototv.bz/",
           "logo": "./logo/anime/anikoto.png",
           "enabled": true
         },
