@@ -54,7 +54,7 @@
       "sites": [
         {
           "name": "VoirAnime",
-          "url": "https://voir-anime.to/",
+          "url": "https://voiranime.be/",
           "enabled": true,
           "logo": "./logo/anime/voiranime.png"
         },
