@@ -366,7 +366,7 @@
         },
         {
           "name": "AllManga",
-          "url": "https://gain-access.to/",
+          "url": "https://allmanga.to/",
           "logo": "./logo/anime/allmanga.png",
           "enabled": true
         }
@@ -453,7 +453,7 @@
         },
         {
           "name": "AllManga",
-          "url": "https://gain-access.to/",
+          "url": "https://allmanga.to/",
           "logo": "./logo/manga/allmanga.png",
           "enabled": true
         },
@@ -507,7 +507,7 @@
         },
         {
           "name": "AllManga",
-          "url": "https://gain-access.to/",
+          "url": "https://allmanga.to/",
           "logo": "./logo/anime/allmanga.png",
           "enabled": true
         },
